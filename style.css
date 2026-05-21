@@ -34,7 +34,6 @@ body {
   color: #063b8e;
   font-size: 1.35rem;
   font-weight: 900;
-  letter-spacing: -0.02em;
 }
 
 nav {
@@ -47,7 +46,6 @@ nav a {
   text-decoration: none;
   font-weight: 750;
   font-size: 0.95rem;
-  transition: 0.2s ease;
 }
 
 nav a:hover {
@@ -63,17 +61,25 @@ nav a:hover {
   color: #063b8e;
 }
 
+/* HERO */
+
 .hero {
   min-height: 78vh;
   position: relative;
   display: flex;
   align-items: center;
   padding: 90px 7% 150px;
-  background-image: url("./state.jpg");
-  background-size: cover;
-  background-position: center 38%;
-  background-repeat: no-repeat;
   overflow: hidden;
+  background: #031630;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
 }
 
 .hero-shade {
@@ -81,7 +87,7 @@ nav a:hover {
   inset: 0;
   background:
     radial-gradient(circle at 20% 20%, rgba(246, 198, 68, 0.25), transparent 28%),
-    linear-gradient(90deg, rgba(3, 20, 48, 0.88), rgba(5, 38, 89, 0.62), rgba(5, 38, 89, 0.22));
+    linear-gradient(90deg, rgba(3, 20, 48, 0.9), rgba(5, 38, 89, 0.63), rgba(5, 38, 89, 0.2));
 }
 
 .hero-content {
@@ -161,6 +167,8 @@ nav a:hover {
   color: white;
 }
 
+/* STATS */
+
 .stats-section {
   padding: 0 7%;
   margin-top: -72px;
@@ -176,8 +184,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: center;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 246, 255, 0.96));
+  background: linear-gradient(135deg, #ffffff, #eff6ff);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
   border: 1px solid rgba(148, 163, 184, 0.25);
 }
@@ -205,6 +212,8 @@ nav a:hover {
   height: 64px;
   background: linear-gradient(transparent, #cbd5e1, transparent);
 }
+
+/* GENERAL SECTIONS */
 
 .section {
   padding: 86px 7%;
@@ -237,8 +246,10 @@ nav a:hover {
   font-size: 1.03rem;
 }
 
+/* ABOUT / EVENT TYPES */
+
 .feature-grid {
-  max-width: 1050px;
+  max-width: 1120px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -246,23 +257,49 @@ nav a:hover {
 }
 
 .feature-card {
+  position: relative;
   background: white;
-  border-radius: 26px;
-  padding: 30px;
+  border-radius: 28px;
+  padding: 34px 30px;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
   border: 1px solid #e8eef7;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(6, 59, 142, 0.08);
+  border-radius: 50%;
+  right: -55px;
+  top: -55px;
+}
+
+.feature-number {
+  color: #f6c644;
+  font-size: 0.95rem;
+  font-weight: 950;
+  margin-bottom: 12px;
 }
 
 .feature-card h3 {
   color: #063b8e;
-  font-size: 1.35rem;
-  margin-bottom: 10px;
+  font-size: 1.55rem;
+  margin-bottom: 12px;
 }
+
+.feature-card p {
+  color: #526175;
+}
+
+/* EVENTS */
 
 .events-section {
   background:
-    linear-gradient(135deg, rgba(4, 24, 57, 0.95), rgba(6, 59, 142, 0.92)),
-    linear-gradient(90deg, #041839, #063b8e);
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.18), transparent 32%),
+    linear-gradient(135deg, #041839, #063b8e);
   color: white;
 }
 
@@ -332,66 +369,134 @@ nav a:hover {
   color: #526175;
 }
 
+/* OFFICERS */
+
+.officers {
+  background:
+    radial-gradient(circle at top right, rgba(6, 59, 142, 0.08), transparent 34%),
+    #f7f9fc;
+}
+
 .officer-grid {
-  max-width: 1120px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
 .officer-card {
+  text-decoration: none;
+  color: inherit;
   background: white;
-  padding: 24px 18px;
-  min-height: 140px;
-  border-radius: 24px;
-  text-align: center;
+  border-radius: 28px;
   border: 1px solid #e8eef7;
-  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.075);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+}
+
+.officer-photo {
+  height: 190px;
+  background:
+    linear-gradient(135deg, rgba(6, 59, 142, 0.95), rgba(15, 84, 190, 0.86)),
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.5), transparent 30%);
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
 }
 
-.officer-card h3 {
-  font-size: 1.08rem;
+.officer-info {
+  padding: 22px;
+  text-align: center;
+}
+
+.officer-info h3 {
   color: #122033;
-  margin-bottom: 8px;
+  font-size: 1.15rem;
+  margin-bottom: 7px;
 }
 
-.officer-card p {
+.officer-info p {
   color: #063b8e;
   font-weight: 900;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
+.officer-click {
+  margin-top: 14px;
+  display: inline-block;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* RESOURCES */
+
 .resources {
-  background: #edf4ff;
+  background:
+    linear-gradient(135deg, rgba(4, 24, 57, 0.96), rgba(6, 59, 142, 0.93)),
+    #063b8e;
 }
 
 .resource-grid {
-  max-width: 1020px;
+  max-width: 1120px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
-.resource-grid a {
+.resource-card {
   text-decoration: none;
-  background: white;
-  color: #063b8e;
-  padding: 24px;
-  border-radius: 22px;
-  font-weight: 900;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  transition: 0.2s ease;
+  background: rgba(255, 255, 255, 0.96);
+  color: #122033;
+  padding: 28px;
+  border-radius: 28px;
+  min-height: 190px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+  transition: 0.22s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.resource-grid a:hover {
-  transform: translateY(-4px);
+.resource-card:hover {
+  transform: translateY(-6px);
+  background: white;
 }
+
+.resource-card span {
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  background: #edf4ff;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.resource-card h3 {
+  color: #063b8e;
+  font-size: 1.22rem;
+  margin-bottom: 8px;
+}
+
+.resource-card p {
+  color: #526175;
+}
+
+/* JOIN */
 
 .join {
   background:
@@ -449,6 +554,90 @@ footer h3 {
   margin-bottom: 8px;
 }
 
+/* OFFICER DETAIL PAGE */
+
+.profile-page {
+  min-height: calc(100vh - 72px);
+  padding: 80px 7%;
+  background:
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.18), transparent 34%),
+    linear-gradient(135deg, #f7f9fc, #edf4ff);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #063b8e;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.profile-card {
+  max-width: 1050px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  border: 1px solid #e8eef7;
+}
+
+.profile-photo {
+  min-height: 520px;
+  background:
+    linear-gradient(135deg, rgba(6, 59, 142, 0.95), rgba(15, 84, 190, 0.86)),
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.5), transparent 30%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 34px;
+  font-size: 1.3rem;
+  font-weight: 950;
+}
+
+.profile-content {
+  padding: 50px;
+}
+
+.profile-role {
+  color: #063b8e;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+}
+
+.profile-content h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  margin-bottom: 28px;
+}
+
+.profile-details {
+  display: grid;
+  gap: 18px;
+}
+
+.profile-detail {
+  padding: 20px;
+  border-radius: 22px;
+  background: #f7f9fc;
+  border: 1px solid #e8eef7;
+}
+
+.profile-detail h3 {
+  color: #063b8e;
+  margin-bottom: 6px;
+}
+
+/* MOBILE */
+
 @media (max-width: 950px) {
   nav {
     display: none;
@@ -498,5 +687,17 @@ footer h3 {
 
   .join-card {
     padding: 28px;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    min-height: 320px;
+  }
+
+  .profile-content {
+    padding: 32px;
   }
 }
