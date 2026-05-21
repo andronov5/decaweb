@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>School DECA Chapter</title>
+  <title>Northfield DECA Chapter</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="navbar">
-    <div class="logo">DECA</div>
+    <div class="logo">Northfield DECA</div>
 
     <nav id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#events">Events</a>
-      <a href="#competition">Competition</a>
-      <a href="#officers">Officers</a>
+      <a href="#events">Calendar</a>
+      <a href="#officers">Officer Team</a>
       <a href="#resources">Resources</a>
       <a href="#join">Join</a>
     </nav>
@@ -25,160 +24,104 @@
   </header>
 
   <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-      <p class="tagline">Business • Leadership • Competition • Community</p>
-      <h1>Welcome to Our School DECA Chapter</h1>
-      <p>
-        DECA prepares students to become emerging leaders in marketing, finance,
-        hospitality, entrepreneurship, and business management.
+      <p class="hero-tag">Leadership • Competition • Community • Business</p>
+      <h1>Welcome to Northfield's DECA Chapter</h1>
+      <p class="hero-text">
+        Northfield DECA is a community of student leaders passionate about business,
+        competition, service, and professional growth.
       </p>
+
       <div class="hero-buttons">
         <a href="#join" class="btn primary">Join DECA</a>
-        <a href="#competition" class="btn secondary">Learn About Competition</a>
+        <a href="#events" class="btn secondary">View Calendar</a>
       </div>
     </div>
   </section>
 
-  <section class="section stats">
-    <div>
-      <h2>100+</h2>
-      <p>Chapter Members</p>
-    </div>
-    <div>
-      <h2>20+</h2>
-      <p>Competitive Events</p>
-    </div>
-    <div>
-      <h2>1</h2>
-      <p>Chapter Community</p>
+  <section class="stats-wrapper">
+    <div class="stats-bar">
+      <div class="stat-card">
+        <h2>200+</h2>
+        <p>Chapter Members</p>
+      </div>
+      <div class="stat-card">
+        <h2>40+</h2>
+        <p>Events</p>
+      </div>
+      <div class="stat-card">
+        <h2>1</h2>
+        <p>Unmatched Chapter Community</p>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="section-header">
+  <section class="section about-section" id="about">
+    <div class="section-header compact">
       <p class="label">About Us</p>
       <h2>What is DECA?</h2>
+      <p>
+        DECA helps students build skills in business, marketing, finance,
+        entrepreneurship, hospitality, leadership, and public speaking.
+        Through conferences, competitions, chapter events, and community outreach,
+        members gain real-world experience while making lasting memories.
+      </p>
     </div>
 
-    <div class="two-column">
-      <div>
-        <p>
-          DECA is a student organization that helps high school students build
-          skills in business, leadership, communication, problem-solving, and
-          professional confidence.
-        </p>
-        <p>
-          Members compete in roleplays, written business plans, finance events,
-          entrepreneurship events, marketing events, and more. DECA is also a
-          great way to meet people, travel, strengthen your resume, and practice
-          real-world skills.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Why Join?</h3>
-        <ul>
-          <li>Compete in business events</li>
-          <li>Practice public speaking</li>
-          <li>Build leadership experience</li>
-          <li>Meet new people</li>
-          <li>Prepare for college and careers</li>
-        </ul>
-      </div>
+    <div class="about-pills">
+      <div class="pill">Competitive Events</div>
+      <div class="pill">Leadership Development</div>
+      <div class="pill">Professional Skills</div>
+      <div class="pill">Chapter Community</div>
     </div>
   </section>
 
   <section class="section gray" id="events">
     <div class="section-header">
       <p class="label">Calendar</p>
-      <h2>Upcoming Events</h2>
+      <h2>Important Dates</h2>
+      <p>Scroll to see more events.</p>
     </div>
 
-    <div class="card-grid" id="eventContainer">
-      <!-- Events load from JavaScript -->
-    </div>
-  </section>
-
-  <section class="section" id="competition">
-    <div class="section-header">
-      <p class="label">Competition</p>
-      <h2>How DECA Competition Works</h2>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span>1</span>
-        <h3>Choose Your Event</h3>
-        <p>Pick from finance, marketing, entrepreneurship, hospitality, or business management.</p>
-      </div>
-
-      <div class="step">
-        <span>2</span>
-        <h3>Prepare</h3>
-        <p>Practice roleplays, study performance indicators, and learn business vocabulary.</p>
-      </div>
-
-      <div class="step">
-        <span>3</span>
-        <h3>Compete</h3>
-        <p>Present your solution to a judge and show your creativity, confidence, and business knowledge.</p>
-      </div>
-
-      <div class="step">
-        <span>4</span>
-        <h3>Advance</h3>
-        <p>Top competitors can move from districts to state and potentially to ICDC.</p>
-      </div>
+    <div class="events-scroll" id="eventContainer">
+      <!-- Events load from JS -->
     </div>
   </section>
 
-  <section class="section gray" id="officers">
+  <section class="section" id="officers">
     <div class="section-header">
       <p class="label">Leadership Team</p>
-      <h2>Meet the Officers</h2>
+      <h2>Officer Team</h2>
     </div>
 
-    <div class="card-grid" id="officerContainer">
-      <!-- Officers load from JavaScript -->
+    <div class="officer-grid" id="officerContainer">
+      <!-- Officers load from JS -->
     </div>
   </section>
 
-  <section class="section" id="resources">
+  <section class="section gray" id="resources">
     <div class="section-header">
       <p class="label">Resources</p>
-      <h2>Helpful DECA Links</h2>
+      <h2>Helpful Links</h2>
     </div>
 
     <div class="resource-list">
-      <a href="#">Roleplay Practice Guide</a>
+      <a href="#">DECA Event List</a>
       <a href="#">Performance Indicators</a>
-      <a href="#">DECA Dress Code</a>
-      <a href="#">Written Event Templates</a>
-      <a href="#">Competition Checklist</a>
+      <a href="#">Roleplay Tips</a>
+      <a href="#">Written Event Guides</a>
+      <a href="#">Competition Dress Code</a>
+      <a href="#">Chapter Instagram</a>
     </div>
   </section>
 
-  <section class="section gray gallery-section">
-    <div class="section-header">
-      <p class="label">Gallery</p>
-      <h2>Chapter Moments</h2>
-    </div>
-
-    <div class="gallery">
-      <div class="photo-placeholder">Photo 1</div>
-      <div class="photo-placeholder">Photo 2</div>
-      <div class="photo-placeholder">Photo 3</div>
-      <div class="photo-placeholder">Photo 4</div>
-    </div>
-  </section>
-
-  <section class="section join-section" id="join">
+  <section class="section" id="join">
     <div class="section-header">
       <p class="label">Get Involved</p>
-      <h2>Join Our Chapter</h2>
-      <p>
-        Interested in joining DECA? Fill out this quick form and an officer will reach out.
-      </p>
+      <h2>Join Northfield DECA</h2>
+      <p>Interested in being part of our chapter? Fill out the form below.</p>
     </div>
 
     <form id="joinForm" class="join-form">
@@ -189,22 +132,22 @@
         <option value="">What are you interested in?</option>
         <option value="competition">Competition</option>
         <option value="leadership">Leadership</option>
-        <option value="fundraising">Fundraising</option>
         <option value="events">Chapter Events</option>
+        <option value="community">Community Outreach</option>
       </select>
 
-      <textarea id="message" placeholder="Anything else you want us to know?"></textarea>
+      <textarea id="message" placeholder="Anything else you'd like us to know?"></textarea>
 
-      <button type="submit" class="btn primary">Submit Interest Form</button>
+      <button type="submit" class="btn primary form-btn">Submit</button>
       <p id="formMessage"></p>
     </form>
   </section>
 
   <footer>
-    <h3>School DECA Chapter</h3>
-    <p>Follow us on Instagram: @yourdecaaccount</p>
-    <p>Email: yourdecaemail@school.org</p>
-    <p>© 2026 School DECA. All rights reserved.</p>
+    <h3>Northfield DECA</h3>
+    <p>@northfielddeca</p>
+    <p>northfielddeca@email.com</p>
+    <p>© 2026 Northfield DECA. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
