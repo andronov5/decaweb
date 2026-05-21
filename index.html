@@ -9,7 +9,7 @@
 <body>
 
   <header class="navbar">
-    <a href="#home" class="logo">Northfield DECA</a>
+    <a href="index.html#home" class="logo">Northfield DECA</a>
 
     <nav id="navLinks">
       <a href="#about">About</a>
@@ -19,12 +19,12 @@
       <a href="#join">Join</a>
     </nav>
 
-    <button class="menu-btn" id="menuBtn">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <img src="state.jpg" alt="Northfield DECA at State" class="hero-img" />
+      <img src="state.jpg" alt="Northfield DECA chapter at State" class="hero-img" />
       <div class="hero-shade"></div>
 
       <div class="hero-content">
@@ -79,33 +79,35 @@
 
       <div class="feature-grid">
         <div class="feature-card">
-          <div class="feature-number">01</div>
+          <p class="feature-kicker">01</p>
           <h3>Roleplays</h3>
           <p>
-            Roleplays are individual competitive events where you are given a
-            business scenario and a short prep time before presenting your solution
-            to a judge. These events also include a cluster exam, so your score
-            combines both your presentation and business knowledge.
+            Roleplays are individual competitive events where competitors receive
+            a business scenario, get a short prep time, and present a solution to
+            a judge. Roleplay competitors also take an exam, so the final score
+            includes both presentation skills and business knowledge.
           </p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-number">02</div>
+          <p class="feature-kicker">02</p>
           <h3>Writtens</h3>
           <p>
-            Written events are longer projects where competitors create a business
-            plan, campaign, or proposal before competition. Instead of solving a
-            scenario on the spot, you prepare a paper and presentation ahead of time.
+            Written events are prepared before competition. Competitors create a
+            business plan, campaign, or proposal, then present it to judges. Unlike
+            roleplays, most of the work happens ahead of time through research,
+            writing, design, and presentation practice.
           </p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-number">03</div>
+          <p class="feature-kicker">03</p>
           <h3>Team Decision Making</h3>
           <p>
-            Team Decision Making, or TDM, is basically a roleplay with two people.
-            Partners work together during prep time, organize a solution, and then
-            present as a team to the judge.
+            Team Decision Making, or TDM, is basically a two-person roleplay.
+            Partners prep together, build one solution, and present as a team.
+            It is great for people who like collaboration, quick thinking, and
+            solving business problems with a partner.
           </p>
         </div>
       </div>
@@ -128,54 +130,34 @@
         <p class="section-label">Leadership Team</p>
         <h2>Officer Team</h2>
         <p>
-          Meet the officers!
+          Scroll through the officer team and click on anyone to learn more about them.
         </p>
       </div>
-      <div class="officer-grid" id="officerContainer"></div>
+
+      <div class="officer-carousel-shell">
+        <button class="carousel-btn" id="officerPrev" aria-label="Scroll officers left">←</button>
+
+        <div class="officer-carousel" id="officerContainer"></div>
+
+        <button class="carousel-btn" id="officerNext" aria-label="Scroll officers right">→</button>
+      </div>
     </section>
 
     <section class="section resources" id="resources">
-      <div class="section-heading light">
+      <div class="section-heading">
         <p class="section-label">Resources</p>
         <h2>Helpful Resources</h2>
-        <p>Use these links to prepare for competition and stay connected.</p>
+        <p>Simple links to help members prepare, compete, and stay connected.</p>
       </div>
 
       <div class="resource-grid">
-        <a href="#" class="resource-card">
-          <span>📘</span>
-          <h3>Event List</h3>
-          <p>Explore roleplays, writtens, and team events.</p>
-        </a>
-
-        <a href="#" class="resource-card">
-          <span>🎤</span>
-          <h3>Roleplay Tips</h3>
-          <p>Practice structure, confidence, and judge interaction.</p>
-        </a>
-
-        <a href="#" class="resource-card">
-          <span>📝</span>
-          <h3>Performance Indicators</h3>
-          <p>Study the business concepts judges are looking for.</p>
-        </a>
-
-        <a href="#" class="resource-card">
-          <span>📄</span>
-          <h3>Written Event Guide</h3>
-          <p>Learn how to plan, write, and present your project.</p>
-        </a>
-
-        <a href="#" class="resource-card">
-          <span>👔</span>
-          <h3>Dress Code</h3>
-          <p>Know what to wear for conferences and competition.</p>
-        </a>
-
-        <a href="#" class="resource-card">
-          <span>📸</span>
-          <h3>Chapter Instagram</h3>
-          <p>Follow updates, reminders, and chapter highlights.</p>
+        <a href="#" class="resource-button">Event List</a>
+        <a href="#" class="resource-button">Roleplay Tips</a>
+        <a href="#" class="resource-button">Performance Indicators</a>
+        <a href="#" class="resource-button">Written Event Guide</a>
+        <a href="#" class="resource-button">Dress Code</a>
+        <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer" class="resource-button">
+          Instagram
         </a>
       </div>
     </section>
@@ -211,7 +193,9 @@
 
   <footer>
     <h3>Northfield DECA</h3>
-    <p>@northfielddeca</p>
+    <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer">
+      @deca_northfield
+    </a>
     <p>© 2026 Northfield DECA</p>
   </footer>
 
