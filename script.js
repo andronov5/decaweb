@@ -7,53 +7,44 @@ navToggle.addEventListener("click", () => {
 
 const events = [
   {
-    date: "September 12",
-    title: "First DECA Meeting",
-    description: "Learn about the chapter, competition events, and how to get involved."
+    date: "August 28, 2026",
+    title: "Club Fair",
+    description: "Meet our chapter, learn about DECA, and sign up to get involved."
   },
   {
-    date: "October 3",
-    title: "Roleplay Practice",
-    description: "Practice business roleplays with officers and experienced competitors."
+    date: "TBD",
+    title: "First Meeting",
+    description: "Our first official chapter meeting of the year."
   },
   {
-    date: "November 15",
-    title: "Mock Competition",
-    description: "Prepare for districts with a full practice competition experience."
+    date: "November 18, 2026",
+    title: "Districts",
+    description: "District competition for Northfield DECA members."
+  },
+  {
+    date: "February 26, 2027",
+    title: "State",
+    description: "State Career Development Conference."
+  },
+  {
+    date: "April 17, 2027",
+    title: "ICDC",
+    description: "International Career Development Conference."
   }
 ];
 
 const officers = [
-  {
-    name: "Your Name",
-    position: "President",
-    description: "Leads chapter meetings, organizes events, and supports the officer team."
-  },
-  {
-    name: "Officer Name",
-    position: "Vice President",
-    description: "Helps coordinate chapter activities, recruitment, and competition preparation."
-  },
-  {
-    name: "Officer Name",
-    position: "Marketing Officer",
-    description: "Manages social media, chapter announcements, and promotional materials."
-  },
-  {
-    name: "Officer Name",
-    position: "Finance Officer",
-    description: "Helps with fundraising, chapter finances, and event planning."
-  },
-  {
-    name: "Officer Name",
-    position: "Secretary",
-    description: "Keeps track of meeting notes, forms, deadlines, and member communication."
-  },
-  {
-    name: "Officer Name",
-    position: "Community Outreach",
-    description: "Plans service projects, partnerships, and school involvement."
-  }
+  { name: "Scarlett Tolan", role: "President" },
+  { name: "Will Zhang", role: "Vice President" },
+  { name: "Ava Lonigro", role: "VP of Marketing" },
+  { name: "Isabelle Brehm", role: "VP of Finance" },
+  { name: "Demi Dolechek", role: "VP of Community Outreach" },
+  { name: "Mimi Haile", role: "VP of Operations" },
+  { name: "Owen Huie", role: "Junior President" },
+  { name: "Lera Andronova", role: "Junior Vice President" },
+  { name: "Lila Rowley", role: "Junior VP of Marketing" },
+  { name: "Maddie Ng", role: "Junior VP of Finance" },
+  { name: "Keira McCord", role: "Junior VP of Community Outreach" }
 ];
 
 const eventContainer = document.getElementById("eventContainer");
@@ -78,10 +69,8 @@ officers.forEach(officer => {
   card.classList.add("officer-card");
 
   card.innerHTML = `
-    <div class="officer-img">Photo</div>
     <h3>${officer.name}</h3>
-    <p><strong>${officer.position}</strong></p>
-    <p>${officer.description}</p>
+    <p>${officer.role}</p>
   `;
 
   officerContainer.appendChild(card);
@@ -94,8 +83,7 @@ joinForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   const name = document.getElementById("name").value;
-
-  formMessage.textContent = `Thank you, ${name}! Your interest form has been submitted.`;
+  formMessage.textContent = `Thanks, ${name}! Your form was submitted.`;
 
   joinForm.reset();
 });
