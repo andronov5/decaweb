@@ -821,3 +821,194 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* FINAL OFFICER HORIZONTAL CAROUSEL */
+
+.officers {
+  background:
+    radial-gradient(circle at top right, rgba(6, 59, 142, 0.08), transparent 34%),
+    #f7f9fc;
+}
+
+.officer-carousel-wrap {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 58px;
+  gap: 18px;
+  align-items: center;
+}
+
+.officer-arrow {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid #d8e2ef;
+  background: white;
+  color: #063b8e;
+  font-size: 1.55rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+  transition: 0.2s ease;
+}
+
+.officer-arrow:hover {
+  background: #063b8e;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.officer-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 18px 6px 28px;
+  scrollbar-width: none;
+}
+
+.officer-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.officer-card {
+  min-width: 250px;
+  max-width: 250px;
+  flex: 0 0 250px;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border-radius: 28px;
+  border: 1px solid #e8eef7;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+}
+
+.officer-photo {
+  height: 230px;
+  background:
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.5), transparent 32%),
+    linear-gradient(135deg, #063b8e, #0f54be);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  overflow: hidden;
+}
+
+.officer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.officer-info {
+  padding: 22px;
+  text-align: center;
+}
+
+.officer-info h3 {
+  color: #122033;
+  font-size: 1.12rem;
+  margin-bottom: 7px;
+}
+
+.officer-info p {
+  color: #063b8e;
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.officer-click {
+  display: inline-block;
+  margin-top: 14px;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 850;
+}
+
+/* RESOURCE CARDS — KEEP THIS VERSION */
+
+.resources {
+  background: #edf4ff;
+}
+
+.resource-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.resource-card {
+  text-decoration: none;
+  background: white;
+  color: #122033;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid #dce6f2;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  transition: 0.22s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12);
+}
+
+.resource-label {
+  color: #063b8e;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 950;
+  margin-bottom: 10px;
+}
+
+.resource-card h3 {
+  color: #122033;
+  font-size: 1.22rem;
+  margin-bottom: 8px;
+}
+
+.resource-card p {
+  color: #526175;
+}
+
+@media (max-width: 900px) {
+  .officer-carousel-wrap {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 10px;
+  }
+
+  .officer-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .officer-card {
+    min-width: 220px;
+    max-width: 220px;
+    flex-basis: 220px;
+  }
+
+  .officer-photo {
+    height: 205px;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
