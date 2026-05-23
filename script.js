@@ -8,7 +8,7 @@ const officers = [
     bigImage: "scarlettbig.JPEG",
     funFact: "I love Stranger Things",
     memory: "ICDC in Atlanta",
-    excited: "senior sunrise!"
+    excited: "Senior sunrise!"
   },
   {
     id: "will-zhang",
@@ -19,7 +19,7 @@ const officers = [
     bigImage: "willbig.jpg",
     funFact: "I’ve gotten bit by a snake",
     memory: "Getting ice cream in Atlanta",
-    excited: "helping people qualify for State!"
+    excited: "Helping people qualify for State!"
   },
   {
     id: "ava-lonigro",
@@ -30,7 +30,7 @@ const officers = [
     bigImage: "avabig.JPEG",
     funFact: "I am a huge Avs fan",
     memory: "Six Flags during ICDC in Atlanta!",
-    excited: "senior-y things and prom!"
+    excited: "Senior-y things and prom!"
   },
   {
     id: "isabelle-brehm",
@@ -41,7 +41,7 @@ const officers = [
     bigImage: "isabellebig.JPG",
     funFact: "I want to go to med school",
     memory: "Running to last roller coaster at Six Flags",
-    excited: "going to State"
+    excited: "Going to State"
   },
   {
     id: "demi-dolechek",
@@ -52,7 +52,7 @@ const officers = [
     bigImage: "demibig.jpg",
     funFact: "I can juggle",
     memory: "Trading pins at ICDC",
-    excited: "districts with incoming freshmen"
+    excited: "Districts with incoming freshmen"
   },
   {
     id: "mimi-haile",
@@ -63,7 +63,7 @@ const officers = [
     bigImage: "mimibig.JPG",
     funFact: "I’m really good at puzzles",
     memory: "ICDC in Atlanta",
-    excited: "seeing new faces!"
+    excited: "Seeing new faces!"
   },
   {
     id: "owen-huie",
@@ -72,9 +72,9 @@ const officers = [
     role: "Junior President",
     smallImage: "owensmall.jpg",
     bigImage: "owenbig.jpg",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Owen is most excited for next year coming soon."
+    funFact: "-",
+    memory: "-",
+    excited: "-"
   },
   {
     id: "lera-andronova",
@@ -83,9 +83,9 @@ const officers = [
     role: "Junior Vice President",
     smallImage: "lerasmall.jpg",
     bigImage: "lerabig.jpg",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Lera is most excited for next year coming soon."
+    funFact: "I speak Russian",
+    memory: "Winning state champion",
+    excited: "Districts with freshmen!"
   },
   {
     id: "lila-rowley",
@@ -94,9 +94,9 @@ const officers = [
     role: "Junior VP of Marketing",
     smallImage: "lilasmall.jpg",
     bigImage: "lilabig.jpg",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Lila is most excited for next year coming soon."
+    funFact: "-",
+    memory: "-",
+    excited: "-"
   },
   {
     id: "maddie-ng",
@@ -105,9 +105,9 @@ const officers = [
     role: "Junior VP of Finance",
     smallImage: "maddiesmall.jpg",
     bigImage: "maddiebig.jpg",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Maddie is most excited for next year coming soon."
+    funFact: "-",
+    memory: "-",
+    excited: "-"
   },
   {
     id: "keira-mccord",
@@ -116,9 +116,9 @@ const officers = [
     role: "Junior VP of Community Outreach",
     smallImage: "keirasmall.jpg",
     bigImage: "keirabig.jpg",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Keira is most excited for next year coming soon."
+    funFact: "-",
+    memory: "-",
+    excited: "-"
   }
 ];
 
