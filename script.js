@@ -134,12 +134,12 @@ const events = [
     description: "Our first official meeting of the school year. More details coming soon."
   },
   {
-    date: "November 18, 2026",
+    date: "November",
     title: "Districts",
     description: "Northfield DECA members compete at the district level."
   },
   {
-    date: "February 26, 2027",
+    date: "February",
     title: "State",
     description: "The State Career Development Conference."
   },
