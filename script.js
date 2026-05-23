@@ -1,88 +1,121 @@
 const officers = [
   {
     id: "scarlett-tolan",
+    firstName: "scarlett",
     name: "Scarlett Tolan",
     role: "President",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Scarlett is most excited for next year coming soon."
+    smallImage: "scarlettsmall.jpg",
+    bigImage: "scarlettbig.jpg",
+    funFact: "I love Stranger Things",
+    memory: "ICDC in Atlanta",
+    excited: "senior sunrise!"
   },
   {
     id: "will-zhang",
+    firstName: "will",
     name: "Will Zhang",
     role: "Vice President",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Will is most excited for next year coming soon."
+    smallImage: "willsmall.jpg",
+    bigImage: "willbig.jpg",
+    funFact: "I’ve gotten bit by a snake",
+    memory: "Getting ice cream in Atlanta",
+    excited: "helping people qualify for State!"
   },
   {
     id: "ava-lonigro",
+    firstName: "ava",
     name: "Ava Lonigro",
     role: "VP of Marketing",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Ava is most excited for next year coming soon."
+    smallImage: "avasmall.jpg",
+    bigImage: "avabig.jpg",
+    funFact: "I am a huge Avs fan",
+    memory: "Six Flags during ICDC in Atlanta!",
+    excited: "senior-y things and prom!"
   },
   {
     id: "isabelle-brehm",
+    firstName: "isabelle",
     name: "Isabelle Brehm",
     role: "VP of Finance",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Isabelle is most excited for next year coming soon."
+    smallImage: "isabellesmall.jpg",
+    bigImage: "isabellebig.jpg",
+    funFact: "I want to go to med school",
+    memory: "Running to last roller coaster at Six Flags",
+    excited: "going to State"
   },
   {
     id: "demi-dolechek",
+    firstName: "demi",
     name: "Demi Dolechek",
     role: "VP of Community Outreach",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Demi is most excited for next year coming soon."
+    smallImage: "demismall.jpg",
+    bigImage: "demibig.jpg",
+    funFact: "I can juggle",
+    memory: "Trading pins at ICDC",
+    excited: "districts with incoming freshmen"
   },
   {
     id: "mimi-haile",
+    firstName: "mimi",
     name: "Mimi Haile",
     role: "VP of Operations",
-    funFact: "Fun fact coming soon.",
-    memory: "Favorite DECA memory coming soon.",
-    excited: "What Mimi is most excited for next year coming soon."
+    smallImage: "mimismall.jpg",
+    bigImage: "mimibig.jpg",
+    funFact: "I’m really good at puzzles",
+    memory: "ICDC in Atlanta",
+    excited: "seeing new faces!"
   },
   {
     id: "owen-huie",
+    firstName: "owen",
     name: "Owen Huie",
     role: "Junior President",
+    smallImage: "owensmall.jpg",
+    bigImage: "owenbig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Owen is most excited for next year coming soon."
   },
   {
     id: "lera-andronova",
+    firstName: "lera",
     name: "Lera Andronova",
     role: "Junior Vice President",
+    smallImage: "lerasmall.jpg",
+    bigImage: "lerabig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Lera is most excited for next year coming soon."
   },
   {
     id: "lila-rowley",
+    firstName: "lila",
     name: "Lila Rowley",
     role: "Junior VP of Marketing",
+    smallImage: "lilasmall.jpg",
+    bigImage: "lilabig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Lila is most excited for next year coming soon."
   },
   {
     id: "maddie-ng",
+    firstName: "maddie",
     name: "Maddie Ng",
     role: "Junior VP of Finance",
+    smallImage: "maddiesmall.jpg",
+    bigImage: "maddiebig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Maddie is most excited for next year coming soon."
   },
   {
     id: "keira-mccord",
+    firstName: "keira",
     name: "Keira McCord",
     role: "Junior VP of Community Outreach",
+    smallImage: "keirasmall.jpg",
+    bigImage: "keirabig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Keira is most excited for next year coming soon."
@@ -158,13 +191,21 @@ if (officerContainer) {
     card.href = `officer.html?id=${officer.id}`;
 
     card.innerHTML = `
-      <div class="officer-photo">${officer.name} pic</div>
+      <div class="officer-photo">
+        <img src="${officer.smallImage}" alt="${officer.name}" />
+      </div>
       <div class="officer-info">
         <h3>${officer.name}</h3>
         <p>${officer.role}</p>
         <span class="officer-click">View profile →</span>
       </div>
     `;
+
+    const img = card.querySelector("img");
+    img.addEventListener("error", () => {
+      const photoBox = card.querySelector(".officer-photo");
+      photoBox.innerHTML = `${officer.name}<br>pic`;
+    });
 
     officerContainer.appendChild(card);
   });
@@ -199,7 +240,9 @@ if (profileContainer) {
       <a href="index.html#officers" class="back-link">← Back to Officer Team</a>
 
       <div class="profile-card">
-        <div class="profile-photo">${officer.name} pic</div>
+        <div class="profile-photo">
+          <img src="${officer.bigImage}" alt="${officer.name}" />
+        </div>
 
         <div class="profile-content">
           <p class="profile-role">${officer.role}</p>
@@ -224,6 +267,12 @@ if (profileContainer) {
         </div>
       </div>
     `;
+
+    const profileImg = profileContainer.querySelector(".profile-photo img");
+    profileImg.addEventListener("error", () => {
+      const photoBox = profileContainer.querySelector(".profile-photo");
+      photoBox.innerHTML = `${officer.name} big photo`;
+    });
   } else {
     profileContainer.innerHTML = `
       <a href="index.html#officers" class="back-link">← Back to Officer Team</a>
