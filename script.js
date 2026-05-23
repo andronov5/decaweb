@@ -70,8 +70,8 @@ const officers = [
     firstName: "owen",
     name: "Owen Huie",
     role: "Junior President",
-    smallImage: "owensmall.heic",
-    bigImage: "owenbig.HEIC",
+    smallImage: "owensmall.jpg",
+    bigImage: "owenbig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Owen is most excited for next year coming soon."
@@ -81,8 +81,8 @@ const officers = [
     firstName: "lera",
     name: "Lera Andronova",
     role: "Junior Vice President",
-    smallImage: "lerasmall.heic",
-    bigImage: "lerabig.HEIC",
+    smallImage: "lerasmall.jpg",
+    bigImage: "lerabig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Lera is most excited for next year coming soon."
@@ -92,8 +92,8 @@ const officers = [
     firstName: "lila",
     name: "Lila Rowley",
     role: "Junior VP of Marketing",
-    smallImage: "lilasmall.heic",
-    bigImage: "lilabig.HEIC",
+    smallImage: "lilasmall.jpg",
+    bigImage: "lilabig.jpg",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Lila is most excited for next year coming soon."
