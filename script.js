@@ -16,7 +16,7 @@ const officers = [
     name: "Will Zhang",
     role: "Vice President",
     smallImage: "willsmall.jpg",
-    bigImage: "willbig.JPG",
+    bigImage: "willbig.jpg",
     funFact: "I’ve gotten bit by a snake",
     memory: "Getting ice cream in Atlanta",
     excited: "helping people qualify for State!"
