@@ -5,7 +5,7 @@ const officers = [
     name: "Scarlett Tolan",
     role: "President",
     smallImage: "scarlettsmall.jpg",
-    bigImage: "scarlettbig.jpg",
+    bigImage: "scarlettbig.JPEG",
     funFact: "I love Stranger Things",
     memory: "ICDC in Atlanta",
     excited: "senior sunrise!"
@@ -16,7 +16,7 @@ const officers = [
     name: "Will Zhang",
     role: "Vice President",
     smallImage: "willsmall.jpg",
-    bigImage: "willbig.jpg",
+    bigImage: "willbig.JPG",
     funFact: "I’ve gotten bit by a snake",
     memory: "Getting ice cream in Atlanta",
     excited: "helping people qualify for State!"
@@ -27,7 +27,7 @@ const officers = [
     name: "Ava Lonigro",
     role: "VP of Marketing",
     smallImage: "avasmall.jpg",
-    bigImage: "avabig.jpg",
+    bigImage: "avabig.JPEG",
     funFact: "I am a huge Avs fan",
     memory: "Six Flags during ICDC in Atlanta!",
     excited: "senior-y things and prom!"
@@ -70,8 +70,8 @@ const officers = [
     firstName: "owen",
     name: "Owen Huie",
     role: "Junior President",
-    smallImage: "owensmall.jpg",
-    bigImage: "owenbig.jpg",
+    smallImage: "owensmall.heic",
+    bigImage: "owenbig.HEIC",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Owen is most excited for next year coming soon."
@@ -81,8 +81,8 @@ const officers = [
     firstName: "lera",
     name: "Lera Andronova",
     role: "Junior Vice President",
-    smallImage: "lerasmall.jpg",
-    bigImage: "lerabig.jpg",
+    smallImage: "lerasmall.heic",
+    bigImage: "lerabig.HEIC",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Lera is most excited for next year coming soon."
@@ -92,8 +92,8 @@ const officers = [
     firstName: "lila",
     name: "Lila Rowley",
     role: "Junior VP of Marketing",
-    smallImage: "lilasmall.jpg",
-    bigImage: "lilabig.jpg",
+    smallImage: "lilasmall.heic",
+    bigImage: "lilabig.HEIC",
     funFact: "Fun fact coming soon.",
     memory: "Favorite DECA memory coming soon.",
     excited: "What Lila is most excited for next year coming soon."
