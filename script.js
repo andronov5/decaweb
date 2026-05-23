@@ -38,7 +38,7 @@ const officers = [
     name: "Isabelle Brehm",
     role: "VP of Finance",
     smallImage: "isabellesmall.jpg",
-    bigImage: "isabellebig.jpg",
+    bigImage: "isabellebig.JPG",
     funFact: "I want to go to med school",
     memory: "Running to last roller coaster at Six Flags",
     excited: "going to State"
@@ -60,7 +60,7 @@ const officers = [
     name: "Mimi Haile",
     role: "VP of Operations",
     smallImage: "mimismall.jpg",
-    bigImage: "mimibig.jpg",
+    bigImage: "mimibig.JPG",
     funFact: "I’m really good at puzzles",
     memory: "ICDC in Atlanta",
     excited: "seeing new faces!"
