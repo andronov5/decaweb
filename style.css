@@ -707,3 +707,117 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* FIXED OFFICER SECTION */
+
+.officers {
+  background:
+    radial-gradient(circle at top right, rgba(6, 59, 142, 0.08), transparent 34%),
+    #f7f9fc;
+}
+
+.officer-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.officer-card {
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border-radius: 28px;
+  border: 1px solid #e8eef7;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+}
+
+.officer-photo {
+  height: 220px;
+  background:
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.5), transparent 32%),
+    linear-gradient(135deg, #063b8e, #0f54be);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  overflow: hidden;
+}
+
+.officer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.officer-info {
+  padding: 22px;
+  text-align: center;
+}
+
+.officer-info h3 {
+  color: #122033;
+  font-size: 1.12rem;
+  margin-bottom: 7px;
+}
+
+.officer-info p {
+  color: #063b8e;
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.officer-click {
+  display: inline-block;
+  margin-top: 14px;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 850;
+}
+
+/* FIXED OFFICER PROFILE PAGE */
+
+.profile-photo {
+  min-height: 520px;
+  background:
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.5), transparent 32%),
+    linear-gradient(135deg, #063b8e, #0f54be);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 950;
+  overflow: hidden;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  .officer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .officer-grid {
+    grid-template-columns: 1fr;
+  }
+}
