@@ -89,6 +89,64 @@ const officers = [
   }
 ];
 
+const events = [
+  {
+    date: "August 28, 2026",
+    title: "Club Fair",
+    description: "Stop by the DECA table, meet the chapter, and learn how to get involved."
+  },
+  {
+    date: "TBD",
+    title: "First Meeting",
+    description: "Our first official meeting of the school year. More details coming soon."
+  },
+  {
+    date: "November 18, 2026",
+    title: "Districts",
+    description: "Northfield DECA members compete at the district level."
+  },
+  {
+    date: "February 26, 2027",
+    title: "State",
+    description: "The State Career Development Conference."
+  },
+  {
+    date: "April 17, 2027",
+    title: "ICDC",
+    description: "The International Career Development Conference."
+  }
+];
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
+
+const eventContainer = document.getElementById("eventContainer");
+
+if (eventContainer) {
+  eventContainer.innerHTML = "";
+
+  events.forEach(event => {
+    const card = document.createElement("article");
+    card.className = "event-card";
+
+    card.innerHTML = `
+      <div class="event-date">${event.date}</div>
+      <div>
+        <h3>${event.title}</h3>
+        <p>${event.description}</p>
+      </div>
+    `;
+
+    eventContainer.appendChild(card);
+  });
+}
+
 const officerContainer = document.getElementById("officerContainer");
 
 if (officerContainer) {
@@ -112,6 +170,19 @@ if (officerContainer) {
   });
 }
 
+const joinForm = document.getElementById("joinForm");
+const formMessage = document.getElementById("formMessage");
+
+if (joinForm && formMessage) {
+  joinForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    formMessage.textContent = `Thanks, ${name}! Your interest form was submitted.`;
+    joinForm.reset();
+  });
+}
 
 const profileContainer = document.getElementById("profileContainer");
 
@@ -150,6 +221,17 @@ if (profileContainer) {
               <p>${officer.excited}</p>
             </div>
           </div>
+        </div>
+      </div>
+    `;
+  } else {
+    profileContainer.innerHTML = `
+      <a href="index.html#officers" class="back-link">← Back to Officer Team</a>
+
+      <div class="profile-card">
+        <div class="profile-content">
+          <h1>Officer Not Found</h1>
+          <p>This officer profile does not exist yet.</p>
         </div>
       </div>
     `;
