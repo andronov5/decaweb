@@ -202,12 +202,32 @@ if (officerContainer) {
     `;
 
     const img = card.querySelector("img");
+
     img.addEventListener("error", () => {
       const photoBox = card.querySelector(".officer-photo");
       photoBox.innerHTML = `${officer.name}<br>pic`;
     });
 
     officerContainer.appendChild(card);
+  });
+}
+
+const officerPrev = document.getElementById("officerPrev");
+const officerNext = document.getElementById("officerNext");
+
+if (officerPrev && officerNext && officerContainer) {
+  officerPrev.addEventListener("click", () => {
+    officerContainer.scrollBy({
+      left: -300,
+      behavior: "smooth"
+    });
+  });
+
+  officerNext.addEventListener("click", () => {
+    officerContainer.scrollBy({
+      left: 300,
+      behavior: "smooth"
+    });
   });
 }
 
