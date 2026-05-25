@@ -73,9 +73,9 @@ const officers = [
     role: "Junior President",
     smallImage: "owensmall.jpg",
     bigImage: "owenbig.jpg",
-    funFact: "-",
-    memory: "-",
-    excited: "-"
+    funFact: "I have been to 8 countries!",
+    memory: "Six Flags Rollercoasters at ICDC!",
+    excited: "Being a part of DECA leadership!"
   },
   {
     id: "lera-andronova",
@@ -95,9 +95,9 @@ const officers = [
     role: "Junior VP of Marketing",
     smallImage: "lilasmall.jpg",
     bigImage: "lilabig.jpg",
-    funFact: "-",
-    memory: "-",
-    excited: "-"
+    funFact: "I know how to surf!",
+    memory: "State 2025!",
+    excited: "Being a DECA officer and prom!"
   },
   {
     id: "maddie-ng",
@@ -106,9 +106,9 @@ const officers = [
     role: "Junior VP of Finance",
     smallImage: "maddiesmall.jpg",
     bigImage: "maddiebig.jpg",
-    funFact: "-",
-    memory: "-",
-    excited: "-"
+    funFact: "I can type over 100 words per minute!",
+    memory: "Sophomore year State with friends!",
+    excited: "Having an off period!"
   },
   {
     id: "keira-mccord",
@@ -117,9 +117,9 @@ const officers = [
     role: "Junior VP of Community Outreach",
     smallImage: "keirasmall.jpg",
     bigImage: "keirabig.jpg",
-    funFact: "-",
-    memory: "-",
-    excited: "-"
+    funFact: "I am left-handed!",
+    memory: "Finalizing at State!",
+    excited: "Prom and DECA!"
   }
 ];
 
@@ -127,12 +127,12 @@ const events = [
   {
     date: "August 28, 2026",
     title: "Club Fair",
-    description: "Stop by the DECA table, meet the chapter, and learn how to get involved."
+    description: "Stop by the DECA table and meet the chapter!!"
   },
   {
     date: "TBD",
     title: "First Meeting",
-    description: "Our first official meeting of the school year. More details coming soon."
+    description: "Our first meeting of the school year in the Aux Gym."
   },
   {
     date: "November",
@@ -142,12 +142,12 @@ const events = [
   {
     date: "February",
     title: "State",
-    description: "The State Career Development Conference."
+    description: "The State Career Development Conference in CO Springs."
   },
   {
     date: "April 17, 2027",
     title: "ICDC",
-    description: "The International Career Development Conference."
+    description: "The International Career Development Conference in Anaheim."
   }
 ];
 
