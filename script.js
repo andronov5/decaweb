@@ -1,4 +1,3 @@
-
 const officers = [
   {
     id: "scarlett-tolan",
