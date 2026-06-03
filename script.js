@@ -126,7 +126,7 @@ const events = [
   {
     date: "August 28, 2026",
     title: "Club Fair",
-    description: "Stop by the DECA table and meet the chapter!!"
+    description: "Stop by the DECA table and meet the chapter!"
   },
   {
     date: "TBD",
@@ -134,19 +134,59 @@ const events = [
     description: "Our first meeting of the school year in the Aux Gym."
   },
   {
-    date: "November",
+    date: "November 2026",
     title: "Districts",
     description: "Northfield DECA members compete at the district level."
   },
   {
-    date: "February",
+    date: "February 2027",
     title: "State",
-    description: "The State Career Development Conference in CO Springs."
+    description: "The State Career Development Conference in Colorado Springs."
   },
   {
     date: "April 17, 2027",
     title: "ICDC",
     description: "The International Career Development Conference in Anaheim."
+  }
+];
+
+/*
+  Announcement logistics:
+  - Add new posts to this array.
+  - Homepage cards render automatically from this data.
+  - Each card opens post.html?id=POST_ID.
+  - For deadline posts, use category: "Deadline" and add a clear date in the title/preview/body.
+*/
+const announcements = [
+  {
+    id: "welcome-to-northfield-deca",
+    title: "Welcome to the 2026–2027 DECA Year",
+    category: "General",
+    date: "June 2, 2026",
+    preview: "We are preparing for another year of competition, leadership, and chapter events.",
+    body: "Welcome to Northfield DECA! This website will be used as a chapter hub for upcoming dates, announcements, resources, officer information, and important reminders. Check back here throughout the year for meeting information, competition deadlines, and chapter updates.",
+    link: "join.html",
+    linkText: "Join DECA"
+  },
+  {
+    id: "club-fair-august-28",
+    title: "Club Fair is August 28",
+    category: "Event",
+    date: "August 28, 2026",
+    preview: "Stop by the DECA table to meet officers and learn how to get involved.",
+    body: "Northfield DECA will be at the Club Fair on August 28, 2026. This is a great chance for new members to ask questions, learn what DECA is, and find out how to join the chapter.",
+    link: "join.html",
+    linkText: "How to Join"
+  },
+  {
+    id: "first-meeting-coming-soon",
+    title: "First Meeting Details Coming Soon",
+    category: "Meeting",
+    date: "TBD",
+    preview: "Our first official meeting will be posted here once the date is finalized.",
+    body: "The first Northfield DECA meeting date is still TBD. Once it is finalized, this announcement can be updated with the meeting date, location, what new members should bring, and any important links.",
+    link: "join.html",
+    linkText: "Join the Chapter"
   }
 ];
 
@@ -177,6 +217,30 @@ if (eventContainer) {
     `;
 
     eventContainer.appendChild(card);
+  });
+}
+
+const announcementContainer = document.getElementById("announcementContainer");
+
+if (announcementContainer) {
+  announcementContainer.innerHTML = "";
+
+  announcements.forEach(post => {
+    const card = document.createElement("a");
+    card.className = "news-card";
+    card.href = `post.html?id=${post.id}`;
+
+    card.innerHTML = `
+      <div class="news-meta">
+        <span class="news-tag">${post.category}</span>
+        <span class="news-date">${post.date}</span>
+      </div>
+      <h3>${post.title}</h3>
+      <p>${post.preview}</p>
+      <span class="news-read">Read more →</span>
+    `;
+
+    announcementContainer.appendChild(card);
   });
 }
 
@@ -257,7 +321,7 @@ if (profileContainer) {
     document.title = `${officer.name} | Northfield DECA`;
 
     profileContainer.innerHTML = `
-      <a href="index.html#officers" class="back-link">← Back to Officer Team</a>
+      <a href="about.html#officers" class="back-link">← Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-photo">
@@ -295,7 +359,7 @@ if (profileContainer) {
     });
   } else {
     profileContainer.innerHTML = `
-      <a href="index.html#officers" class="back-link">← Back to Officer Team</a>
+      <a href="about.html#officers" class="back-link">← Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-content">
@@ -303,6 +367,42 @@ if (profileContainer) {
           <p>This officer profile does not exist yet.</p>
         </div>
       </div>
+    `;
+  }
+}
+
+const postContainer = document.getElementById("postContainer");
+
+if (postContainer) {
+  const params = new URLSearchParams(window.location.search);
+  const postId = params.get("id");
+  const post = announcements.find(item => item.id === postId);
+
+  if (post) {
+    document.title = `${post.title} | Northfield DECA`;
+
+    postContainer.innerHTML = `
+      <a href="index.html#news" class="back-link">← Back to Announcements</a>
+
+      <article class="post-card">
+        <div class="news-meta">
+          <span class="news-tag">${post.category}</span>
+          <span class="news-date">${post.date}</span>
+        </div>
+
+        <h1>${post.title}</h1>
+        <p class="post-body">${post.body}</p>
+        <a href="${post.link}" class="btn blue">${post.linkText}</a>
+      </article>
+    `;
+  } else {
+    postContainer.innerHTML = `
+      <a href="index.html#news" class="back-link">← Back to Announcements</a>
+
+      <article class="post-card">
+        <h1>Post Not Found</h1>
+        <p class="post-body">This announcement does not exist yet.</p>
+      </article>
     `;
   }
 }
