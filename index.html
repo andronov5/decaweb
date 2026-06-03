@@ -9,99 +9,34 @@
 <body>
 
   <header class="navbar">
-    <a href="index.html#home" class="logo">Northfield DECA</a>
+    <a href="index.html" class="logo">Northfield DECA</a>
 
     <nav id="navLinks">
-      <a href="#about">About</a>
-      <a href="#events">Calendar</a>
-      <a href="#resources">Resources</a>
-      <a href="#officers">Officers</a>
-      <a href="#join">Join</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="faq.html">FAQ</a>
+      <a href="join.html" class="nav-join">Join</a>
     </nav>
 
-    <button class="menu-btn" id="menuBtn">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero hero-short" id="home">
       <img src="state.jpg" alt="Northfield DECA chapter at State" class="hero-img" />
       <div class="hero-shade"></div>
 
       <div class="hero-content">
+        <p class="eyebrow">Northfield High School</p>
         <h1>Welcome to Northfield DECA!</h1>
+        <p class="hero-subtitle">
+          Stay updated on meetings, deadlines, competitions, and chapter announcements.
+        </p>
 
         <div class="hero-actions">
-          <a href="#join" class="btn gold">Join DECA</a>
+          <a href="join.html" class="btn gold">Join DECA</a>
           <a href="#events" class="btn glass">See Calendar</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats-section">
-      <div class="stats-card">
-        <div class="stat">
-          <h2>200+</h2>
-          <p>Chapter Members</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <h2>40+</h2>
-          <p>Events</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <h2>1</h2>
-          <p>Chapter Community</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="section-heading">
-        <p class="section-label">About DECA</p>
-        <h2>What is DECA?</h2>
-        <p>
-          DECA prepares emerging leaders and entrepreneurs in 5 categories: marketing, finance,
-          hospitality, management, and business. At Northfield, we compete, travel to
-          conferences, and build skills we can use far beyond high school.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <p class="feature-kicker">01</p>
-          <h3>Roleplays</h3>
-          <p>
-            Roleplays are individual competitive events where competitors receive
-            a business scenario, get a 10-minute prep time, and present a solution to
-            a judge. Roleplay competitors also take an exam, so the final score
-            includes both presentation skills and business knowledge.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <p class="feature-kicker">02</p>
-          <h3>Writtens</h3>
-          <p>
-            Written events are prepared before competition. Competitors create a
-            business plan, campaign, or proposal, then present it to judges. Most
-            of the work happens ahead of time. Written events do not include
-            an exam.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <p class="feature-kicker">03</p>
-          <h3>Team Decision Making</h3>
-          <p>
-            Team Decision Making, or TDM, is basically a two-person roleplay.
-            Partners prep together for 25 minutes, build one solution, and
-            present as a team. It is great for people who like collaboration.
-          </p>
         </div>
       </div>
     </section>
@@ -110,6 +45,7 @@
       <div class="section-heading light">
         <p class="section-label">Calendar</p>
         <h2>Important Dates</h2>
+        <p>Upcoming meetings, deadlines, and major DECA events.</p>
       </div>
 
       <div class="calendar-shell">
@@ -117,80 +53,14 @@
       </div>
     </section>
 
-    <section class="section resources" id="resources">
-  <div class="section-heading">
-    <p class="section-label">Resources</p>
-    <h2>Helpful Resources</h2>
-  </div>
-
-  <div class="resource-grid">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHU1T9aWXW_mskyKPGDJ-G8kJGxreGboro07mi6_z2v5Llhw/viewform" class="resource-card">
-      <p class="resource-label">Competition</p>
-      <h3>Event Picker</h3>
-    </a>
-
-    <a href="https://www.glassedge.org/roleplay.html" class="resource-card">
-      <p class="resource-label">AI-Generated Roleplays</p>
-      <h3>Roleplay Practice</h3>
-    </a>
-
-    <a href="https://www.deca.org/resources" class="resource-card">
-      <p class="resource-label">Performance Indicators</p>
-      <h3>DECA Resources</h3>
-    </a>
-
-    <a href="https://golucid.app" class="resource-card">
-      <p class="resource-label">Study</p>
-      <h3>Practice Tests</h3>
-    </a>
-
-    <a href="https://www.decadirect.org/articles/suit-up-for-success-deca-dress-code-101" class="resource-card">
-      <p class="resource-label">Conference</p>
-      <h3>Dress Code</h3>
-    </a>
-
-    <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer" class="resource-card">
-      <p class="resource-label">Social</p>
-      <h3>Instagram</h3>
-    </a>
-  </div>
-</section>
-
-
-        <section class="section officers" id="officers">
-  <div class="section-heading">
-    <p class="section-label">Leadership Team</p>
-    <h2>Officer Team</h2>
-  </div>
-
-  <div class="officer-carousel-wrap">
-    <button class="officer-arrow" id="officerPrev" aria-label="Scroll left">←</button>
-
-    <div class="officer-carousel" id="officerContainer"></div>
-
-    <button class="officer-arrow" id="officerNext" aria-label="Scroll right">→</button>
-  </div>
-</section>
-
-
-    
-    <section class="section join" id="join">
-      <div class="join-card">
-        <div class="section-heading">
-          <p class="section-label">Get Involved</p>
-          <h2>Join Northfield DECA</h2>
-          <p>Interested in joining?</p>
-        </div>
-
-        <form id="joinForm">
-          <input type="text" id="name" placeholder="Your name" required />
-          <input type="email" id="email" placeholder="Your email" required />
-          <textarea id="message" placeholder="Anything else you want us to know?"></textarea>
-
-          <button type="submit" class="btn blue">Submit Interest Form</button>
-          <p id="formMessage"></p>
-        </form>
+    <section class="section news-section" id="news">
+      <div class="section-heading">
+        <p class="section-label">News</p>
+        <h2>Announcements</h2>
+        <p>Updates, deadlines, reminders, and chapter posts will show up here.</p>
       </div>
+
+      <div class="news-grid" id="announcementContainer"></div>
     </section>
   </main>
 
