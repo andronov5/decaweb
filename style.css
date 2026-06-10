@@ -1036,3 +1036,365 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   FINAL VISUAL CONTRAST / POLISH UPDATE
+   Add this at the very bottom of style.css
+   ========================================================= */
+
+:root {
+  --deca-navy: #031630;
+  --deca-dark-blue: #05275f;
+  --deca-blue: #063b8e;
+  --deca-bright-blue: #0f54be;
+  --deca-gold: #f6c644;
+  --deca-cream: #fff8df;
+  --deca-ice: #edf4ff;
+  --deca-soft-blue: #e6f0ff;
+  --deca-page: #f8fbff;
+  --deca-card: #ffffff;
+  --deca-border: #d6e2f2;
+  --deca-text: #122033;
+  --deca-muted: #4d6078;
+}
+
+/* Overall page background */
+
+body {
+  background: var(--deca-page);
+}
+
+/* Navbar gets a cleaner edge so it does not blend into page heroes */
+
+.navbar {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(6, 59, 142, 0.12);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
+}
+
+/* Make links slightly bolder/darker */
+
+nav a {
+  color: #1f2f46;
+}
+
+nav a:hover,
+.nav-join {
+  color: var(--deca-blue);
+}
+
+/* HERO: smoother transition into the calendar */
+
+.hero {
+  background: var(--deca-navy);
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 22, 48, 0),
+    rgba(4, 28, 67, 0.75),
+    #05275f
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  z-index: 3;
+}
+
+.hero-shade {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(246, 198, 68, 0.28), transparent 26%),
+    linear-gradient(
+      90deg,
+      rgba(2, 13, 32, 0.93) 0%,
+      rgba(5, 39, 95, 0.74) 47%,
+      rgba(5, 39, 95, 0.32) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(3, 22, 48, 0.12),
+      rgba(3, 22, 48, 0.48)
+    );
+}
+
+.hero h1 {
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+  color: #f1f6ff;
+}
+
+/* Buttons stand out more */
+
+.gold {
+  background: linear-gradient(135deg, #ffd85d, var(--deca-gold));
+  color: #071a35;
+  box-shadow: 0 16px 34px rgba(246, 198, 68, 0.32);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* CALENDAR: stronger contrast from hero and cleaner section depth */
+
+.events-section {
+  background:
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 28%),
+    linear-gradient(180deg, #05275f 0%, var(--deca-blue) 46%, #031630 100%);
+  border-top: 6px solid rgba(246, 198, 68, 0.9);
+  box-shadow:
+    inset 0 28px 50px rgba(0, 0, 0, 0.14),
+    inset 0 -24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.events-section .section-heading {
+  margin-bottom: 44px;
+}
+
+.calendar-shell {
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
+}
+
+.event-card {
+  border-left: 7px solid var(--deca-gold);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+}
+
+.event-date {
+  color: var(--deca-blue);
+}
+
+/* PAGE HEROES: About / Resources / FAQ / Join now have real contrast */
+
+.page-hero {
+  padding: 92px 7% 78px;
+  background:
+    radial-gradient(circle at top right, rgba(246, 198, 68, 0.26), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.12), transparent 30%),
+    linear-gradient(135deg, var(--deca-navy) 0%, var(--deca-blue) 64%, var(--deca-bright-blue) 100%);
+  border-bottom: 7px solid var(--deca-gold);
+  box-shadow: inset 0 -40px 70px rgba(0, 0, 0, 0.14);
+}
+
+.page-hero .section-label {
+  color: var(--deca-gold);
+}
+
+.page-hero .section-heading h1,
+.page-hero .section-heading h2 {
+  color: white;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+}
+
+.page-hero .section-heading p {
+  color: #e6efff;
+}
+
+/* Make normal content sections alternate better */
+
+.about {
+  background: #ffffff;
+}
+
+.why-section,
+.officer-groups,
+.faq-section,
+.join-actions-section {
+  background:
+    radial-gradient(circle at top right, rgba(6, 59, 142, 0.08), transparent 32%),
+    var(--deca-ice);
+}
+
+.news-section,
+.cta-strip,
+.join {
+  background: #ffffff;
+}
+
+/* Resources page/section: less washed out, more intentional */
+
+.resources {
+  background:
+    radial-gradient(circle at top left, rgba(246, 198, 68, 0.14), transparent 30%),
+    linear-gradient(180deg, #e8f1ff 0%, #f8fbff 100%);
+}
+
+.page-hero + .resources {
+  padding-top: 64px;
+}
+
+/* Cards get stronger separation and a small branded top stripe */
+
+.feature-card,
+.resource-card,
+.news-card,
+.simple-card,
+.group-card,
+.join-button-card,
+.faq-item,
+.cta-card,
+.join-info-card,
+.join-card {
+  background: var(--deca-card);
+  border: 1px solid rgba(6, 59, 142, 0.13);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.1);
+}
+
+.feature-card,
+.resource-card,
+.news-card,
+.simple-card,
+.group-card,
+.join-button-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before,
+.resource-card::before,
+.news-card::before,
+.simple-card::before,
+.group-card::before,
+.join-button-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: linear-gradient(90deg, var(--deca-gold), var(--deca-blue));
+}
+
+.feature-card:hover,
+.resource-card:hover,
+.news-card:hover,
+.simple-card:hover,
+.group-card:hover,
+.join-button-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 26px 58px rgba(15, 23, 42, 0.16);
+}
+
+/* Resource cards specifically */
+
+.resource-card {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resource-label,
+.group-label,
+.news-tag {
+  color: var(--deca-blue);
+}
+
+.resource-card h3,
+.news-card h3,
+.simple-card h3,
+.group-card h3,
+.feature-card h3 {
+  color: #071a35;
+}
+
+.resource-card p,
+.news-card p,
+.simple-card p,
+.group-card p,
+.feature-card p,
+.faq-item p,
+.join-info-card p,
+.cta-card p {
+  color: var(--deca-muted);
+}
+
+/* About page cards: make the 01/02/03 labels pop */
+
+.feature-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--deca-cream);
+  color: #9b6b00;
+  border: 1px solid rgba(246, 198, 68, 0.5);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+/* FAQ details need clearer interaction */
+
+.faq-item summary {
+  color: #071a35;
+}
+
+.faq-item[open] {
+  border-color: rgba(6, 59, 142, 0.24);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+/* Join page button cards */
+
+.join-button-card h3 {
+  color: #071a35;
+}
+
+/* Officer section gets a slight contrast boost but keeps your carousel */
+
+.officers {
+  background:
+    radial-gradient(circle at top right, rgba(6, 59, 142, 0.1), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, var(--deca-ice) 100%);
+}
+
+.officer-arrow {
+  border-color: rgba(6, 59, 142, 0.2);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.13);
+}
+
+.officer-card {
+  border-color: rgba(6, 59, 142, 0.14);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
+}
+
+/* Footer stronger */
+
+footer {
+  background:
+    radial-gradient(circle at top, rgba(6, 59, 142, 0.45), transparent 36%),
+    #020f24;
+}
+
+/* Mobile spacing */
+
+@media (max-width: 950px) {
+  .page-hero {
+    padding: 70px 7% 58px;
+  }
+
+  .events-section {
+    border-top-width: 5px;
+  }
+
+  .resource-card {
+    min-height: auto;
+  }
+}
