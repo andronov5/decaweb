@@ -406,3 +406,39 @@ if (postContainer) {
     `;
   }
 }
+
+
+const openOfficerLeaderModal = document.getElementById("openOfficerLeaderModal");
+const closeOfficerLeaderModal = document.getElementById("closeOfficerLeaderModal");
+const officerLeaderModal = document.getElementById("officerLeaderModal");
+
+function openOfficerModal() {
+  if (!officerLeaderModal) return;
+
+  officerLeaderModal.classList.add("active");
+  officerLeaderModal.setAttribute("aria-hidden", "false");
+}
+
+function closeOfficerModal() {
+  if (!officerLeaderModal) return;
+
+  officerLeaderModal.classList.remove("active");
+  officerLeaderModal.setAttribute("aria-hidden", "true");
+}
+
+if (openOfficerLeaderModal && closeOfficerLeaderModal && officerLeaderModal) {
+  openOfficerLeaderModal.addEventListener("click", openOfficerModal);
+  closeOfficerLeaderModal.addEventListener("click", closeOfficerModal);
+
+  officerLeaderModal.addEventListener("click", event => {
+    if (event.target === officerLeaderModal) {
+      closeOfficerModal();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeOfficerModal();
+    }
+  });
+}
