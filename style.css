@@ -1810,3 +1810,97 @@ footer {
     padding: 14px !important;
   }
 }
+
+/* =========================================================
+   NO FADE HERO → CALENDAR FIX
+   Paste at the VERY BOTTOM of style.css
+   ========================================================= */
+
+/* Kill all previous fade/transition pseudo-elements */
+.hero::after,
+.hero::before,
+.events-section::before,
+.events-section::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Hero ends cleanly */
+.hero,
+.hero-short {
+  min-height: 62vh !important;
+  padding: 90px 7% 115px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #031630 !important;
+}
+
+/* Keep image readable, but remove bottom fade */
+.hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 13, 32, 0.92) 0%,
+      rgba(3, 22, 48, 0.72) 45%,
+      rgba(3, 22, 48, 0.30) 100%
+    ) !important;
+}
+
+/* Hard divider between hero and calendar */
+.hero {
+  border-bottom: 6px solid #f6c644 !important;
+}
+
+/* Calendar starts immediately after hero — no overlap, no fade */
+.events-section {
+  margin-top: 0 !important;
+  padding: 86px 7% !important;
+  border-radius: 0 !important;
+  background: #f8fbff !important;
+  color: #122033 !important;
+  box-shadow: none !important;
+  border-top: none !important;
+}
+
+/* Calendar text should be dark now */
+.events-section .section-label,
+.events-section .light .section-label {
+  color: #063b8e !important;
+}
+
+.events-section .section-heading h1,
+.events-section .section-heading h2,
+.events-section .section-heading p,
+.events-section .light h1,
+.events-section .light h2,
+.events-section .light p {
+  color: #122033 !important;
+}
+
+/* Calendar card styling */
+.calendar-shell {
+  background: white !important;
+  border: 1px solid #dce6f2 !important;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10) !important;
+}
+
+.event-card {
+  background: white !important;
+  color: #122033 !important;
+  border: 1px solid #dce6f2 !important;
+  border-left: 7px solid #f6c644 !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+.event-date {
+  color: #063b8e !important;
+}
+
+.event-card h3 {
+  color: #071a35 !important;
+}
+
+.event-card p {
+  color: #526175 !important;
+}
