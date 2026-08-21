@@ -1492,6 +1492,320 @@ footer {
   color: #526175 !important;
 }
 
+/* =========================================================
+   INTERACTIVE EVENT CALENDAR + NEWSLETTER UPDATES
+   ========================================================= */
+
+.calendar-shell {
+  max-width: 1120px !important;
+}
+
+.calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 2px 2px 18px;
+}
+
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.calendar-navigation[hidden],
+.calendar-view[hidden],
+.no-upcoming-events[hidden] {
+  display: none !important;
+}
+
+.calendar-navigation h3 {
+  margin-left: 8px;
+  color: #122033;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.calendar-nav-button,
+.calendar-today-button,
+.calendar-view-button {
+  border: 1px solid #d6e2f2;
+  background: #ffffff;
+  color: #063b8e;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.calendar-nav-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.calendar-today-button {
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 12px;
+}
+
+.calendar-nav-button:hover,
+.calendar-today-button:hover,
+.calendar-view-button:hover {
+  background: #edf4ff;
+  border-color: rgba(6, 59, 142, 0.35);
+}
+
+.calendar-nav-button:focus-visible,
+.calendar-today-button:focus-visible,
+.calendar-view-button:focus-visible,
+.news-read:focus-visible {
+  outline: 3px solid rgba(15, 84, 190, 0.28);
+  outline-offset: 3px;
+}
+
+.calendar-view-toggle {
+  display: inline-flex;
+  padding: 4px;
+  margin-left: auto;
+  border: 1px solid #d6e2f2;
+  border-radius: 14px;
+  background: #f4f7fb;
+}
+
+.calendar-view-button {
+  min-height: 38px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.calendar-view-button.active {
+  background: #063b8e;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(6, 59, 142, 0.22);
+}
+
+.events-scroll {
+  max-height: 620px !important;
+}
+
+.event-details {
+  min-width: 0;
+}
+
+.no-upcoming-events {
+  padding: 58px 24px;
+  border: 1px dashed #c9d8ea;
+  border-radius: 20px;
+  color: #526175;
+  text-align: center;
+  background: #f8fbff;
+}
+
+.calendar-month-view {
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-color: #b9c9df #edf4ff;
+  scrollbar-width: thin;
+}
+
+.month-calendar {
+  min-width: 760px;
+  overflow: hidden;
+  border: 1px solid #d6e2f2;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekdays {
+  border-bottom: 1px solid #d6e2f2;
+  background: #f4f7fb;
+}
+
+.calendar-weekdays span {
+  padding: 11px 8px;
+  color: #526175;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.calendar-day {
+  min-height: 116px;
+  padding: 8px;
+  overflow: hidden;
+  border-right: 1px solid #e3eaf3;
+  border-bottom: 1px solid #e3eaf3;
+  background: #ffffff;
+}
+
+.calendar-day:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-day:nth-last-child(-n + 7) {
+  border-bottom: none;
+}
+
+.calendar-day.outside-month {
+  background: #f8fafc;
+}
+
+.calendar-day.outside-month .calendar-day-number,
+.calendar-day.outside-month .calendar-event-chip {
+  opacity: 0.48;
+}
+
+.calendar-day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0 0 6px auto;
+  border-radius: 50%;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.calendar-day.today {
+  background: #f5f9ff;
+}
+
+.calendar-day.today .calendar-day-number {
+  background: #0f54be;
+  color: #ffffff;
+  box-shadow: 0 5px 12px rgba(15, 84, 190, 0.24);
+}
+
+.calendar-event-chip {
+  margin-top: 5px;
+  padding: 6px 7px;
+  overflow: hidden;
+  border-left: 4px solid #f6c644;
+  border-radius: 6px;
+  background: #e8f1ff;
+  color: #063b8e;
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.news-grid-single {
+  grid-template-columns: minmax(0, 760px) !important;
+  justify-content: center;
+}
+
+.coming-soon-card {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.coming-soon-card .resource-label {
+  color: #063b8e !important;
+}
+
+.coming-soon-card h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.coming-soon-card .news-read {
+  text-decoration: none;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-field label {
+  color: #122033;
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.form-field input:focus {
+  outline: 3px solid rgba(15, 84, 190, 0.16);
+  border-color: #0f54be;
+}
+
+.form-honeypot {
+  display: none !important;
+}
+
+.form-note {
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#newsletterSubmit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+@media (max-width: 700px) {
+  .calendar-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .calendar-navigation {
+    flex-wrap: wrap;
+  }
+
+  .calendar-navigation h3 {
+    width: 100%;
+    margin: 7px 0 0;
+    order: -1;
+  }
+
+  .calendar-view-toggle {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .calendar-view-button {
+    flex: 1;
+  }
+
+  .month-calendar {
+    min-width: 690px;
+  }
+
+  .calendar-day {
+    min-height: 104px;
+  }
+
+  .coming-soon-card {
+    min-height: 220px;
+    padding: 32px 24px !important;
+  }
+}
+
 /* Officer Groups section: single button instead of group cards */
 
 .officer-groups {
@@ -1601,7 +1915,7 @@ footer {
 }
 
 /* =========================================================
-   CLEAN HERO → CALENDAR REDESIGN
+   CLEAN HERO â†’ CALENDAR REDESIGN
    Paste at the VERY BOTTOM of style.css
    ========================================================= */
 
@@ -1812,7 +2126,7 @@ footer {
 }
 
 /* =========================================================
-   NO FADE HERO → CALENDAR FIX
+   NO FADE HERO â†’ CALENDAR FIX
    Paste at the VERY BOTTOM of style.css
    ========================================================= */
 
@@ -1852,7 +2166,7 @@ footer {
   border-bottom: 6px solid #f6c644 !important;
 }
 
-/* Calendar starts immediately after hero — no overlap, no fade */
+/* Calendar starts immediately after hero â€” no overlap, no fade */
 .events-section {
   margin-top: 0 !important;
   padding: 86px 7% !important;
@@ -1883,6 +2197,11 @@ footer {
   background: white !important;
   border: 1px solid #dce6f2 !important;
   box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10) !important;
+  max-width: 1120px !important;
+}
+
+.events-scroll {
+  max-height: 620px !important;
 }
 
 .event-card {
@@ -1901,6 +2220,9 @@ footer {
   color: #071a35 !important;
 }
 
+.event-card p {
+  color: #526175 !important;
+}
 .event-card p {
   color: #526175 !important;
 }
