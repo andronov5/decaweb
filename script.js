@@ -4,8 +4,8 @@ const officers = [
     firstName: "scarlett",
     name: "Scarlett Tolan",
     role: "President",
-    smallImage: "scarlettsmall.jpg",
-    bigImage: "scarlettbig.JPEG",
+    smallImage: "/scarlettsmall.jpg",
+    bigImage: "/scarlettbig.JPEG",
     funFact: "I love Stranger Things",
     memory: "ICDC in Atlanta",
     excited: "Senior sunrise!"
@@ -15,8 +15,8 @@ const officers = [
     firstName: "will",
     name: "Will Zhang",
     role: "Vice President",
-    smallImage: "willsmall.jpg",
-    bigImage: "willbig.jpg",
+    smallImage: "/willsmall.jpg",
+    bigImage: "/willbig.jpg",
     funFact: "Iâ€™ve gotten bit by a snake",
     memory: "Getting ice cream in Atlanta",
     excited: "Helping people qualify for State!"
@@ -26,8 +26,8 @@ const officers = [
     firstName: "ava",
     name: "Ava Lonigro",
     role: "VP of Marketing",
-    smallImage: "avasmall.jpg",
-    bigImage: "avabig.JPEG",
+    smallImage: "/avasmall.jpg",
+    bigImage: "/avabig.JPEG",
     funFact: "I am a huge Avs fan",
     memory: "Six Flags during ICDC in Atlanta!",
     excited: "Senior-y things and prom!"
@@ -37,8 +37,8 @@ const officers = [
     firstName: "isabelle",
     name: "Isabelle Brehm",
     role: "VP of Finance",
-    smallImage: "isabellesmall.jpg",
-    bigImage: "isabellebig.JPG",
+    smallImage: "/isabellesmall.jpg",
+    bigImage: "/isabellebig.JPG",
     funFact: "I want to go to med school",
     memory: "Running to last roller coaster at Six Flags",
     excited: "Going to State"
@@ -48,8 +48,8 @@ const officers = [
     firstName: "demi",
     name: "Demi Dolechek",
     role: "VP of Community Outreach",
-    smallImage: "demismall.jpg",
-    bigImage: "demibig.jpg",
+    smallImage: "/demismall.jpg",
+    bigImage: "/demibig.jpg",
     funFact: "I can juggle",
     memory: "Trading pins at ICDC",
     excited: "Districts with incoming freshmen"
@@ -59,8 +59,8 @@ const officers = [
     firstName: "mimi",
     name: "Mimi Haile",
     role: "VP of Operations",
-    smallImage: "mimismall.jpg",
-    bigImage: "mimibig.JPG",
+    smallImage: "/mimismall.jpg",
+    bigImage: "/mimibig.JPG",
     funFact: "Iâ€™m really good at puzzles",
     memory: "ICDC in Atlanta",
     excited: "Seeing new faces!"
@@ -70,8 +70,8 @@ const officers = [
     firstName: "owen",
     name: "Owen Huie",
     role: "Junior President",
-    smallImage: "owensmall.jpg",
-    bigImage: "owenbig.jpg",
+    smallImage: "/owensmall.jpg",
+    bigImage: "/owenbig.jpg",
     funFact: "I have been to 8 countries!",
     memory: "Six Flags Rollercoasters at ICDC!",
     excited: "Being a part of DECA leadership!"
@@ -81,8 +81,8 @@ const officers = [
     firstName: "lera",
     name: "Lera Andronova",
     role: "Junior Vice President",
-    smallImage: "lerasmall.jpg",
-    bigImage: "lerabig.jpg",
+    smallImage: "/lerasmall.jpg",
+    bigImage: "/lerabig.jpg",
     funFact: "I speak Russian",
     memory: "Winning state champion",
     excited: "Districts with freshmen!"
@@ -92,8 +92,8 @@ const officers = [
     firstName: "lila",
     name: "Lila Rowley",
     role: "Junior VP of Marketing",
-    smallImage: "lilasmall.jpg",
-    bigImage: "lilabig.jpg",
+    smallImage: "/lilasmall.jpg",
+    bigImage: "/lilabig.jpg",
     funFact: "I know how to surf!",
     memory: "State 2025!",
     excited: "Being a DECA officer and prom!"
@@ -103,8 +103,8 @@ const officers = [
     firstName: "maddie",
     name: "Maddie Ng",
     role: "Junior VP of Finance",
-    smallImage: "maddiesmall.jpg",
-    bigImage: "maddiebig.jpg",
+    smallImage: "/maddiesmall.jpg",
+    bigImage: "/maddiebig.jpg",
     funFact: "I can type over 100 words per minute!",
     memory: "Sophomore year State with friends!",
     excited: "Having an off period!"
@@ -114,8 +114,8 @@ const officers = [
     firstName: "keira",
     name: "Keira McCord",
     role: "Junior VP of Community Outreach",
-    smallImage: "keirasmall.jpg",
-    bigImage: "keirabig.jpg",
+    smallImage: "/keirasmall.jpg",
+    bigImage: "/keirabig.jpg",
     funFact: "I am left-handed!",
     memory: "Finalizing at State!",
     excited: "Prom and DECA!"
@@ -198,7 +198,7 @@ const events = [
   Announcement logistics:
   - Add new posts to this array.
   - Homepage cards render automatically from this data.
-  - Each card opens post.html?id=POST_ID.
+  - Each card opens /post/?id=POST_ID.
   - For deadline posts, use category: "Deadline" and add a clear date in the title/preview/body.
 */
 const announcements = [
@@ -209,7 +209,7 @@ const announcements = [
     date: "June 2, 2026",
     preview: "We are preparing for another year of competition, leadership, and chapter events.",
     body: "Welcome to Northfield DECA! This website will be used as a chapter hub for upcoming dates, announcements, resources, officer information, and important reminders. Check back here throughout the year for meeting information, competition deadlines, and chapter updates.",
-    link: "join.html",
+    link: "/join/",
     linkText: "Join DECA"
   },
   {
@@ -219,7 +219,7 @@ const announcements = [
     date: "August 28, 2026",
     preview: "Stop by the DECA table to meet officers and learn how to get involved.",
     body: "Northfield DECA will be at the Club Fair on August 28, 2026. This is a great chance for new members to ask questions, learn what DECA is, and find out how to join the chapter.",
-    link: "join.html",
+    link: "/join/",
     linkText: "How to Join"
   },
   {
@@ -229,7 +229,7 @@ const announcements = [
     date: "TBD",
     preview: "Our first official meeting will be posted here once the date is finalized.",
     body: "The first Northfield DECA meeting date is still TBD. Once it is finalized, this announcement can be updated with the meeting date, location, what new members should bring, and any important links.",
-    link: "join.html",
+    link: "/join/",
     linkText: "Join the Chapter"
   }
 ];
@@ -431,7 +431,7 @@ if (announcementContainer) {
   announcements.forEach(post => {
     const card = document.createElement("a");
     card.className = "news-card";
-    card.href = `post.html?id=${post.id}`;
+    card.href = `/post/?id=${post.id}`;
 
     card.innerHTML = `
       <div class="news-meta">
@@ -455,7 +455,7 @@ if (officerContainer) {
   officers.forEach(officer => {
     const card = document.createElement("a");
     card.className = "officer-card";
-    card.href = `officer.html?id=${officer.id}`;
+    card.href = `/officer/?id=${officer.id}`;
 
     card.innerHTML = `
       <div class="officer-photo">
@@ -537,7 +537,7 @@ if (profileContainer) {
     document.title = `${officer.name} | Northfield DECA`;
 
     profileContainer.innerHTML = `
-      <a href="about.html#officers" class="back-link">â† Back to Officer Team</a>
+      <a href="/about/#officers" class="back-link">â† Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-photo">
@@ -575,7 +575,7 @@ if (profileContainer) {
     });
   } else {
     profileContainer.innerHTML = `
-      <a href="about.html#officers" class="back-link">â† Back to Officer Team</a>
+      <a href="/about/#officers" class="back-link">â† Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-content">
@@ -598,7 +598,7 @@ if (postContainer) {
     document.title = `${post.title} | Northfield DECA`;
 
     postContainer.innerHTML = `
-      <a href="index.html#news" class="back-link">â† Back to Announcements</a>
+      <a href="/#news" class="back-link">â† Back to Announcements</a>
 
       <article class="post-card">
         <div class="news-meta">
@@ -613,7 +613,7 @@ if (postContainer) {
     `;
   } else {
     postContainer.innerHTML = `
-      <a href="index.html#news" class="back-link">â† Back to Announcements</a>
+      <a href="/#news" class="back-link">â† Back to Announcements</a>
 
       <article class="post-card">
         <h1>Post Not Found</h1>
