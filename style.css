@@ -1915,7 +1915,7 @@ footer {
 }
 
 /* =========================================================
-   CLEAN HERO â†’ CALENDAR REDESIGN
+   CLEAN HERO → CALENDAR REDESIGN
    Paste at the VERY BOTTOM of style.css
    ========================================================= */
 
@@ -2126,7 +2126,7 @@ footer {
 }
 
 /* =========================================================
-   NO FADE HERO â†’ CALENDAR FIX
+   NO FADE HERO → CALENDAR FIX
    Paste at the VERY BOTTOM of style.css
    ========================================================= */
 
@@ -2166,7 +2166,7 @@ footer {
   border-bottom: 6px solid #f6c644 !important;
 }
 
-/* Calendar starts immediately after hero â€” no overlap, no fade */
+/* Calendar starts immediately after hero — no overlap, no fade */
 .events-section {
   margin-top: 0 !important;
   padding: 86px 7% !important;
@@ -2288,7 +2288,7 @@ footer {
 }
 
 .newsletter-letter p {
-  margin: 0 0 22px;
+  margin: 0 0 1.7em;
 }
 
 .newsletter-letter strong {
@@ -2297,9 +2297,14 @@ footer {
 
 .newsletter-logo {
   display: block;
-  width: min(190px, 48vw);
+  width: min(96px, 24vw);
   height: auto;
-  margin-top: 10px;
+  margin-top: 4px;
+}
+
+.newsletter-subscribe-link {
+  margin-top: 24px;
+  font-family: Inter, Arial, sans-serif;
 }
 
 @media (max-width: 700px) {

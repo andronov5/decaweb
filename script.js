@@ -17,7 +17,7 @@ const officers = [
     role: "Vice President",
     smallImage: "/willsmall.jpg",
     bigImage: "/willbig.jpg",
-    funFact: "Iâ€™ve gotten bit by a snake",
+    funFact: "I’ve gotten bit by a snake",
     memory: "Getting ice cream in Atlanta",
     excited: "Helping people qualify for State!"
   },
@@ -61,7 +61,7 @@ const officers = [
     role: "VP of Operations",
     smallImage: "/mimismall.jpg",
     bigImage: "/mimibig.JPG",
-    funFact: "Iâ€™m really good at puzzles",
+    funFact: "I’m really good at puzzles",
     memory: "ICDC in Atlanta",
     excited: "Seeing new faces!"
   },
@@ -190,7 +190,7 @@ const events = [
   {
     date: "2026-11-18",
     title: "DECA Districts",
-    subtitle: "All day Â· Location TBD"
+    subtitle: "All day · Location TBD"
   }
 ];
 
@@ -204,7 +204,7 @@ const events = [
 const announcements = [
   {
     id: "welcome-to-northfield-deca",
-    title: "Welcome to the 2026â€“2027 DECA Year",
+    title: "Welcome to the 2026–2027 DECA Year",
     category: "General",
     date: "June 2, 2026",
     preview: "We are preparing for another year of competition, leadership, and chapter events.",
@@ -356,7 +356,7 @@ function renderMonthCalendar() {
       const eventChip = document.createElement("div");
       eventChip.className = "calendar-event-chip";
       eventChip.textContent = event.title;
-      eventChip.title = event.subtitle ? `${event.title} â€” ${event.subtitle}` : event.title;
+      eventChip.title = event.subtitle ? `${event.title} — ${event.subtitle}` : event.title;
       dayCell.appendChild(eventChip);
     });
 
@@ -440,7 +440,7 @@ if (announcementContainer) {
       </div>
       <h3>${post.title}</h3>
       <p>${post.preview}</p>
-      <span class="news-read">Read more â†’</span>
+      <span class="news-read">Read more →</span>
     `;
 
     announcementContainer.appendChild(card);
@@ -464,7 +464,7 @@ if (officerContainer) {
       <div class="officer-info">
         <h3>${officer.name}</h3>
         <p>${officer.role}</p>
-        <span class="officer-click">View profile â†’</span>
+        <span class="officer-click">View profile →</span>
       </div>
     `;
 
@@ -537,7 +537,7 @@ if (profileContainer) {
     document.title = `${officer.name} | Northfield DECA`;
 
     profileContainer.innerHTML = `
-      <a href="/about/#officers" class="back-link">â† Back to Officer Team</a>
+      <a href="/about/#officers" class="back-link">← Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-photo">
@@ -575,7 +575,7 @@ if (profileContainer) {
     });
   } else {
     profileContainer.innerHTML = `
-      <a href="/about/#officers" class="back-link">â† Back to Officer Team</a>
+      <a href="/about/#officers" class="back-link">← Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-content">
@@ -598,7 +598,7 @@ if (postContainer) {
     document.title = `${post.title} | Northfield DECA`;
 
     postContainer.innerHTML = `
-      <a href="/#news" class="back-link">â† Back to Announcements</a>
+      <a href="/#news" class="back-link">← Back to Announcements</a>
 
       <article class="post-card">
         <div class="news-meta">
@@ -613,7 +613,7 @@ if (postContainer) {
     `;
   } else {
     postContainer.innerHTML = `
-      <a href="/#news" class="back-link">â† Back to Announcements</a>
+      <a href="/#news" class="back-link">← Back to Announcements</a>
 
       <article class="post-card">
         <h1>Post Not Found</h1>
