@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northfield DECA</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Northfield DECA</a>
+
+    <nav id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="faq.html">FAQ</a>
+      <a href="join.html" class="nav-join">Join</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero hero-short" id="home">
+      <img src="state.jpg" alt="Northfield DECA chapter at State" class="hero-img" />
+      <div class="hero-shade"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Northfield High School</p>
+        <h1>Welcome to Northfield DECA!</h1>
+        <p class="hero-subtitle">
+          Stay updated on meetings, deadlines, competitions, and chapter announcements.
+        </p>
+
+        <div class="hero-actions">
+          <a href="join.html" class="btn gold">Join DECA</a>
+          <a href="#events" class="btn glass">See Calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section events-section" id="events">
+      <div class="section-heading light">
+        <p class="section-label">Calendar</p>
+        <h2>Important Dates</h2>
+      </div>
+
+      <div class="calendar-shell">
+        <div class="calendar-toolbar">
+          <div class="calendar-navigation" id="calendarNavigation" hidden>
+            <button type="button" class="calendar-nav-button" id="calendarPrevious" aria-label="Previous month">&lsaquo;</button>
+            <button type="button" class="calendar-today-button" id="calendarToday">Today</button>
+            <button type="button" class="calendar-nav-button" id="calendarNext" aria-label="Next month">&rsaquo;</button>
+            <h3 id="calendarMonthLabel" aria-live="polite"></h3>
+          </div>
+
+          <div class="calendar-view-toggle" role="group" aria-label="Choose an event view">
+            <button type="button" class="calendar-view-button active" data-calendar-view="list" aria-pressed="true">List</button>
+            <button type="button" class="calendar-view-button" data-calendar-view="calendar" aria-pressed="false">Calendar</button>
+          </div>
+        </div>
+
+        <div class="calendar-view" id="eventListView">
+          <div class="events-scroll" id="eventContainer"></div>
+          <p class="no-upcoming-events" id="noUpcomingEvents" hidden>No upcoming events are currently scheduled.</p>
+        </div>
+
+        <div class="calendar-view calendar-month-view" id="eventCalendarView" hidden>
+          <div class="month-calendar" role="grid" aria-label="Northfield DECA event calendar">
+            <div class="calendar-weekdays" aria-hidden="true">
+              <span>Sun</span>
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" id="news">
+      <div class="section-heading">
+        <p class="section-label">Newsletters</p>
+        <h2>Announcements</h2>
+      </div>
+
+      <div class="news-grid news-grid-single">
+        <article class="news-card coming-soon-card">
+          <p class="resource-label">Northfield DECA Newsletter</p>
+          <h3>Coming soon!</h3>
+          <p>Chapter newsletters and announcements will be posted here.</p>
+          <a href="join.html#newsletter-form" class="news-read">Subscribe to the newsletter &rarr;</a>
+        </article>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <h3>Northfield DECA</h3>
+    <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer">
+      @deca_northfield
+    </a>
+    <p>© 2026 Northfield DECA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

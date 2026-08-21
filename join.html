@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join | Northfield DECA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Northfield DECA</a>
+
+    <nav id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="faq.html">FAQ</a>
+      <a href="join.html" class="nav-join">Join</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="page-hero join-hero-page">
+      <div class="section-heading">
+        <p class="section-label">Join DECA</p>
+        <h1>Become part of Northfield DECA.</h1>
+        <p>Join the Schoology page, come to the next meeting, and use the links below to get started.</p>
+      </div>
+    </section>
+
+    <section class="section join-actions-section">
+      <div class="join-info-card">
+        <p class="section-label">Next Meeting</p>
+        <h2>Interest Meeting &mdash; September 4</h2>
+        <p>At lunch in the Main Gym.</p>
+      </div>
+
+      <div class="join-button-grid">
+        <a href="#" class="join-button-card">
+          <p class="resource-label">Required</p>
+          <h3>Join the Schoology Page</h3>
+          <p>Replace this link with the actual Schoology group link.</p>
+        </a>
+
+        <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer" class="join-button-card">
+          <p class="resource-label">Updates</p>
+          <h3>Follow Instagram</h3>
+          <p>Follow chapter reminders, photos, and announcements.</p>
+        </a>
+
+        <a href="resources.html" class="join-button-card">
+          <p class="resource-label">Prepare</p>
+          <h3>View Resources</h3>
+          <p>Find event help, roleplay practice, dress code, and study links.</p>
+        </a>
+
+        <a href="about.html#officers" class="join-button-card">
+          <p class="resource-label">Questions</p>
+          <h3>Meet the Officers</h3>
+          <p>Find the officer team and click profiles to learn more.</p>
+        </a>
+
+        <a href="about.html#officer-groups" class="join-button-card">
+          <p class="resource-label">Support</p>
+          <h3>Officer Groups</h3>
+          <p>Use this once member groups and officer contacts are finalized.</p>
+        </a>
+
+        <a href="faq.html" class="join-button-card">
+          <p class="resource-label">Learn</p>
+          <h3>Read the FAQ</h3>
+          <p>Get quick answers about joining, competing, and preparing.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section join" id="newsletter-form">
+      <div class="join-card">
+        <div class="section-heading">
+          <p class="section-label">Newsletter Signup</p>
+          <h2>Subscribe to our newsletter</h2>
+          <p>Get Northfield DECA updates, deadlines, meeting reminders, and chapter news by email.</p>
+        </div>
+
+        <form id="newsletterForm" action="https://formsubmit.co/804466@dpsk12.net" method="POST">
+          <input type="hidden" name="_cc" value="827015@dpsk12.net" />
+          <input type="hidden" name="_subject" value="Northfield DECA mailing list request" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://northfielddeca.org/join.html?subscribed=true#newsletter-form" />
+          <input type="hidden" name="message" id="mailingListRequest" value="" />
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" required />
+          </div>
+
+          <button type="submit" class="btn blue" id="newsletterSubmit">Subscribe</button>
+          <p class="form-note">By subscribing, you agree to receive Northfield DECA chapter emails. You can ask to be removed at any time.</p>
+          <p id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>Northfield DECA</h3>
+    <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer">
+      @deca_northfield
+    </a>
+    <p>© 2026 Northfield DECA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
