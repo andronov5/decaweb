@@ -2223,6 +2223,18 @@ footer {
 .event-card p {
   color: #526175 !important;
 }
+
+.events-section {
+  padding: 70px 7% !important;
+}
+
+.events-section .section-heading {
+  margin-bottom: 30px !important;
+}
+
+.calendar-shell {
+  max-width: 1050px !important;
+}
 .event-card p {
   color: #526175 !important;
 }
