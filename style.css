@@ -2223,18 +2223,24 @@ footer {
 .event-card p {
   color: #526175 !important;
 }
-
 .events-section {
-  padding: 70px 7% !important;
+  padding: 50px 7% !important;
 }
 
 .events-section .section-heading {
-  margin-bottom: 30px !important;
+  margin-bottom: 20px !important;
 }
 
 .calendar-shell {
-  max-width: 1050px !important;
+  max-width: 900px !important;
+  padding: 14px !important;
 }
-.event-card p {
-  color: #526175 !important;
+
+.event-card {
+  min-height: 105px !important;
+  padding: 18px 22px !important;
+}
+
+.events-scroll {
+  max-height: 480px !important;
 }
