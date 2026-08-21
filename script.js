@@ -17,7 +17,7 @@ const officers = [
     role: "Vice President",
     smallImage: "willsmall.jpg",
     bigImage: "willbig.jpg",
-    funFact: "I’ve gotten bit by a snake",
+    funFact: "Iâ€™ve gotten bit by a snake",
     memory: "Getting ice cream in Atlanta",
     excited: "Helping people qualify for State!"
   },
@@ -61,7 +61,7 @@ const officers = [
     role: "VP of Operations",
     smallImage: "mimismall.jpg",
     bigImage: "mimibig.JPG",
-    funFact: "I’m really good at puzzles",
+    funFact: "Iâ€™m really good at puzzles",
     memory: "ICDC in Atlanta",
     excited: "Seeing new faces!"
   },
@@ -124,29 +124,73 @@ const officers = [
 
 const events = [
   {
-    date: "August 28, 2026",
+    date: "2026-09-03",
     title: "Club Fair",
-    description: "Stop by the DECA table and meet the chapter!"
+    subtitle: "At lunch in the Quad"
   },
   {
-    date: "TBD",
-    title: "First Meeting",
-    description: "Our first meeting of the school year in the Aux Gym."
+    date: "2026-09-04",
+    title: "Interest Meeting",
+    subtitle: "At lunch in the Main Gym"
   },
   {
-    date: "November 2026",
-    title: "Districts",
-    description: "Northfield DECA members compete at the district level."
+    date: "2026-09-09",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
   },
   {
-    date: "February 2027",
-    title: "State",
-    description: "The State Career Development Conference in Colorado Springs."
+    date: "2026-09-16",
+    title: "DECA Test Day & Applications Due",
+    subtitle: "Business Hallway (B2)"
   },
   {
-    date: "April 17, 2027",
-    title: "ICDC",
-    description: "The International Career Development Conference in Anaheim."
+    date: "2026-09-21",
+    title: "Official DECA Roster Posted"
+  },
+  {
+    date: "2026-09-23",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-09-30",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-10-07",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-10-14",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-10-21",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-10-28",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-11-04",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-11-11",
+    title: "DECA Meeting",
+    subtitle: "At lunch in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-11-18",
+    title: "DECA Districts",
+    subtitle: "All day Â· Location TBD"
   }
 ];
 
@@ -160,7 +204,7 @@ const events = [
 const announcements = [
   {
     id: "welcome-to-northfield-deca",
-    title: "Welcome to the 2026–2027 DECA Year",
+    title: "Welcome to the 2026â€“2027 DECA Year",
     category: "General",
     date: "June 2, 2026",
     preview: "We are preparing for another year of competition, leadership, and chapter events.",
@@ -200,24 +244,183 @@ if (menuBtn && navLinks) {
 }
 
 const eventContainer = document.getElementById("eventContainer");
+const eventListView = document.getElementById("eventListView");
+const eventCalendarView = document.getElementById("eventCalendarView");
+const calendarGrid = document.getElementById("calendarGrid");
+const calendarNavigation = document.getElementById("calendarNavigation");
+const calendarMonthLabel = document.getElementById("calendarMonthLabel");
+const calendarPrevious = document.getElementById("calendarPrevious");
+const calendarNext = document.getElementById("calendarNext");
+const calendarToday = document.getElementById("calendarToday");
+const noUpcomingEvents = document.getElementById("noUpcomingEvents");
+const calendarViewButtons = document.querySelectorAll("[data-calendar-view]");
 
-if (eventContainer) {
+function dateFromISO(dateString) {
+  const [year, month, day] = dateString.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function dateToISO(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function datesMatch(firstDate, secondDate) {
+  return firstDate.getFullYear() === secondDate.getFullYear()
+    && firstDate.getMonth() === secondDate.getMonth()
+    && firstDate.getDate() === secondDate.getDate();
+}
+
+function formattedEventDate(dateString) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }).format(dateFromISO(dateString));
+}
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+let visibleCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+function renderEventList() {
+  if (!eventContainer || !noUpcomingEvents) return;
+
   eventContainer.innerHTML = "";
 
-  events.forEach(event => {
+  const upcomingEvents = events.filter(event => dateFromISO(event.date) >= today);
+  noUpcomingEvents.hidden = upcomingEvents.length > 0;
+
+  upcomingEvents.forEach(event => {
     const card = document.createElement("article");
     card.className = "event-card";
 
     card.innerHTML = `
-      <div class="event-date">${event.date}</div>
-      <div>
+      <time class="event-date" datetime="${event.date}">${formattedEventDate(event.date)}</time>
+      <div class="event-details">
         <h3>${event.title}</h3>
-        <p>${event.description}</p>
+        ${event.subtitle ? `<p>${event.subtitle}</p>` : ""}
       </div>
     `;
 
     eventContainer.appendChild(card);
   });
+}
+
+function renderMonthCalendar() {
+  if (!calendarGrid || !calendarMonthLabel) return;
+
+  const year = visibleCalendarMonth.getFullYear();
+  const month = visibleCalendarMonth.getMonth();
+  const firstDayOfMonth = new Date(year, month, 1);
+  const gridStartDate = new Date(year, month, 1 - firstDayOfMonth.getDay());
+
+  calendarMonthLabel.textContent = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    year: "numeric"
+  }).format(visibleCalendarMonth);
+
+  calendarGrid.innerHTML = "";
+
+  for (let index = 0; index < 42; index += 1) {
+    const cellDate = new Date(
+      gridStartDate.getFullYear(),
+      gridStartDate.getMonth(),
+      gridStartDate.getDate() + index
+    );
+    const cellDateISO = dateToISO(cellDate);
+    const eventsOnDate = events.filter(event => event.date === cellDateISO);
+    const dayCell = document.createElement("div");
+
+    dayCell.className = "calendar-day";
+    dayCell.setAttribute("role", "gridcell");
+    dayCell.setAttribute("aria-label", `${formattedEventDate(cellDateISO)}${eventsOnDate.length ? `, ${eventsOnDate.length} event${eventsOnDate.length === 1 ? "" : "s"}` : ""}`);
+
+    if (cellDate.getMonth() !== month) {
+      dayCell.classList.add("outside-month");
+    }
+
+    if (datesMatch(cellDate, today)) {
+      dayCell.classList.add("today");
+    }
+
+    const dayNumber = document.createElement("time");
+    dayNumber.className = "calendar-day-number";
+    dayNumber.dateTime = cellDateISO;
+    dayNumber.textContent = cellDate.getDate();
+    dayCell.appendChild(dayNumber);
+
+    eventsOnDate.forEach(event => {
+      const eventChip = document.createElement("div");
+      eventChip.className = "calendar-event-chip";
+      eventChip.textContent = event.title;
+      eventChip.title = event.subtitle ? `${event.title} â€” ${event.subtitle}` : event.title;
+      dayCell.appendChild(eventChip);
+    });
+
+    calendarGrid.appendChild(dayCell);
+  }
+}
+
+function setCalendarView(view) {
+  if (!eventListView || !eventCalendarView || !calendarNavigation) return;
+
+  const showCalendar = view === "calendar";
+  eventListView.hidden = showCalendar;
+  eventCalendarView.hidden = !showCalendar;
+  calendarNavigation.hidden = !showCalendar;
+
+  calendarViewButtons.forEach(button => {
+    const isActive = button.dataset.calendarView === view;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  if (showCalendar) {
+    renderMonthCalendar();
+  }
+}
+
+if (eventContainer) {
+  renderEventList();
+  renderMonthCalendar();
+
+  calendarViewButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      setCalendarView(button.dataset.calendarView);
+    });
+  });
+
+  if (calendarPrevious) {
+    calendarPrevious.addEventListener("click", () => {
+      visibleCalendarMonth = new Date(
+        visibleCalendarMonth.getFullYear(),
+        visibleCalendarMonth.getMonth() - 1,
+        1
+      );
+      renderMonthCalendar();
+    });
+  }
+
+  if (calendarNext) {
+    calendarNext.addEventListener("click", () => {
+      visibleCalendarMonth = new Date(
+        visibleCalendarMonth.getFullYear(),
+        visibleCalendarMonth.getMonth() + 1,
+        1
+      );
+      renderMonthCalendar();
+    });
+  }
+
+  if (calendarToday) {
+    calendarToday.addEventListener("click", () => {
+      visibleCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+      renderMonthCalendar();
+    });
+  }
 }
 
 const announcementContainer = document.getElementById("announcementContainer");
@@ -237,7 +440,7 @@ if (announcementContainer) {
       </div>
       <h3>${post.title}</h3>
       <p>${post.preview}</p>
-      <span class="news-read">Read more →</span>
+      <span class="news-read">Read more â†’</span>
     `;
 
     announcementContainer.appendChild(card);
@@ -261,7 +464,7 @@ if (officerContainer) {
       <div class="officer-info">
         <h3>${officer.name}</h3>
         <p>${officer.role}</p>
-        <span class="officer-click">View profile →</span>
+        <span class="officer-click">View profile â†’</span>
       </div>
     `;
 
@@ -295,17 +498,30 @@ if (officerPrev && officerNext && officerContainer) {
   });
 }
 
-const joinForm = document.getElementById("joinForm");
+const newsletterForm = document.getElementById("newsletterForm");
 const formMessage = document.getElementById("formMessage");
 
-if (joinForm && formMessage) {
-  joinForm.addEventListener("submit", event => {
-    event.preventDefault();
+if (newsletterForm && formMessage) {
+  const pageParameters = new URLSearchParams(window.location.search);
 
+  if (pageParameters.get("subscribed") === "true") {
+    formMessage.textContent = "Thanks! Your newsletter subscription request was sent.";
+  }
+
+  newsletterForm.addEventListener("submit", () => {
     const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mailingListRequest = document.getElementById("mailingListRequest");
+    const newsletterSubmit = document.getElementById("newsletterSubmit");
 
-    formMessage.textContent = `Thanks, ${name}! Your interest form was submitted.`;
-    joinForm.reset();
+    if (mailingListRequest) {
+      mailingListRequest.value = `${name} has requested to be on the Northfield DECA mailing list. Their email is ${email}.`;
+    }
+
+    if (newsletterSubmit) {
+      newsletterSubmit.disabled = true;
+      newsletterSubmit.textContent = "Sending...";
+    }
   });
 }
 
@@ -321,7 +537,7 @@ if (profileContainer) {
     document.title = `${officer.name} | Northfield DECA`;
 
     profileContainer.innerHTML = `
-      <a href="about.html#officers" class="back-link">← Back to Officer Team</a>
+      <a href="about.html#officers" class="back-link">â† Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-photo">
@@ -359,7 +575,7 @@ if (profileContainer) {
     });
   } else {
     profileContainer.innerHTML = `
-      <a href="about.html#officers" class="back-link">← Back to Officer Team</a>
+      <a href="about.html#officers" class="back-link">â† Back to Officer Team</a>
 
       <div class="profile-card">
         <div class="profile-content">
@@ -382,7 +598,7 @@ if (postContainer) {
     document.title = `${post.title} | Northfield DECA`;
 
     postContainer.innerHTML = `
-      <a href="index.html#news" class="back-link">← Back to Announcements</a>
+      <a href="index.html#news" class="back-link">â† Back to Announcements</a>
 
       <article class="post-card">
         <div class="news-meta">
@@ -397,7 +613,7 @@ if (postContainer) {
     `;
   } else {
     postContainer.innerHTML = `
-      <a href="index.html#news" class="back-link">← Back to Announcements</a>
+      <a href="index.html#news" class="back-link">â† Back to Announcements</a>
 
       <article class="post-card">
         <h1>Post Not Found</h1>
