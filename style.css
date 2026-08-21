@@ -2288,7 +2288,11 @@ footer {
 }
 
 .newsletter-letter p {
-  margin: 0 0 1.7em;
+  margin: 0;
+}
+
+.newsletter-letter p + p {
+  margin-top: 1.7em;
 }
 
 .newsletter-letter strong {
@@ -2297,14 +2301,18 @@ footer {
 
 .newsletter-logo {
   display: block;
-  width: min(96px, 24vw);
+  width: min(96px, 25vw);
   height: auto;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .newsletter-subscribe-link {
-  margin-top: 24px;
+  display: inline-block;
+  margin-top: 28px;
+  color: #063b8e;
   font-family: Inter, Arial, sans-serif;
+  font-weight: 800;
+  text-decoration: underline;
 }
 
 @media (max-width: 700px) {
