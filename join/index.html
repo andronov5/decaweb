@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
 
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=20260904-calendar-schoology" />
 </head>
 <body>
 
@@ -42,11 +42,15 @@
       </div>
 
       <div class="join-button-grid">
-        <a href="#" class="join-button-card">
-          <p class="resource-label">Required</p>
-          <h3>Join the Schoology Page</h3>
-          <p>Coming soon!</p>
-        </a>
+        <button type="button" class="join-button-card schoology-card" id="openSchoologyModal" aria-haspopup="dialog" aria-controls="schoologyModal">
+          <span class="resource-label">Required</span>
+          <span class="schoology-card-title">Join the Schoology Page</span>
+          <span class="schoology-code-preview">
+            <span>Group code</span>
+            <strong>38HX-95X7-W5N56</strong>
+          </span>
+          <span class="schoology-card-action">View joining directions &rarr;</span>
+        </button>
 
         <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer" class="join-button-card">
           <p class="resource-label">Updates</p>
@@ -111,6 +115,33 @@
         </form>
       </div>
     </section>
+
+    <div class="modal-backdrop" id="schoologyModal" aria-hidden="true" hidden>
+      <div class="schoology-modal" role="dialog" aria-modal="true" aria-labelledby="schoologyModalTitle" aria-describedby="schoologyModalDescription" tabindex="-1">
+        <button type="button" class="modal-close" id="closeSchoologyModal" aria-label="Close Schoology directions">&times;</button>
+
+        <p class="section-label">Schoology Group</p>
+        <h2 id="schoologyModalTitle">Join Northfield DECA</h2>
+        <p id="schoologyModalDescription">Follow these steps to join the Northfield DECA group in Schoology.</p>
+
+        <div class="schoology-code-box">
+          <span>Group code</span>
+          <code>38HX-95X7-W5N56</code>
+        </div>
+
+        <!-- Group joining steps: https://uc.powerschool-docs.com/en/schoology/latest/guide-to-groups -->
+        <ol class="schoology-steps">
+          <li>Open <a href="https://schoology.dpsk12.org/" target="_blank" rel="noopener noreferrer">DPS Schoology</a> in your browser and sign in with your DPS student account.</li>
+          <li>Select <strong>Groups</strong>, then <strong>My Groups</strong>.</li>
+          <li>Choose <strong>Join Group</strong>.</li>
+          <li>Enter <strong>38HX-95X7-W5N56</strong>, then select <strong>Join</strong>.</li>
+        </ol>
+
+        <p class="schoology-help">Can't find Join Group? Try Schoology in your browser or ask a DECA advisor for help.</p>
+
+        <button type="button" class="btn blue schoology-done-button" id="confirmSchoologyModal">Got it</button>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -121,6 +152,6 @@
     <p>© 2026 Northfield DECA</p>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="/script.js?v=20260904-calendar-schoology"></script>
 </body>
 </html>
