@@ -267,10 +267,23 @@ function dateToISO(date) {
   return `${year}-${month}-${day}`;
 }
 
-function datesMatch(firstDate, secondDate) {
-  return firstDate.getFullYear() === secondDate.getFullYear()
-    && firstDate.getMonth() === secondDate.getMonth()
-    && firstDate.getDate() === secondDate.getDate();
+const chapterTimeZone = "America/Denver";
+
+function currentChapterDateISO() {
+  const dateParts = new Intl.DateTimeFormat("en-US", {
+    timeZone: chapterTimeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(new Date());
+
+  const dateValues = Object.fromEntries(
+    dateParts
+      .filter(part => part.type !== "literal")
+      .map(part => [part.type, part.value])
+  );
+
+  return `${dateValues.year}-${dateValues.month}-${dateValues.day}`;
 }
 
 function formattedEventDate(dateString) {
@@ -281,8 +294,8 @@ function formattedEventDate(dateString) {
   }).format(dateFromISO(dateString));
 }
 
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+let todayISO = currentChapterDateISO();
+let today = dateFromISO(todayISO);
 let visibleCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
 
 function renderEventList() {
@@ -290,7 +303,9 @@ function renderEventList() {
 
   eventContainer.innerHTML = "";
 
-  const upcomingEvents = events.filter(event => dateFromISO(event.date) >= today);
+  const upcomingEvents = events
+    .filter(event => event.date >= todayISO)
+    .sort((firstEvent, secondEvent) => firstEvent.date.localeCompare(secondEvent.date));
   noUpcomingEvents.hidden = upcomingEvents.length > 0;
 
   upcomingEvents.forEach(event => {
@@ -342,7 +357,7 @@ function renderMonthCalendar() {
       dayCell.classList.add("outside-month");
     }
 
-    if (datesMatch(cellDate, today)) {
+    if (cellDateISO === todayISO) {
       dayCell.classList.add("today");
     }
 
@@ -383,6 +398,25 @@ function setCalendarView(view) {
   }
 }
 
+function refreshCalendarDate() {
+  const refreshedTodayISO = currentChapterDateISO();
+
+  if (refreshedTodayISO === todayISO) return;
+
+  const wasShowingCurrentMonth = visibleCalendarMonth.getFullYear() === today.getFullYear()
+    && visibleCalendarMonth.getMonth() === today.getMonth();
+
+  todayISO = refreshedTodayISO;
+  today = dateFromISO(todayISO);
+
+  if (wasShowingCurrentMonth) {
+    visibleCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  }
+
+  renderEventList();
+  renderMonthCalendar();
+}
+
 if (eventContainer) {
   renderEventList();
   renderMonthCalendar();
@@ -421,6 +455,14 @@ if (eventContainer) {
       renderMonthCalendar();
     });
   }
+
+  window.setInterval(refreshCalendarDate, 60 * 1000);
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      refreshCalendarDate();
+    }
+  });
 }
 
 const announcementContainer = document.getElementById("announcementContainer");
@@ -655,6 +697,68 @@ if (openOfficerLeaderModal && closeOfficerLeaderModal && officerLeaderModal) {
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
       closeOfficerModal();
+    }
+  });
+}
+
+const openSchoologyModal = document.getElementById("openSchoologyModal");
+const closeSchoologyModal = document.getElementById("closeSchoologyModal");
+const confirmSchoologyModal = document.getElementById("confirmSchoologyModal");
+const schoologyModal = document.getElementById("schoologyModal");
+let schoologyReturnFocus = null;
+
+function openSchoologyDirections() {
+  if (!schoologyModal || !closeSchoologyModal) return;
+
+  schoologyReturnFocus = document.activeElement;
+  schoologyModal.classList.add("active");
+  schoologyModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  closeSchoologyModal.focus();
+}
+
+function closeSchoologyDirections() {
+  if (!schoologyModal) return;
+
+  schoologyModal.classList.remove("active");
+  schoologyModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+
+  if (schoologyReturnFocus && document.contains(schoologyReturnFocus)) {
+    schoologyReturnFocus.focus();
+  }
+}
+
+if (openSchoologyModal && closeSchoologyModal && confirmSchoologyModal && schoologyModal) {
+  openSchoologyModal.addEventListener("click", openSchoologyDirections);
+  closeSchoologyModal.addEventListener("click", closeSchoologyDirections);
+  confirmSchoologyModal.addEventListener("click", closeSchoologyDirections);
+
+  schoologyModal.addEventListener("click", event => {
+    if (event.target === schoologyModal) {
+      closeSchoologyDirections();
+    }
+  });
+
+  schoologyModal.addEventListener("keydown", event => {
+    if (event.key !== "Tab") return;
+
+    const focusableElements = [closeSchoologyModal, confirmSchoologyModal];
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstFocusableElement) {
+      event.preventDefault();
+      lastFocusableElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastFocusableElement) {
+      event.preventDefault();
+      firstFocusableElement.focus();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && schoologyModal.classList.contains("active")) {
+      closeSchoologyDirections();
     }
   });
 }
