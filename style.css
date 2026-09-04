@@ -2350,6 +2350,7 @@ footer {
 #eventListView .event-date {
   display: block;
   padding-top: 3px;
+  font-size: 0.875rem;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
@@ -2396,7 +2397,7 @@ footer {
 .schoology-code-preview span {
   display: block;
   margin-bottom: 3px;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 850;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2422,9 +2423,14 @@ body.modal-open {
   overflow: hidden;
 }
 
+#schoologyModal[hidden] {
+  display: none;
+}
+
 .schoology-modal {
   width: min(620px, 100%);
   max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
   position: relative;
   overflow-y: auto;
   background: #ffffff;
@@ -2460,7 +2466,7 @@ body.modal-open {
   display: block;
   margin-bottom: 5px;
   color: #526175;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2496,6 +2502,17 @@ body.modal-open {
   font-weight: 950;
 }
 
+.schoology-steps a {
+  color: #063b8e;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.schoology-help {
+  margin-top: 20px;
+}
+
 .schoology-done-button {
   width: 100%;
   margin-top: 26px;
@@ -2523,7 +2540,7 @@ body.modal-open {
 
   #eventListView .event-date {
     padding-top: 0;
-    font-size: 0.71rem;
+    font-size: 0.875rem;
     letter-spacing: 0.055em;
   }
 
@@ -2534,12 +2551,11 @@ body.modal-open {
   }
 
   #eventListView .event-card p {
-    font-size: 0.92rem;
+    font-size: 1rem;
     line-height: 1.45;
   }
 
   .schoology-modal {
-    max-height: calc(100vh - 24px);
     padding: 34px 20px 26px;
     border-radius: 22px;
   }

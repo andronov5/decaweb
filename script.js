@@ -711,6 +711,7 @@ function openSchoologyDirections() {
   if (!schoologyModal || !closeSchoologyModal) return;
 
   schoologyReturnFocus = document.activeElement;
+  schoologyModal.hidden = false;
   schoologyModal.classList.add("active");
   schoologyModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
@@ -721,6 +722,7 @@ function closeSchoologyDirections() {
   if (!schoologyModal) return;
 
   schoologyModal.classList.remove("active");
+  schoologyModal.hidden = true;
   schoologyModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 
@@ -743,7 +745,7 @@ if (openSchoologyModal && closeSchoologyModal && confirmSchoologyModal && school
   schoologyModal.addEventListener("keydown", event => {
     if (event.key !== "Tab") return;
 
-    const focusableElements = [closeSchoologyModal, confirmSchoologyModal];
+    const focusableElements = schoologyModal.querySelectorAll("button, a[href]");
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
