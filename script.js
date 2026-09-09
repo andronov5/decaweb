@@ -139,8 +139,12 @@ const events = [
     subtitle: "At lunch in the Business Hallway (B2)"
   },
   {
+    date: "2026-09-15",
+    title: "DECA Applications Due"
+  },
+  {
     date: "2026-09-16",
-    title: "DECA Test Day & Applications Due",
+    title: "DECA Test Day",
     subtitle: "Business Hallway (B2)"
   },
   {
