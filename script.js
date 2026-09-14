@@ -258,6 +258,8 @@ const calendarNext = document.getElementById("calendarNext");
 const calendarToday = document.getElementById("calendarToday");
 const noUpcomingEvents = document.getElementById("noUpcomingEvents");
 const calendarViewButtons = document.querySelectorAll("[data-calendar-view]");
+const nextMeetingTitle = document.getElementById("nextMeetingTitle");
+const nextMeetingDetails = document.getElementById("nextMeetingDetails");
 
 function dateFromISO(dateString) {
   const [year, month, day] = dateString.split("-").map(Number);
@@ -301,6 +303,29 @@ function formattedEventDate(dateString) {
 let todayISO = currentChapterDateISO();
 let today = dateFromISO(todayISO);
 let visibleCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+function renderNextMeeting() {
+  if (!nextMeetingTitle || !nextMeetingDetails) return;
+
+  // Meetings and test days count as meetings; deadlines and other events do not.
+  // Date-only events stay visible through their scheduled day in Denver.
+  const nextMeeting = events
+    .filter(event => event.date >= todayISO && /\b(meeting|test day)\b/i.test(event.title))
+    .sort((firstEvent, secondEvent) => firstEvent.date.localeCompare(secondEvent.date))[0];
+
+  if (!nextMeeting) {
+    nextMeetingTitle.textContent = "Next meeting to be announced";
+    nextMeetingDetails.textContent = "Check Schoology for updates and new meeting dates.";
+    nextMeetingDetails.hidden = false;
+    return;
+  }
+
+  nextMeetingTitle.textContent = `${nextMeeting.title} — ${formattedEventDate(nextMeeting.date)}`;
+  nextMeetingDetails.textContent = nextMeeting.subtitle || "";
+  nextMeetingDetails.hidden = !nextMeeting.subtitle;
+}
+
+renderNextMeeting();
 
 function renderEventList() {
   if (!eventContainer || !noUpcomingEvents) return;
@@ -419,6 +444,7 @@ function refreshCalendarDate() {
 
   renderEventList();
   renderMonthCalendar();
+  renderNextMeeting();
 }
 
 if (eventContainer) {
@@ -459,7 +485,9 @@ if (eventContainer) {
       renderMonthCalendar();
     });
   }
+}
 
+if (eventContainer || nextMeetingTitle) {
   window.setInterval(refreshCalendarDate, 60 * 1000);
 
   document.addEventListener("visibilitychange", () => {
