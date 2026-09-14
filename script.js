@@ -320,7 +320,11 @@ function renderNextMeeting() {
     return;
   }
 
-  nextMeetingTitle.textContent = `${nextMeeting.title} — ${formattedEventDate(nextMeeting.date)}`;
+  const meetingDate = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric"
+  }).format(dateFromISO(nextMeeting.date));
+  nextMeetingTitle.textContent = `${nextMeeting.title} — ${meetingDate}`;
   nextMeetingDetails.textContent = nextMeeting.subtitle || "";
   nextMeetingDetails.hidden = !nextMeeting.subtitle;
 }
