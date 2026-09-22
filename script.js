@@ -148,13 +148,8 @@ const events = [
     subtitle: "Business Hallway (B2)"
   },
   {
-    date: "2026-09-21",
+    date: "2026-09-22",
     title: "Official DECA Roster Posted"
-  },
-  {
-    date: "2026-09-23",
-    title: "DECA Meeting",
-    subtitle: "At lunch in the Business Hallway (B2)"
   },
   {
     date: "2026-09-30",
