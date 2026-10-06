@@ -187,7 +187,7 @@ const events = [
     subtitle: "At lunch in the Business Hallway (B2)"
   },
   {
-    date: "2026-11-18",
+    date: "2026-11-19",
     title: "DECA Districts",
     subtitle: "All day · Location TBD"
   }
