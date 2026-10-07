@@ -19,13 +19,80 @@
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
-  const members = [...section.querySelectorAll("[data-member-name]")].map(item => ({
-    name: item.dataset.memberName,
-    search: normalize(item.dataset.search),
-    tentative: item.dataset.tentative === "true",
-    item,
-    group: item.closest(".og-group")
-  }));
+  // Convenience search aliases, not changes to members' listed names. Expand
+  // only known first names, including first names in the roster's own aliases.
+  const nicknameFamilies = [
+    { names: ["abigail"], nicknames: ["abby", "abbey", "abbie", "abi", "gail"] },
+    { names: ["adelaide"], nicknames: ["addie", "addy", "adele"] },
+    { names: ["alexander", "alexandra", "alexandria"], nicknames: ["alex", "lex", "sasha"] },
+    { names: ["alexander"], nicknames: ["xander"] },
+    { names: ["alexis", "alexandra", "alexandria"], nicknames: ["lexi", "lexie"] },
+    { names: ["alison", "allison"], nicknames: ["ali", "allie", "ally"] },
+    { names: ["andrew", "andres"], nicknames: ["andy", "drew"] },
+    { names: ["august", "augustus"], nicknames: ["augie", "auggie", "gus"] },
+    { names: ["benjamin"], nicknames: ["ben", "benny"] },
+    { names: ["camden", "cameron"], nicknames: ["cam", "cammy"] },
+    { names: ["camila", "camilla"], nicknames: ["cami", "cammie", "mila"] },
+    { names: ["caroline", "carolina"], nicknames: ["carrie", "caro"] },
+    { names: ["charles"], nicknames: ["charlie", "charley", "chuck"] },
+    { names: ["daniel"], nicknames: ["dan", "danny"] },
+    { names: ["david"], nicknames: ["dave", "davy", "davey"] },
+    { names: ["eliana", "eleanor", "elizabeth"], nicknames: ["ellie", "elle"] },
+    { names: ["elias", "elijah"], nicknames: ["eli"] },
+    { names: ["emily"], nicknames: ["em", "emmy", "emmie"] },
+    { names: ["finnegan", "finnigan"], nicknames: ["finn"] },
+    { names: ["francisco"], nicknames: ["frank", "frankie", "paco"] },
+    { names: ["gianna"], nicknames: ["gia", "gigi"] },
+    { names: ["jackson"], nicknames: ["jack", "jax"] },
+    { names: ["jacob"], nicknames: ["jake"] },
+    { names: ["james"], nicknames: ["jim", "jimmy", "jamie"] },
+    { names: ["jameson"], nicknames: ["jamie"] },
+    { names: ["joseph"], nicknames: ["joe", "joey"] },
+    { names: ["katherine", "kathryn", "catherine", "katharine"], nicknames: ["kate", "katie", "kat", "kathy"] },
+    { names: ["lilian", "lillian"], nicknames: ["lily", "lilly", "lillie"] },
+    { names: ["lucas"], nicknames: ["luke"] },
+    { names: ["madeline", "madeleine", "madelyn", "madison"], nicknames: ["maddie", "maddy"] },
+    { names: ["mathew", "matthew"], nicknames: ["matt", "matty"] },
+    { names: ["maximilian", "maximillian", "maximilliam", "maxwell", "maximus"], nicknames: ["max"] },
+    { names: ["michael", "micheal"], nicknames: ["mike", "mikey"] },
+    { names: ["natalia", "natalie"], nicknames: ["nat", "natty"] },
+    { names: ["nicholas", "nicolas"], nicknames: ["nick", "nicky"] },
+    { names: ["oliver"], nicknames: ["ollie", "olly"] },
+    { names: ["santiago"], nicknames: ["santi"] },
+    { names: ["sophia", "sofia"], nicknames: ["sophie", "sofie", "soph"] },
+    { names: ["tatiana", "tatyana"], nicknames: ["tati", "tanya"] },
+    { names: ["thomas"], nicknames: ["tom", "tommy"] },
+    { names: ["vanessa"], nicknames: ["ness", "nessa"] },
+    { names: ["vivian", "vivienne"], nicknames: ["viv", "vivi"] },
+    { names: ["wesley", "weston"], nicknames: ["wes"] },
+    { names: ["william"], nicknames: ["will", "willie", "willy", "bill", "billy", "liam"] }
+  ];
+
+  const members = [...section.querySelectorAll("[data-member-name]")].map(item => {
+    const names = item.dataset.search.split("|").map(normalize);
+    const firstNames = new Set(names.map(name => name.split(" ")[0]));
+    const nicknames = new Set(nicknameFamilies
+      .filter(family => family.names.some(name => firstNames.has(name)))
+      .flatMap(family => family.nicknames));
+    return {
+      name: item.dataset.memberName,
+      names,
+      search: names.join(" "),
+      nicknames,
+      tentative: item.dataset.tentative === "true",
+      item,
+      group: item.closest(".og-group")
+    };
+  });
+
+  function matchRank(member, query, words) {
+    if (member.names.includes(query)) return 0;
+    if (words.every(word => member.search.includes(word))) return 1;
+    // Exact nickname tokens avoid broad accidental matches while typing.
+    // Other words still have to match this member's name (e.g. Joe Edinger).
+    if (words.every(word => member.search.includes(word) || member.nicknames.has(word))) return 2;
+    return -1;
+  }
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -102,8 +169,11 @@
       return;
     }
     const words = query.split(/\s+/);
-    const matches = members.filter(member => words.every(word => member.search.includes(word)))
-      .sort((a, b) => a.name.localeCompare(b.name));
+    const matches = members
+      .map(member => ({ member, rank: matchRank(member, query, words) }))
+      .filter(match => match.rank >= 0)
+      .sort((a, b) => a.rank - b.rank || a.member.name.localeCompare(b.member.name))
+      .map(match => match.member);
     if (!matches.length) {
       status.textContent = "No match yet. Try your first or last name, browse the groups below, or check with an officer at the next meeting.";
       return;

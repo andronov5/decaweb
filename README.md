@@ -16,6 +16,13 @@ in `about/officer-groups.js`; the lists also work with JavaScript disabled.
 Officer cards link to the existing profiles. Styling is isolated in
 `about/officer-groups.css`.
 
+Search also accepts common first-name nicknames defined in `nicknameFamilies`
+in `about/officer-groups.js`, including Joe/Joseph, Max/Maxwell or Maximilian,
+and Abby/Abbey/Abigail. Nicknames can be combined with a surname. Exact names
+rank ahead of nickname matches, and results always display the listed member
+name. Add individual preferred names to `data-search`; common nicknames do not
+expand surnames or change the roster.
+
 Do not add student IDs, school-email addresses containing IDs, roster PDFs, or
 ID-derived lookup tables to this public repository. Name search is intentional:
 an ID lookup would need a private backend rather than a public static dataset.
