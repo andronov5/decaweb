@@ -209,12 +209,22 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  padding-bottom: 15px;
+  padding: 12px 14px;
   margin-bottom: 17px;
-  border-bottom: 1px solid #e5ebf3;
+  border-left: 4px solid #e3b431;
+  border-radius: 0 8px 8px 0;
+  background: #f0f5fc;
 }
 
-.og-result-member > strong { font-size: 1.08rem; letter-spacing: -0.02em; }
+.og-result-member > strong {
+  min-width: 0;
+  color: #122033;
+  font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
 
 .og-tag,
 .og-pending {

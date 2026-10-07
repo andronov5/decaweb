@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="/about/officer-groups.css?v=20261007" />
+  <link rel="stylesheet" href="/about/officer-groups.css?v=20261007-cleanup" />
 </head>
 <body>
 
@@ -130,22 +130,19 @@
         <header class="og-intro">
           <p class="section-label">Officer Groups</p>
           <span class="og-year">2026–2027</span>
-          <h2 id="officerGroupsTitle">Find your people.</h2>
-          <p>Your officer is your go-to for competition prep, chapter questions, and getting started.</p>
+          <h2 id="officerGroupsTitle">Find Your Officer Group!</h2>
         </header>
 
         <div class="og-finder" id="officerFinder" hidden>
-          <p class="og-eyebrow">A familiar face. A little guidance.</p>
           <h3>Who’s your officer leader?</h3>
           <p>Search your name to meet your officer and find your group.</p>
           <form class="og-search-form" id="officerSearchForm" role="search" aria-label="Find your officer leader">
             <label for="memberSearch">Your first or last name</label>
             <div class="og-search-row">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              <input type="search" id="memberSearch" placeholder="Start typing your name…" autocomplete="off" spellcheck="false" maxlength="80" aria-describedby="memberSearchHint" aria-controls="groupSearchResults" />
+              <input type="search" id="memberSearch" placeholder="Start typing your name…" autocomplete="off" spellcheck="false" maxlength="80" aria-controls="groupSearchResults" />
               <button type="button" class="og-clear" id="clearMemberSearch" hidden>Clear<span class="og-sr-only"> search</span></button>
             </div>
-            <p class="og-search-hint" id="memberSearchHint">Use at least 2 letters, or <a href="#officerGroupDirectory">browse all groups below</a>.</p>
           </form>
           <p class="og-status" id="groupSearchStatus" role="status" aria-live="polite" aria-atomic="true"></p>
           <div class="og-results" id="groupSearchResults"></div>
@@ -154,7 +151,7 @@
 
         <div class="og-directory" id="officerGroupDirectory">
           <div class="og-directory-heading">
-            <div><h3>All officer groups</h3><p>11 officers. 144 members. One chapter.</p></div>
+            <div><h3>All officer groups</h3></div>
             <button type="button" class="og-expand-all" id="expandOfficerGroups" aria-expanded="false" hidden>Expand all groups</button>
           </div>
           <div class="og-grid">
@@ -397,13 +394,13 @@
             <summary>
               <img class="og-avatar" src="/lilasmall.jpg" alt="" width="52" height="52" loading="lazy" />
               <span class="og-group-heading"><strong>Lila Rowley</strong><span>Junior Vice President of Marketing</span></span>
-              <span class="og-group-count">13<span class="og-sr-only"> members</span></span>
+              <span class="og-group-count">12<span class="og-sr-only"> members</span></span>
               <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </summary>
             <div class="og-group-body">
               <a class="og-profile-link" href="/officer/?id=lila-rowley">Meet Lila <span aria-hidden="true">↗</span></a>
               <ul class="og-members">
-                <li data-member-name="Alexander Raaberg" data-search="Alexander Raaberg" data-tentative="true"><span>Alexander Raaberg</span><span class="og-pending">Confirm with officer</span></li>
+
 <li data-member-name="Alice O’Donnell" data-search="Alice O’Donnell | Alice O&#x27;Donnell" data-tentative="false"><span>Alice O’Donnell</span></li>
 <li data-member-name="Brady Welch" data-search="Brady Welch" data-tentative="false"><span>Brady Welch</span></li>
 <li data-member-name="Camila Delgadillo" data-search="Camila Delgadillo" data-tentative="false"><span>Camila Delgadillo</span></li>
@@ -446,25 +443,14 @@
             </div>
           </details>
           </div>
-          <p class="og-help">“Confirm with officer” means the assignment is tentative. Can’t find your name? Check with an officer at the next meeting.</p>
-          <details class="og-unassigned">
-            <summary>Members awaiting a group assignment</summary>
-            <ul id="unassignedMembers"><li data-member-name="Finnegan Hanlon" data-search="Finnegan Hanlon">Finnegan Hanlon</li>
-<li data-member-name="Cecilia Saenger" data-search="Cecilia Saenger">Cecilia Saenger</li></ul>
-            <p>These members are on the roster, but their officer group is not listed yet.</p>
-          </details>
+          <ul id="unassignedMembers" hidden>
+            <li data-member-name="Finnegan Hanlon" data-search="Finnegan Hanlon">Finnegan Hanlon</li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <h3>Northfield DECA</h3>
-    <a href="https://www.instagram.com/deca_northfield/" target="_blank" rel="noopener noreferrer">
-      @deca_northfield
-    </a>
-    <p>© 2026 Northfield DECA</p>
-  </footer>
 
   <script src="/script.js?v=20260821-encoding-fix"></script>
   <script src="/about/officer-groups.js?v=20261007"></script>

@@ -6,8 +6,9 @@ Static website served by GitHub Pages at northfielddeca.org.
 
 The About page contains the 2026–2027 officer groups from the October 6 supplied
 Officer Groups PDF, reconciled against the chapter roster. The directory has
-144 members in 11 groups, two tentative assignments, and two roster members
-awaiting an assignment. Keep tentative labels until an officer confirms them.
+143 members in 11 groups and one tentative assignment. One additional roster
+member awaiting an assignment remains searchable without a separate visible list.
+Keep tentative labels until an officer confirms them.
 
 Edit the group lists in `about/index.html` to update assignments. Member names
 and `data-search` aliases are the source for the progressive name-search feature
