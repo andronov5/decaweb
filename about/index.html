@@ -9,6 +9,7 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/about/officer-groups.css?v=20261007" />
 </head>
 <body>
 
@@ -124,28 +125,337 @@
       </div>
     </section>
 
-    <section class="section officer-groups" id="officer-groups">
-  <div class="officer-leader-card">
-    <p class="section-label">Officer Groups</p>
-    <h2>Find Your Officer Leader</h2>
+    <section class="section officer-groups" id="officer-groups" aria-labelledby="officerGroupsTitle">
+      <div class="og-shell">
+        <header class="og-intro">
+          <p class="section-label">Officer Groups</p>
+          <span class="og-year">2026–2027</span>
+          <h2 id="officerGroupsTitle">Find your people.</h2>
+          <p>Your officer is your go-to for competition prep, chapter questions, and getting started.</p>
+        </header>
 
-    <button class="btn blue officer-group-btn" id="openOfficerLeaderModal">
-      Click here
-    </button>
-  </div>
-</section>
+        <div class="og-finder" id="officerFinder" hidden>
+          <p class="og-eyebrow">A familiar face. A little guidance.</p>
+          <h3>Who’s your officer leader?</h3>
+          <p>Search your name to meet your officer and find your group.</p>
+          <form class="og-search-form" id="officerSearchForm" role="search" aria-label="Find your officer leader">
+            <label for="memberSearch">Your first or last name</label>
+            <div class="og-search-row">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <input type="search" id="memberSearch" placeholder="Start typing your name…" autocomplete="off" spellcheck="false" maxlength="80" aria-describedby="memberSearchHint" aria-controls="groupSearchResults" />
+              <button type="button" class="og-clear" id="clearMemberSearch" hidden>Clear<span class="og-sr-only"> search</span></button>
+            </div>
+            <p class="og-search-hint" id="memberSearchHint">Use at least 2 letters, or <a href="#officerGroupDirectory">browse all groups below</a>.</p>
+          </form>
+          <p class="og-status" id="groupSearchStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div class="og-results" id="groupSearchResults"></div>
+        </div>
+        <noscript><p class="og-help">Browse the groups below to find your name. Turn on JavaScript to use name search.</p></noscript>
 
-<div class="modal-backdrop" id="officerLeaderModal" aria-hidden="true">
-  <div class="coming-soon-modal" role="dialog" aria-modal="true" aria-labelledby="comingSoonTitle">
-    <button class="modal-close" id="closeOfficerLeaderModal" aria-label="Close popup">×</button>
-
-    <p class="section-label">Officer Groups</p>
-    <h2 id="comingSoonTitle">Coming Soon!</h2>
-    <p>
-      Officer leader assignments will be added here once groups are finalized.
-    </p>
-  </div>
-</div>
+        <div class="og-directory" id="officerGroupDirectory">
+          <div class="og-directory-heading">
+            <div><h3>All officer groups</h3><p>11 officers. 144 members. One chapter.</p></div>
+            <button type="button" class="og-expand-all" id="expandOfficerGroups" aria-expanded="false" hidden>Expand all groups</button>
+          </div>
+          <div class="og-grid">
+          <details class="og-group" id="group-scarlett-tolan" data-officer-name="Scarlett Tolan" data-officer-role="President" data-officer-photo="/scarlettsmall.jpg" data-officer-profile="/officer/?id=scarlett-tolan">
+            <summary>
+              <img class="og-avatar" src="/scarlettsmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Scarlett Tolan</strong><span>President</span></span>
+              <span class="og-group-count">14<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=scarlett-tolan">Meet Scarlett <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Caroline Ahern" data-search="Caroline Ahern" data-tentative="false"><span>Caroline Ahern</span></li>
+<li data-member-name="Didi Ekiko" data-search="Didi Ekiko" data-tentative="false"><span>Didi Ekiko</span></li>
+<li data-member-name="Donavan Manzanares" data-search="Donavan Manzanares" data-tentative="false"><span>Donavan Manzanares</span></li>
+<li data-member-name="Finn Erickson" data-search="Finn Erickson" data-tentative="false"><span>Finn Erickson</span></li>
+<li data-member-name="Grant Eisenman" data-search="Grant Eisenman" data-tentative="false"><span>Grant Eisenman</span></li>
+<li data-member-name="Isaiah Jasso" data-search="Isaiah Jasso" data-tentative="false"><span>Isaiah Jasso</span></li>
+<li data-member-name="Jack Katalinas" data-search="Jack Katalinas" data-tentative="false"><span>Jack Katalinas</span></li>
+<li data-member-name="Jake Carr" data-search="Jake Carr" data-tentative="false"><span>Jake Carr</span></li>
+<li data-member-name="James Henderson" data-search="James Henderson" data-tentative="false"><span>James Henderson</span></li>
+<li data-member-name="Jason West" data-search="Jason West" data-tentative="false"><span>Jason West</span></li>
+<li data-member-name="Mckenna McManis" data-search="Mckenna McManis" data-tentative="false"><span>Mckenna McManis</span></li>
+<li data-member-name="Micheal Caruso" data-search="Micheal Caruso" data-tentative="false"><span>Micheal Caruso</span></li>
+<li data-member-name="Owen Fauerbach" data-search="Owen Fauerbach | Owen Faurrban" data-tentative="false"><span>Owen Fauerbach</span></li>
+<li data-member-name="William Houston" data-search="William Houston" data-tentative="false"><span>William Houston</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-will-zhang" data-officer-name="Will Zhang" data-officer-role="Vice President" data-officer-photo="/willsmall.jpg" data-officer-profile="/officer/?id=will-zhang">
+            <summary>
+              <img class="og-avatar" src="/willsmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Will Zhang</strong><span>Vice President</span></span>
+              <span class="og-group-count">11<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=will-zhang">Meet Will <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Bridger DeCamp" data-search="Bridger DeCamp" data-tentative="false"><span>Bridger DeCamp</span></li>
+<li data-member-name="Charlie Gehde" data-search="Charlie Gehde | Charles Gehde" data-tentative="false"><span>Charlie Gehde</span></li>
+<li data-member-name="Eliana Leonardo" data-search="Eliana Leonardo" data-tentative="false"><span>Eliana Leonardo</span></li>
+<li data-member-name="Elliot Leighton" data-search="Elliot Leighton" data-tentative="false"><span>Elliot Leighton</span></li>
+<li data-member-name="Ethan Jung" data-search="Ethan Jung" data-tentative="false"><span>Ethan Jung</span></li>
+<li data-member-name="Joseph Edinger" data-search="Joseph Edinger" data-tentative="false"><span>Joseph Edinger</span></li>
+<li data-member-name="Lilian Gustafson" data-search="Lilian Gustafson" data-tentative="false"><span>Lilian Gustafson</span></li>
+<li data-member-name="Mergen Basanisengal" data-search="Mergen Basanisengal | Mergen Baasanjargal" data-tentative="false"><span>Mergen Basanisengal</span></li>
+<li data-member-name="Mila Gomochak" data-search="Mila Gomochak" data-tentative="false"><span>Mila Gomochak</span></li>
+<li data-member-name="Milena Kesner" data-search="Milena Kesner" data-tentative="false"><span>Milena Kesner</span></li>
+<li data-member-name="Payne Davidson" data-search="Payne Davidson | William Payne Davidson" data-tentative="false"><span>Payne Davidson</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-isabelle-brehm" data-officer-name="Isabelle Brehm" data-officer-role="Vice President of Finance" data-officer-photo="/isabellesmall.jpg" data-officer-profile="/officer/?id=isabelle-brehm">
+            <summary>
+              <img class="og-avatar" src="/isabellesmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Isabelle Brehm</strong><span>Vice President of Finance</span></span>
+              <span class="og-group-count">14<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=isabelle-brehm">Meet Isabelle <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Aiden McCarty" data-search="Aiden McCarty" data-tentative="false"><span>Aiden McCarty</span></li>
+<li data-member-name="Brennan Golden" data-search="Brennan Golden" data-tentative="false"><span>Brennan Golden</span></li>
+<li data-member-name="Chase Shumate" data-search="Chase Shumate" data-tentative="false"><span>Chase Shumate</span></li>
+<li data-member-name="Cohen Troge" data-search="Cohen Troge" data-tentative="false"><span>Cohen Troge</span></li>
+<li data-member-name="Elias Suddarth" data-search="Elias Suddarth" data-tentative="false"><span>Elias Suddarth</span></li>
+<li data-member-name="Evan Munoz" data-search="Evan Munoz" data-tentative="false"><span>Evan Munoz</span></li>
+<li data-member-name="Felix Mootz" data-search="Felix Mootz" data-tentative="false"><span>Felix Mootz</span></li>
+<li data-member-name="Jameson O’Donnell" data-search="Jameson O’Donnell | Jameson O&#x27;Donnell" data-tentative="false"><span>Jameson O’Donnell</span></li>
+<li data-member-name="Keegan Mentasti" data-search="Keegan Mentasti" data-tentative="false"><span>Keegan Mentasti</span></li>
+<li data-member-name="Lucas Lawson" data-search="Lucas Lawson" data-tentative="false"><span>Lucas Lawson</span></li>
+<li data-member-name="Lucca Rodovolho" data-search="Lucca Rodovolho" data-tentative="false"><span>Lucca Rodovolho</span></li>
+<li data-member-name="Maeve McKae" data-search="Maeve McKae" data-tentative="false"><span>Maeve McKae</span></li>
+<li data-member-name="Noah Stern" data-search="Noah Stern" data-tentative="false"><span>Noah Stern</span></li>
+<li data-member-name="Tommy Drinkwine" data-search="Tommy Drinkwine" data-tentative="false"><span>Tommy Drinkwine</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-ava-lonigro" data-officer-name="Ava Lonigro" data-officer-role="Vice President of Marketing" data-officer-photo="/avasmall.jpg" data-officer-profile="/officer/?id=ava-lonigro">
+            <summary>
+              <img class="og-avatar" src="/avasmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Ava Lonigro</strong><span>Vice President of Marketing</span></span>
+              <span class="og-group-count">14<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=ava-lonigro">Meet Ava <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Alexander Williams" data-search="Alexander Williams" data-tentative="false"><span>Alexander Williams</span></li>
+<li data-member-name="Asher McCarty" data-search="Asher McCarty" data-tentative="false"><span>Asher McCarty</span></li>
+<li data-member-name="August Streich" data-search="August Streich" data-tentative="false"><span>August Streich</span></li>
+<li data-member-name="Bronwyn Wolfram" data-search="Bronwyn Wolfram" data-tentative="false"><span>Bronwyn Wolfram</span></li>
+<li data-member-name="Cairo Murphy" data-search="Cairo Murphy | Horace (Cairo) Murphy" data-tentative="false"><span>Cairo Murphy</span></li>
+<li data-member-name="Clara Thomas" data-search="Clara Thomas" data-tentative="false"><span>Clara Thomas</span></li>
+<li data-member-name="Emily Thomson-Rincon" data-search="Emily Thomson-Rincon" data-tentative="false"><span>Emily Thomson-Rincon</span></li>
+<li data-member-name="Lydia Wagner" data-search="Lydia Wagner" data-tentative="false"><span>Lydia Wagner</span></li>
+<li data-member-name="Mae Marshall" data-search="Mae Marshall" data-tentative="false"><span>Mae Marshall</span></li>
+<li data-member-name="Natalia Lucio" data-search="Natalia Lucio" data-tentative="false"><span>Natalia Lucio</span></li>
+<li data-member-name="Oliver Tung" data-search="Oliver Tung" data-tentative="false"><span>Oliver Tung</span></li>
+<li data-member-name="Sophia Waples-Ramirez" data-search="Sophia Waples-Ramirez" data-tentative="false"><span>Sophia Waples-Ramirez</span></li>
+<li data-member-name="Vera Martin-Allshouse" data-search="Vera Martin-Allshouse" data-tentative="false"><span>Vera Martin-Allshouse</span></li>
+<li data-member-name="Wren Woodburn" data-search="Wren Woodburn" data-tentative="false"><span>Wren Woodburn</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-demi-dolechek" data-officer-name="Demi Dolechek" data-officer-role="Vice President of Community Relations" data-officer-photo="/demismall.jpg" data-officer-profile="/officer/?id=demi-dolechek">
+            <summary>
+              <img class="og-avatar" src="/demismall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Demi Dolechek</strong><span>Vice President of Community Relations</span></span>
+              <span class="og-group-count">12<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=demi-dolechek">Meet Demi <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Alison Saarela" data-search="Alison Saarela" data-tentative="false"><span>Alison Saarela</span></li>
+<li data-member-name="Allen Guzran" data-search="Allen Guzran" data-tentative="false"><span>Allen Guzran</span></li>
+<li data-member-name="Andres Weaver" data-search="Andres Weaver | Andrew Weaver" data-tentative="false"><span>Andres Weaver</span></li>
+<li data-member-name="Chase Baum" data-search="Chase Baum" data-tentative="false"><span>Chase Baum</span></li>
+<li data-member-name="Francisco Pena" data-search="Francisco Pena" data-tentative="false"><span>Francisco Pena</span></li>
+<li data-member-name="Jonah Kuit" data-search="Jonah Kuit" data-tentative="false"><span>Jonah Kuit</span></li>
+<li data-member-name="Kathryn Winslett" data-search="Kathryn Winslett" data-tentative="false"><span>Kathryn Winslett</span></li>
+<li data-member-name="Kiran Parkhie" data-search="Kiran Parkhie" data-tentative="false"><span>Kiran Parkhie</span></li>
+<li data-member-name="Lucas Andersen" data-search="Lucas Andersen" data-tentative="false"><span>Lucas Andersen</span></li>
+<li data-member-name="Lynette Bradley" data-search="Lynette Bradley" data-tentative="false"><span>Lynette Bradley</span></li>
+<li data-member-name="Santiago Mosley" data-search="Santiago Mosley" data-tentative="false"><span>Santiago Mosley</span></li>
+<li data-member-name="Sierra Davis" data-search="Sierra Davis" data-tentative="false"><span>Sierra Davis</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-mimi-haile" data-officer-name="Mimi Haile" data-officer-role="Vice President of Operations" data-officer-photo="/mimismall.jpg" data-officer-profile="/officer/?id=mimi-haile">
+            <summary>
+              <img class="og-avatar" src="/mimismall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Mimi Haile</strong><span>Vice President of Operations</span></span>
+              <span class="og-group-count">14<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=mimi-haile">Meet Mimi <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Annie Turner" data-search="Annie Turner" data-tentative="false"><span>Annie Turner</span></li>
+<li data-member-name="Chinghang (Kieren)" data-search="Chinghang (Kieren) | Chinghang (Kieren) Chiu" data-tentative="false"><span>Chinghang (Kieren)</span></li>
+<li data-member-name="Cooper Chalker" data-search="Cooper Chalker" data-tentative="false"><span>Cooper Chalker</span></li>
+<li data-member-name="Everett Newlson" data-search="Everett Newlson | Everett Nelson" data-tentative="false"><span>Everett Newlson</span></li>
+<li data-member-name="Jackson Ragland" data-search="Jackson Ragland" data-tentative="false"><span>Jackson Ragland</span></li>
+<li data-member-name="Keldrick Hines Jr" data-search="Keldrick Hines Jr" data-tentative="false"><span>Keldrick Hines Jr</span></li>
+<li data-member-name="Krishan Alden" data-search="Krishan Alden" data-tentative="false"><span>Krishan Alden</span></li>
+<li data-member-name="Lovestacra Ayyapony" data-search="Lovestacra Ayyapony" data-tentative="false"><span>Lovestacra Ayyapony</span></li>
+<li data-member-name="Mathew Portilla" data-search="Mathew Portilla" data-tentative="false"><span>Mathew Portilla</span></li>
+<li data-member-name="Oliver Jorden" data-search="Oliver Jorden" data-tentative="false"><span>Oliver Jorden</span></li>
+<li data-member-name="Sawyer Wesoky" data-search="Sawyer Wesoky" data-tentative="false"><span>Sawyer Wesoky</span></li>
+<li data-member-name="Sydney Hurley" data-search="Sydney Hurley" data-tentative="false"><span>Sydney Hurley</span></li>
+<li data-member-name="Vanessa Garcia Roudree" data-search="Vanessa Garcia Roudree | Vanessa Garcia - Roudree" data-tentative="false"><span>Vanessa Garcia Roudree</span></li>
+<li data-member-name="Ziyad Aneffati" data-search="Ziyad Aneffati" data-tentative="false"><span>Ziyad Aneffati</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-owen-huie" data-officer-name="Owen Huie" data-officer-role="Junior President" data-officer-photo="/owensmall.jpg" data-officer-profile="/officer/?id=owen-huie">
+            <summary>
+              <img class="og-avatar" src="/owensmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Owen Huie</strong><span>Junior President</span></span>
+              <span class="og-group-count">14<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=owen-huie">Meet Owen <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="August Murphy" data-search="August Murphy" data-tentative="false"><span>August Murphy</span></li>
+<li data-member-name="Ben Rink" data-search="Ben Rink" data-tentative="false"><span>Ben Rink</span></li>
+<li data-member-name="Blake Kiser" data-search="Blake Kiser" data-tentative="false"><span>Blake Kiser</span></li>
+<li data-member-name="Camden Willenborg" data-search="Camden Willenborg" data-tentative="false"><span>Camden Willenborg</span></li>
+<li data-member-name="Charles Shiler" data-search="Charles Shiler | Charles Schiler" data-tentative="false"><span>Charles Shiler</span></li>
+<li data-member-name="David McClendon" data-search="David McClendon" data-tentative="false"><span>David McClendon</span></li>
+<li data-member-name="Isaac Smith" data-search="Isaac Smith" data-tentative="false"><span>Isaac Smith</span></li>
+<li data-member-name="Jack Moran" data-search="Jack Moran" data-tentative="false"><span>Jack Moran</span></li>
+<li data-member-name="James Mosely" data-search="James Mosely | James Mosley" data-tentative="false"><span>James Mosely</span></li>
+<li data-member-name="Liam Dougherty" data-search="Liam Dougherty" data-tentative="false"><span>Liam Dougherty</span></li>
+<li data-member-name="Lucas Lappi" data-search="Lucas Lappi" data-tentative="false"><span>Lucas Lappi</span></li>
+<li data-member-name="Maximilian Tolan" data-search="Maximilian Tolan | Maximillian Tolan" data-tentative="false"><span>Maximilian Tolan</span></li>
+<li data-member-name="Maxwell Mulcock" data-search="Maxwell Mulcock" data-tentative="false"><span>Maxwell Mulcock</span></li>
+<li data-member-name="Zoe Whitworth" data-search="Zoe Whitworth" data-tentative="false"><span>Zoe Whitworth</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-lera-andronova" data-officer-name="Lera Andronova" data-officer-role="Junior Vice President" data-officer-photo="/lerasmall.jpg" data-officer-profile="/officer/?id=lera-andronova">
+            <summary>
+              <img class="og-avatar" src="/lerasmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Lera Andronova</strong><span>Junior Vice President</span></span>
+              <span class="og-group-count">12<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=lera-andronova">Meet Lera <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Abigail Latin" data-search="Abigail Latin" data-tentative="false"><span>Abigail Latin</span></li>
+<li data-member-name="Colin Callahan" data-search="Colin Callahan" data-tentative="false"><span>Colin Callahan</span></li>
+<li data-member-name="Daniel Kanter" data-search="Daniel Kanter" data-tentative="false"><span>Daniel Kanter</span></li>
+<li data-member-name="Elias Cooper" data-search="Elias Cooper" data-tentative="false"><span>Elias Cooper</span></li>
+<li data-member-name="Elijah Cohen" data-search="Elijah Cohen" data-tentative="false"><span>Elijah Cohen</span></li>
+<li data-member-name="Evan Baruth" data-search="Evan Baruth" data-tentative="false"><span>Evan Baruth</span></li>
+<li data-member-name="Finn Hopper" data-search="Finn Hopper" data-tentative="false"><span>Finn Hopper</span></li>
+<li data-member-name="Finn Kirkwood" data-search="Finn Kirkwood" data-tentative="false"><span>Finn Kirkwood</span></li>
+<li data-member-name="Marley Yaden" data-search="Marley Yaden" data-tentative="false"><span>Marley Yaden</span></li>
+<li data-member-name="Reed Henderson" data-search="Reed Henderson" data-tentative="false"><span>Reed Henderson</span></li>
+<li data-member-name="Thomas Maguire" data-search="Thomas Maguire | Thomas Patrick Maguire" data-tentative="false"><span>Thomas Maguire</span></li>
+<li data-member-name="Zoe Dorn" data-search="Zoe Dorn" data-tentative="false"><span>Zoe Dorn</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-maddie-ng" data-officer-name="Maddie Ng" data-officer-role="Junior Vice President of Finance" data-officer-photo="/maddiesmall.jpg" data-officer-profile="/officer/?id=maddie-ng">
+            <summary>
+              <img class="og-avatar" src="/maddiesmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Maddie Ng</strong><span>Junior Vice President of Finance</span></span>
+              <span class="og-group-count">13<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=maddie-ng">Meet Maddie <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Alexis Tuohy - Miller" data-search="Alexis Tuohy - Miller" data-tentative="false"><span>Alexis Tuohy - Miller</span></li>
+<li data-member-name="Beza Alex" data-search="Beza Alex" data-tentative="false"><span>Beza Alex</span></li>
+<li data-member-name="Colton Conley" data-search="Colton Conley" data-tentative="false"><span>Colton Conley</span></li>
+<li data-member-name="Connor Berry" data-search="Connor Berry" data-tentative="false"><span>Connor Berry</span></li>
+<li data-member-name="Declan Huie" data-search="Declan Huie" data-tentative="false"><span>Declan Huie</span></li>
+<li data-member-name="Joey Drinkwine" data-search="Joey Drinkwine" data-tentative="false"><span>Joey Drinkwine</span></li>
+<li data-member-name="Kenya Harris" data-search="Kenya Harris" data-tentative="false"><span>Kenya Harris</span></li>
+<li data-member-name="Kight Woodburn" data-search="Kight Woodburn" data-tentative="false"><span>Kight Woodburn</span></li>
+<li data-member-name="Lyla Allman" data-search="Lyla Allman" data-tentative="false"><span>Lyla Allman</span></li>
+<li data-member-name="Sarah Nguyen" data-search="Sarah Nguyen" data-tentative="false"><span>Sarah Nguyen</span></li>
+<li data-member-name="Vivian Howell" data-search="Vivian Howell" data-tentative="false"><span>Vivian Howell</span></li>
+<li data-member-name="Webb Lynott" data-search="Webb Lynott" data-tentative="false"><span>Webb Lynott</span></li>
+<li data-member-name="Wesley Carrigan" data-search="Wesley Carrigan" data-tentative="false"><span>Wesley Carrigan</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-lila-rowley" data-officer-name="Lila Rowley" data-officer-role="Junior Vice President of Marketing" data-officer-photo="/lilasmall.jpg" data-officer-profile="/officer/?id=lila-rowley">
+            <summary>
+              <img class="og-avatar" src="/lilasmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Lila Rowley</strong><span>Junior Vice President of Marketing</span></span>
+              <span class="og-group-count">13<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=lila-rowley">Meet Lila <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Alexander Raaberg" data-search="Alexander Raaberg" data-tentative="true"><span>Alexander Raaberg</span><span class="og-pending">Confirm with officer</span></li>
+<li data-member-name="Alice O’Donnell" data-search="Alice O’Donnell | Alice O&#x27;Donnell" data-tentative="false"><span>Alice O’Donnell</span></li>
+<li data-member-name="Brady Welch" data-search="Brady Welch" data-tentative="false"><span>Brady Welch</span></li>
+<li data-member-name="Camila Delgadillo" data-search="Camila Delgadillo" data-tentative="false"><span>Camila Delgadillo</span></li>
+<li data-member-name="Ellie Clement" data-search="Ellie Clement" data-tentative="false"><span>Ellie Clement</span></li>
+<li data-member-name="Jack Walenczak" data-search="Jack Walenczak" data-tentative="false"><span>Jack Walenczak</span></li>
+<li data-member-name="Katie Casey" data-search="Katie Casey | Katherine Casey" data-tentative="false"><span>Katie Casey</span></li>
+<li data-member-name="Landon Buese" data-search="Landon Buese" data-tentative="false"><span>Landon Buese</span></li>
+<li data-member-name="Larsen Decamp" data-search="Larsen Decamp | Larsen DeCamp" data-tentative="false"><span>Larsen Decamp</span></li>
+<li data-member-name="Simon Nelson" data-search="Simon Nelson | Simon Christopher Nelson" data-tentative="false"><span>Simon Nelson</span></li>
+<li data-member-name="Tatiana Kline - Davila" data-search="Tatiana Kline - Davila | Tatiana Kline-Davila" data-tentative="false"><span>Tatiana Kline - Davila</span></li>
+<li data-member-name="Wesley Gunther" data-search="Wesley Gunther" data-tentative="false"><span>Wesley Gunther</span></li>
+<li data-member-name="Weston Cooper" data-search="Weston Cooper" data-tentative="false"><span>Weston Cooper</span></li>
+              </ul>
+            </div>
+          </details>
+          <details class="og-group" id="group-keira-mccord" data-officer-name="Keira McCord" data-officer-role="Junior Vice President of Community Relations" data-officer-photo="/keirasmall.jpg" data-officer-profile="/officer/?id=keira-mccord">
+            <summary>
+              <img class="og-avatar" src="/keirasmall.jpg" alt="" width="52" height="52" loading="lazy" />
+              <span class="og-group-heading"><strong>Keira McCord</strong><span>Junior Vice President of Community Relations</span></span>
+              <span class="og-group-count">13<span class="og-sr-only"> members</span></span>
+              <svg class="og-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="og-group-body">
+              <a class="og-profile-link" href="/officer/?id=keira-mccord">Meet Keira <span aria-hidden="true">↗</span></a>
+              <ul class="og-members">
+                <li data-member-name="Abigail Bismuth" data-search="Abigail Bismuth" data-tentative="true"><span>Abigail Bismuth</span><span class="og-pending">Confirm with officer</span></li>
+<li data-member-name="Adelaide Kail" data-search="Adelaide Kail" data-tentative="false"><span>Adelaide Kail</span></li>
+<li data-member-name="Calliope Caplett" data-search="Calliope Caplett" data-tentative="false"><span>Calliope Caplett</span></li>
+<li data-member-name="Cameron Hopkins" data-search="Cameron Hopkins" data-tentative="false"><span>Cameron Hopkins</span></li>
+<li data-member-name="Carlene Reichmuth" data-search="Carlene Reichmuth" data-tentative="false"><span>Carlene Reichmuth</span></li>
+<li data-member-name="Chase Lonigro" data-search="Chase Lonigro" data-tentative="false"><span>Chase Lonigro</span></li>
+<li data-member-name="Gianna Nally" data-search="Gianna Nally" data-tentative="false"><span>Gianna Nally</span></li>
+<li data-member-name="Heldanea Alexander" data-search="Heldanea Alexander" data-tentative="false"><span>Heldanea Alexander</span></li>
+<li data-member-name="Lauren Bisping" data-search="Lauren Bisping" data-tentative="false"><span>Lauren Bisping</span></li>
+<li data-member-name="Lauren Miller" data-search="Lauren Miller" data-tentative="false"><span>Lauren Miller</span></li>
+<li data-member-name="Lauryn Casey" data-search="Lauryn Casey" data-tentative="false"><span>Lauryn Casey</span></li>
+<li data-member-name="Roger Koch" data-search="Roger Koch" data-tentative="false"><span>Roger Koch</span></li>
+<li data-member-name="Talon Garg" data-search="Talon Garg" data-tentative="false"><span>Talon Garg</span></li>
+              </ul>
+            </div>
+          </details>
+          </div>
+          <p class="og-help">“Confirm with officer” means the assignment is tentative. Can’t find your name? Check with an officer at the next meeting.</p>
+          <details class="og-unassigned">
+            <summary>Members awaiting a group assignment</summary>
+            <ul id="unassignedMembers"><li data-member-name="Finnegan Hanlon" data-search="Finnegan Hanlon">Finnegan Hanlon</li>
+<li data-member-name="Cecilia Saenger" data-search="Cecilia Saenger">Cecilia Saenger</li></ul>
+            <p>These members are on the roster, but their officer group is not listed yet.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -157,5 +467,6 @@
   </footer>
 
   <script src="/script.js?v=20260821-encoding-fix"></script>
+  <script src="/about/officer-groups.js?v=20261007"></script>
 </body>
 </html>
