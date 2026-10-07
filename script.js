@@ -187,9 +187,9 @@ const events = [
     subtitle: "At lunch in the Business Hallway (B2)"
   },
   {
-    date: "2026-11-19",
+    date: "2026-11-18",
     title: "DECA Districts",
-    subtitle: "All day · Location TBD"
+    subtitle: "All day · Arapahoe County Fairgrounds"
   }
 ];
 
