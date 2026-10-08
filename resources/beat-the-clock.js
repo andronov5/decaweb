@@ -24,7 +24,7 @@
       const getPool=()=>bank.filter(item=>el('category').value==='all'||item.category===el('category').value);
       const clearTimers=()=>{clearInterval(ticker);clearTimeout(advance);ticker=null;advance=null;};
       function show(name){['start','play','finish'].forEach(s=>el(s).hidden=s!==name);}
-      function select(){const label=el('category').selectedOptions[0].textContent;el('category-name').textContent=label;el('category-field').dataset.long=String(label.length>24);el('count').textContent=getPool().length+' terms';const best=bests.get(el('category').value)||0;el('start-best').hidden=!best;el('start-best').textContent='Session best · '+best+' points';}
+      function select(){const label=el('category').selectedOptions[0].textContent;el('category-name').textContent=label;el('category-field').dataset.long=String(label.length>24);const best=bests.get(el('category').value)||0;el('start-best').hidden=!best;el('start-best').textContent='Session best · '+best+' points';}
       function buildDeck(){let unseen=pool.filter(item=>!seen.has(item.id));if(!unseen.length){pool.forEach(item=>seen.delete(item.id));unseen=pool;}deck=shuffle(unseen);if(current&&deck.length>1&&deck.at(-1).id===current.id)[deck[0],deck[deck.length-1]]=[deck.at(-1),deck[0]];}
       function paint(ms){const left=Math.max(0,ms);el('seconds').textContent=Math.ceil(left/1000);el('timer').style.setProperty('--dc-time',left/600+'%');el('timer').dataset.low=String(left<=10000);el('timer').setAttribute('aria-label',Math.ceil(left/1000)+' seconds remaining');}
       function tick(){if(phase!=='question')return;const left=remaining-(performance.now()-started);paint(left);if(left<=0){remaining=0;finish(true);}}

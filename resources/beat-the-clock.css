@@ -36,7 +36,6 @@
 #beat-the-clock .dc-setting{padding-top:23px;border-top:1px solid var(--dc-line)}
 #beat-the-clock .dc-labelrow{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px;font-size:12px}
 #beat-the-clock label{font-weight:600}
-#beat-the-clock .dc-count{color:var(--dc-muted);font-variant-numeric:tabular-nums}
 #beat-the-clock select{width:100%;min-height:54px;background:var(--dc-paper);color:var(--dc-ink);border:1px solid var(--dc-line);border-radius:12px;padding:12px 14px;font-size:16px}
 #beat-the-clock .dc-primary{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:54px;border:0;border-radius:12px;background:var(--dc-primary);color:var(--dc-onprimary);padding:14px 18px;font-weight:650;font-size:15px}
 #beat-the-clock .dc-start-action{margin-top:16px}
