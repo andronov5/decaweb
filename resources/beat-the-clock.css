@@ -1,0 +1,102 @@
+.beat-clock-section { padding: 0 7% 86px; background: #f7f9fc; }
+#beat-the-clock{--dc-bg:light-dark(#faf9f5,#101e31);--dc-paper:light-dark(#fff,#192b42);--dc-ink:light-dark(#122e51,#edf3fc);--dc-muted:light-dark(#657184,#a8b8ce);--dc-line:light-dark(#e1e5e9,#30445e);--dc-soft:light-dark(#f0f2f3,#233953);--dc-primary:light-dark(#122e51,#efc967);--dc-onprimary:light-dark(#fff,#162b45);--dc-gold:light-dark(#e8bd57,#efc967);--dc-good:light-dark(#20694c,#91dab2);--dc-goodbg:light-dark(#eef7f0,#183b31);--dc-bad:light-dark(#a14145,#f3b0b0);--dc-badbg:light-dark(#fbefed,#402932);padding:12px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.45;color:var(--dc-ink)}
+#beat-the-clock *{box-sizing:border-box}
+#beat-the-clock [hidden]{display:none!important}
+#beat-the-clock button,#beat-the-clock select{font:inherit}
+#beat-the-clock button{touch-action:manipulation}
+#beat-the-clock h2,#beat-the-clock h3,#beat-the-clock p{margin:0}
+#beat-the-clock .dc-shell{max-width:690px;margin:auto;background:var(--dc-bg);border:1px solid var(--dc-line);border-radius:24px;overflow:hidden;box-shadow:0 12px 40px light-dark(#122e5109,#00000016)}
+#beat-the-clock .dc-nav{display:flex;align-items:center;gap:9px;padding:24px 110px 20px 30px;font-size:11px;font-weight:750;letter-spacing:1.7px;text-transform:uppercase}
+#beat-the-clock .dc-brand-dot{width:9px;height:9px;border-radius:2px;background:var(--dc-gold);transform:rotate(45deg);flex-shrink:0}
+#beat-the-clock .dc-body{padding:10px 30px 30px}
+#beat-the-clock .dc-hero{display:grid;grid-template-columns:1fr 124px;align-items:center;gap:18px;padding:18px 0 30px}
+#beat-the-clock .dc-eyebrow{font-size:11px;font-weight:650;letter-spacing:1.6px;text-transform:uppercase;color:var(--dc-muted);margin-bottom:10px}
+#beat-the-clock .dc-title{font-size:clamp(37px,7vw,57px);letter-spacing:-2.4px;line-height:1.02;font-weight:730}
+#beat-the-clock .dc-title span{color:var(--dc-muted)}
+#beat-the-clock .dc-clock{--dc-turn:100%;width:124px;aspect-ratio:1;border-radius:50%;padding:6px;background:conic-gradient(var(--dc-gold) var(--dc-turn),var(--dc-soft) 0);transform:rotate(-8deg)}
+#beat-the-clock .dc-clock-inner{width:100%;height:100%;border-radius:50%;background:var(--dc-bg);display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(8deg)}
+#beat-the-clock .dc-clock strong{font-size:44px;line-height:1;font-weight:650;letter-spacing:-2px;font-variant-numeric:tabular-nums}
+#beat-the-clock .dc-clock small{font-size:10px;letter-spacing:2px;margin-top:6px;color:var(--dc-muted)}
+#beat-the-clock .dc-setting{padding-top:23px;border-top:1px solid var(--dc-line)}
+#beat-the-clock .dc-labelrow{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px;font-size:12px}
+#beat-the-clock label{font-weight:600}
+#beat-the-clock .dc-count{color:var(--dc-muted);font-variant-numeric:tabular-nums}
+#beat-the-clock select{width:100%;min-height:54px;background:var(--dc-paper);color:var(--dc-ink);border:1px solid var(--dc-line);border-radius:12px;padding:12px 14px;font-size:16px}
+#beat-the-clock .dc-primary{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:54px;border:0;border-radius:12px;background:var(--dc-primary);color:var(--dc-onprimary);padding:14px 18px;font-weight:650;font-size:15px}
+#beat-the-clock .dc-start-action{margin-top:16px}
+#beat-the-clock .dc-primary .dc-arrow{font-size:22px;font-weight:400;line-height:1}
+#beat-the-clock .dc-best{font-size:12px;color:var(--dc-muted);text-align:center;margin-top:14px}
+#beat-the-clock .dc-textbutton{background:transparent;color:var(--dc-muted);border:0;padding:10px 8px;min-height:44px;font-size:12px;border-radius:8px}
+#beat-the-clock .dc-textbutton:hover{background:var(--dc-soft);color:var(--dc-ink)}
+#beat-the-clock .dc-hud{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 24px}
+#beat-the-clock .dc-stats{display:flex;align-items:center;gap:26px}
+#beat-the-clock .dc-stat small{display:block;color:var(--dc-muted);font-size:11px;margin-bottom:1px}
+#beat-the-clock .dc-stat strong{font-size:29px;font-weight:650;line-height:1.1;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+#beat-the-clock .dc-timerblock{display:flex;gap:9px;align-items:center}
+#beat-the-clock .dc-timer{width:61px;aspect-ratio:1;background:conic-gradient(var(--dc-gold) var(--dc-time,100%),var(--dc-soft) 0);padding:4px;border-radius:50%;font-variant-numeric:tabular-nums}
+#beat-the-clock .dc-timer-inner{height:100%;background:var(--dc-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;gap:1px}
+#beat-the-clock .dc-timer strong{font-size:22px;font-weight:650;letter-spacing:-1px}
+#beat-the-clock .dc-timer small{font-size:11px;color:var(--dc-muted);padding-top:5px}
+#beat-the-clock .dc-timer[data-low=true]{background:conic-gradient(var(--dc-bad) var(--dc-time,100%),var(--dc-soft) 0)}
+#beat-the-clock .dc-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;color:var(--dc-muted);font-size:11px;margin-bottom:9px}
+#beat-the-clock .dc-term{font-size:clamp(26px,4.8vw,37px);line-height:1.13;letter-spacing:-1.2px;font-weight:680;overflow-wrap:anywhere}
+#beat-the-clock .dc-questionhead{min-height:112px;padding-bottom:22px}
+#beat-the-clock .dc-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;grid-auto-rows:1fr}
+#beat-the-clock .dc-option{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;min-height:137px;border:1px solid var(--dc-line);border-radius:14px;padding:16px;background:var(--dc-paper);color:var(--dc-ink);font-size:14px;line-height:1.45}
+#beat-the-clock .dc-key{display:flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:7px;background:var(--dc-soft);color:var(--dc-muted);font-size:11px;font-weight:650;flex-shrink:0}
+#beat-the-clock .dc-option[data-result=right]{background:var(--dc-goodbg);border-color:var(--dc-good)}
+#beat-the-clock .dc-option[data-result=right] .dc-key{background:var(--dc-good);color:var(--dc-paper)}
+#beat-the-clock .dc-option[data-result=wrong]{background:var(--dc-badbg);border-color:var(--dc-bad)}
+#beat-the-clock .dc-option[data-result=wrong] .dc-key{background:var(--dc-bad);color:var(--dc-paper)}
+#beat-the-clock .dc-option[aria-disabled=true]:not([data-result]){opacity:.65}
+#beat-the-clock .dc-feedbackrow{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:70px;padding-top:15px}
+#beat-the-clock .dc-feedback{font-size:13px;color:var(--dc-muted);overflow-wrap:anywhere}
+#beat-the-clock .dc-feedback strong{color:var(--dc-ink);display:block;font-weight:650}
+#beat-the-clock .dc-feedback[data-good=true]{color:var(--dc-good);font-weight:650}
+#beat-the-clock .dc-continue{width:auto;min-width:118px;min-height:44px;padding:10px 14px;font-size:13px;flex-shrink:0}
+#beat-the-clock .dc-gamebottom{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:2px}
+#beat-the-clock .dc-pausepanel{text-align:center;padding:68px 0 70px}
+#beat-the-clock .dc-pausepanel h3{font-size:30px;letter-spacing:-1px;font-weight:650;margin-bottom:22px}
+#beat-the-clock .dc-pausepanel button{max-width:230px;margin:auto}
+#beat-the-clock .dc-results{text-align:center;padding-top:8px}
+#beat-the-clock .dc-results h3{font-size:24px;letter-spacing:-.7px;font-weight:650}
+#beat-the-clock .dc-finalscore{font-size:78px;line-height:1.1;letter-spacing:-4px;font-weight:650;margin-top:10px}
+#beat-the-clock .dc-points{font-size:12px;color:var(--dc-muted)}
+#beat-the-clock .dc-finalstats{display:grid;grid-template-columns:repeat(3,1fr);margin:28px 0;padding:19px 0;border-block:1px solid var(--dc-line)}
+#beat-the-clock .dc-finalstats strong{display:block;font-size:22px;letter-spacing:-.7px;font-weight:650}
+#beat-the-clock .dc-finalstats span{display:block;font-size:11px;color:var(--dc-muted);margin-top:4px}
+#beat-the-clock .dc-results details{text-align:left;margin-bottom:22px}
+#beat-the-clock .dc-results summary{font-size:13px;color:var(--dc-muted);min-height:44px;padding:10px 0}
+#beat-the-clock .dc-reviewitem{padding:12px 0;border-top:1px solid var(--dc-line);font-size:13px}
+#beat-the-clock .dc-reviewitem strong{display:block;margin-bottom:4px;font-weight:650}
+#beat-the-clock .dc-reviewitem p{color:var(--dc-muted)}
+#beat-the-clock .dc-results .dc-textbutton{margin-top:7px}
+#beat-the-clock .dc-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(hover:hover){#beat-the-clock .dc-option[aria-disabled=false]:hover{border-color:var(--dc-ink);background:var(--dc-soft)}
+#beat-the-clock .dc-primary:hover{filter:brightness(1.08)}}
+@media(max-width:560px){#beat-the-clock{padding:0}
+#beat-the-clock .dc-nav{padding:23px 105px 18px 21px;font-size:10px;letter-spacing:1.4px}
+#beat-the-clock .dc-body{padding:7px 20px 22px}
+#beat-the-clock .dc-hero{grid-template-columns:1fr 88px;gap:8px;padding:18px 0 29px}
+#beat-the-clock .dc-clock{width:88px;padding:5px}
+#beat-the-clock .dc-clock strong{font-size:32px}
+#beat-the-clock .dc-clock small{font-size:9px}
+#beat-the-clock .dc-title{font-size:39px;letter-spacing:-1.9px}
+#beat-the-clock .dc-options{grid-template-columns:1fr;gap:8px}
+#beat-the-clock .dc-option{min-height:79px;flex-direction:row;align-items:center;padding:12px;gap:11px;font-size:13px}
+#beat-the-clock .dc-questionhead{min-height:104px;padding-bottom:19px}
+#beat-the-clock .dc-hud{margin-bottom:24px}
+#beat-the-clock .dc-stats{gap:20px}
+#beat-the-clock .dc-feedbackrow{min-height:71px;gap:9px}
+#beat-the-clock .dc-feedback{font-size:12px}
+#beat-the-clock .dc-continue{min-width:96px;padding:10px}
+#beat-the-clock .dc-gamebottom{justify-content:flex-end}}
+@media(prefers-reduced-motion:no-preference){#beat-the-clock .dc-option{transition:background .15s,border-color .15s,opacity .15s}
+#beat-the-clock .dc-primary{transition:filter .15s,transform .15s}
+#beat-the-clock .dc-primary:active{transform:translateY(1px)}}
+
+#beat-the-clock { color-scheme: light; padding: 0; scroll-margin-top: 94px; }
+#beat-the-clock .dc-nav { padding-right: 30px; }
+#beat-the-clock button, #beat-the-clock summary, #beat-the-clock select { cursor: pointer; }
+#beat-the-clock select { margin: 0; }
+@media (max-width: 560px) { .beat-clock-section { padding: 0 5% 60px; } #beat-the-clock .dc-nav { padding-right: 21px; } }

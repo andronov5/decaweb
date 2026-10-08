@@ -9,6 +9,7 @@
   <link rel="apple-touch-icon" href="/favicon.png">
 
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/resources/beat-the-clock.css" />
 </head>
 <body>
 
@@ -74,6 +75,42 @@
       </div>
     </section>
 
+    <section class="beat-clock-section" aria-label="Beat the Clock">
+      <div id="beat-the-clock">
+
+        <div class="dc-shell">
+          <div class="dc-nav"><span class="dc-brand-dot" aria-hidden="true"></span>Northfield DECA</div>
+          <div class="dc-body">
+            <section id="dr-start">
+              <div class="dc-hero"><div><p class="dc-eyebrow">Quick play</p><h2 class="dc-title">Beat the<br><span>Clock</span></h2></div><div class="dc-clock" aria-label="60 seconds"><div class="dc-clock-inner"><strong>60</strong><small>SECONDS</small></div></div></div>
+              <div class="dc-setting"><div class="dc-labelrow"><label for="dr-category">Category</label><span class="dc-count" id="dr-count">540 terms</span></div><select id="dr-category" ><option value="all">Mix everything</option></select></div>
+              <button id="dr-start-button" type="button" class="dc-primary dc-start-action">Let’s play <span class="dc-arrow" aria-hidden="true">→</span></button>
+              <p class="dc-best" id="dr-start-best" hidden></p>
+            </section>
+            <section id="dr-play" hidden aria-label="Beat the Clock game">
+              <div class="dc-hud"><div class="dc-stats"><div class="dc-stat"><small>Score</small><strong id="dr-score">0</strong></div><div class="dc-stat"><small>Streak</small><strong id="dr-streak">0</strong></div></div><div class="dc-timerblock"><button type="button" id="dr-pause" class="dc-textbutton">Pause</button><div class="dc-timer" id="dr-timer" role="timer" aria-label="Time remaining"><div class="dc-timer-inner"><strong id="dr-seconds">60</strong><small>s</small></div></div></div></div>
+              <div id="dr-question">
+                <div class="dc-questionhead"><div class="dc-meta"><span id="dr-topic"></span><span id="dr-number"></span></div><h3 class="dc-term" id="dr-term"></h3></div>
+                <div class="dc-options" id="dr-options" role="group" aria-label="Choose the correct definition"></div>
+                <div class="dc-feedbackrow"><p id="dr-feedback" class="dc-feedback" role="status" aria-live="polite"></p><button id="dr-next" type="button" class="dc-primary dc-continue" hidden>Continue <span aria-hidden="true">→</span></button></div>
+              </div>
+              <div id="dr-paused" class="dc-pausepanel" hidden><h3>Take a breather.</h3><button id="dr-resume" type="button" class="dc-primary">Resume <span aria-hidden="true">→</span></button></div>
+              <div class="dc-gamebottom"><button id="dr-end" type="button" class="dc-textbutton">End round</button></div>
+            </section>
+            <section id="dr-finish" class="dc-results" hidden aria-label="Round results">
+              <p class="dc-eyebrow" id="dr-result-eyebrow">Round complete</p><h3 id="dr-result-title">Nice work.</h3><div class="dc-finalscore" id="dr-finalscore">0</div><p class="dc-points">points</p>
+              <div class="dc-finalstats"><div><strong id="dr-correct">0/0</strong><span>Correct</span></div><div><strong id="dr-accuracy">0%</strong><span>Accuracy</span></div><div><strong id="dr-beststreak">0</strong><span>Best streak</span></div></div>
+              <details id="dr-review"><summary id="dr-review-title" >Review missed terms</summary><div id="dr-review-list"></div></details>
+              <button id="dr-replay" type="button" class="dc-primary">Play again <span aria-hidden="true">→</span></button><button id="dr-change" type="button" class="dc-textbutton">Change category</button>
+            </section>
+            <span id="dr-announcement" class="dc-sr" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -85,5 +122,6 @@
   </footer>
 
   <script src="/script.js"></script>
+  <script src="/resources/beat-the-clock.js"></script>
 </body>
 </html>
