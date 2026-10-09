@@ -873,6 +873,54 @@ textarea {
   gap: 18px;
 }
 
+.profile-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 100%;
+  margin: -10px 0 26px;
+  padding: 10px 14px;
+  border: 1px solid #dce6f2;
+  border-radius: 999px;
+  background: #edf4ff;
+  color: #063b8e;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.profile-email svg {
+  flex: none;
+}
+
+.profile-email span {
+  overflow-wrap: anywhere;
+}
+
+.profile-email:hover {
+  background: #e0ecff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.profile-email:focus-visible {
+  outline: 3px solid #063b8e;
+  outline-offset: 4px;
+}
+
+@media (max-width: 380px) {
+  .profile-email {
+    gap: 6px;
+    padding: 10px;
+    font-size: 0.875rem;
+  }
+
+  .profile-email svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .profile-detail {
   padding: 20px;
   border-radius: 22px;

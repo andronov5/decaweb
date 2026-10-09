@@ -23,6 +23,10 @@ rank ahead of nickname matches, and results always display the listed member
 name. Add individual preferred names to `data-search`; common nicknames do not
 expand surnames or change the roster.
 
-Do not add student IDs, school-email addresses containing IDs, roster PDFs, or
-ID-derived lookup tables to this public repository. Name search is intentional:
-an ID lookup would need a private backend rather than a public static dataset.
+The 11 officer profiles display their school email addresses, as explicitly
+requested by the site owner on October 8, 2026, using the supplied chapter roster.
+These contact links are maintained in the `officers` array in `script.js`.
+Keep this exception limited to the officer contact addresses: do not add other
+member email addresses, standalone student IDs, roster PDFs, or ID-derived lookup
+tables to this public repository. Name search is intentional: an ID lookup would
+need a private backend rather than a public static dataset.

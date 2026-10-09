@@ -1,6 +1,7 @@
 const officers = [
   {
     id: "scarlett-tolan",
+    email: "804466@dpsk12.net",
     firstName: "scarlett",
     name: "Scarlett Tolan",
     role: "President",
@@ -12,6 +13,7 @@ const officers = [
   },
   {
     id: "will-zhang",
+    email: "786419@dpsk12.net",
     firstName: "will",
     name: "Will Zhang",
     role: "Vice President",
@@ -23,6 +25,7 @@ const officers = [
   },
   {
     id: "ava-lonigro",
+    email: "802154@dpsk12.net",
     firstName: "ava",
     name: "Ava Lonigro",
     role: "VP of Marketing",
@@ -34,6 +37,7 @@ const officers = [
   },
   {
     id: "isabelle-brehm",
+    email: "770717@dpsk12.net",
     firstName: "isabelle",
     name: "Isabelle Brehm",
     role: "VP of Finance",
@@ -45,6 +49,7 @@ const officers = [
   },
   {
     id: "demi-dolechek",
+    email: "804258@dpsk12.net",
     firstName: "demi",
     name: "Demi Dolechek",
     role: "VP of Community Outreach",
@@ -56,6 +61,7 @@ const officers = [
   },
   {
     id: "mimi-haile",
+    email: "802379@dpsk12.net",
     firstName: "mimi",
     name: "Mimi Haile",
     role: "VP of Operations",
@@ -67,6 +73,7 @@ const officers = [
   },
   {
     id: "owen-huie",
+    email: "819077@dpsk12.net",
     firstName: "owen",
     name: "Owen Huie",
     role: "Junior President",
@@ -78,6 +85,7 @@ const officers = [
   },
   {
     id: "lera-andronova",
+    email: "827015@dpsk12.net",
     firstName: "lera",
     name: "Lera Andronova",
     role: "Junior Vice President",
@@ -89,6 +97,7 @@ const officers = [
   },
   {
     id: "lila-rowley",
+    email: "791683@dpsk12.net",
     firstName: "lila",
     name: "Lila Rowley",
     role: "Junior VP of Marketing",
@@ -100,6 +109,7 @@ const officers = [
   },
   {
     id: "maddie-ng",
+    email: "820037@dpsk12.net",
     firstName: "maddie",
     name: "Maddie Ng",
     role: "Junior VP of Finance",
@@ -111,6 +121,7 @@ const officers = [
   },
   {
     id: "keira-mccord",
+    email: "802048@dpsk12.net",
     firstName: "keira",
     name: "Keira McCord",
     role: "Junior VP of Community Outreach",
@@ -620,6 +631,10 @@ if (profileContainer) {
         <div class="profile-content">
           <p class="profile-role">${officer.role}</p>
           <h1>${officer.name}</h1>
+          <a class="profile-email" href="mailto:${officer.email}" aria-label="Email ${officer.name} at ${officer.email}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m4 7 8 6 8-6" /></svg>
+            <span>${officer.email}</span>
+          </a>
 
           <div class="profile-details">
             <div class="profile-detail">
