@@ -37,7 +37,7 @@
         buttons.forEach((button,i)=>{button.firstElementChild.textContent=String(i+1);button.lastElementChild.textContent=options[i].definition;delete button.dataset.result;button.setAttribute('aria-disabled','false');button.setAttribute('aria-label',(i+1)+'. '+options[i].definition);});
         el('feedback').textContent='';delete el('feedback').dataset.good;el('next').hidden=true;el('question').hidden=false;el('paused').hidden=true;el('announcement').textContent=current.term+'. Choose a definition.';runClock();
       }
-      function start(){clearTimers();category=el('category').value;pool=getPool();score=0;streak=0;maxStreak=0;answered=0;correct=0;missed=[];number=0;remaining=60000;el('score').textContent='0';el('streak').textContent='0';buildDeck();show('play');draw();focus(buttons[0]);}
+      function start(){clearTimers();category=el('category').value;window.decaVocabActivity?.start(category);pool=getPool();score=0;streak=0;maxStreak=0;answered=0;correct=0;missed=[];number=0;remaining=60000;el('score').textContent='0';el('streak').textContent='0';buildDeck();show('play');draw();focus(buttons[0]);}
       function answer(index){
         if(phase!=='question')return;remaining=Math.max(0,remaining-(performance.now()-started));clearTimers();paint(remaining);if(!remaining){finish(true);return;}
         const chosen=options[index],right=chosen.id===current.id;answered++;phase=right?'correct':'review';el('pause').hidden=true;
@@ -50,7 +50,7 @@
       function pause(){if(!['question','correct'].includes(phase))return;pausedFrom=phase;if(phase==='question')remaining=Math.max(0,remaining-(performance.now()-started));clearTimers();paint(remaining);if(!remaining){finish(true);return;}phase='paused';el('question').hidden=true;el('paused').hidden=false;el('pause').hidden=true;el('announcement').textContent='Game paused';focus(el('resume'));}
       function resume(){if(phase!=='paused')return;if(pausedFrom==='correct')draw();else{el('question').hidden=false;el('paused').hidden=true;runClock();}focus(buttons[0]);}
       function finish(expired=false){
-        if(['start','finished'].includes(phase))return;clearTimers();phase='finished';const oldBest=bests.get(category)||0;bests.set(category,Math.max(oldBest,score));
+        if(['start','finished'].includes(phase))return;clearTimers();phase='finished';window.decaVocabActivity?.finish({score,correct,answered,maxStreak,reason:expired?'Time expired':'Ended early'});const oldBest=bests.get(category)||0;bests.set(category,Math.max(oldBest,score));
         el('result-eyebrow').textContent=expired?'Time’s up':'Round complete';el('result-title').textContent=score>oldBest?'New session best.':score?'Nice work.':'Ready for another?';el('finalscore').textContent=score;el('correct').textContent=correct+'/'+answered;el('accuracy').textContent=(answered?Math.round(correct/answered*100):0)+'%';el('beststreak').textContent=maxStreak;
         el('review').hidden=!missed.length;el('review').open=false;el('review-title').textContent='Review '+missed.length+' missed '+(missed.length===1?'term':'terms');el('review-list').replaceChildren();missed.forEach(({item})=>{const row=document.createElement('div');row.className='dc-reviewitem';const title=document.createElement('strong');title.textContent=item.term;const text=document.createElement('p');text.textContent=item.definition;row.append(title,text);el('review-list').appendChild(row);});show('finish');el('announcement').textContent='Round complete. '+score+' points.';focus(el('replay'));
       }
