@@ -178,9 +178,10 @@ const events = [
     subtitle: "At lunch in the Business Hallway (B2)"
   },
   {
-    date: "2026-10-21",
-    title: "DECA Meeting",
-    subtitle: "At lunch in the Business Hallway (B2)"
+    date: "2026-10-22",
+    title: "Mock Districts",
+    subtitle: "At lunch in the Business Hallway (B2)",
+    details: "Mock Districts is mainly for members competing in Principles events. Practice presenting to an officer and get feedback to help you prepare for Districts. Check Schoology to sign up."
   },
   {
     date: "2026-10-28",
@@ -337,6 +338,48 @@ function renderNextMeeting() {
 
 renderNextMeeting();
 
+let eventDetailsDialog = null;
+
+function openEventDetails(event) {
+  if (!event.details) return;
+
+  if (!eventDetailsDialog) {
+    eventDetailsDialog = document.createElement("dialog");
+    eventDetailsDialog.className = "event-details-dialog";
+    eventDetailsDialog.setAttribute("aria-labelledby", "eventDetailsTitle");
+    eventDetailsDialog.setAttribute("aria-describedby", "eventDetailsDescription");
+    eventDetailsDialog.innerHTML = `
+      <form method="dialog">
+        <button type="submit" class="event-dialog-close" aria-label="Close event details" autofocus>&times;</button>
+      </form>
+      <p class="section-label">Event details</p>
+      <h2 id="eventDetailsTitle"></h2>
+      <p class="event-dialog-date"></p>
+      <p class="event-dialog-location"></p>
+      <p id="eventDetailsDescription"></p>
+    `;
+    document.body.appendChild(eventDetailsDialog);
+    eventDetailsDialog.addEventListener("click", clickEvent => {
+      if (clickEvent.target !== eventDetailsDialog) return;
+      const bounds = eventDetailsDialog.getBoundingClientRect();
+      if (clickEvent.clientX < bounds.left || clickEvent.clientX > bounds.right
+        || clickEvent.clientY < bounds.top || clickEvent.clientY > bounds.bottom) {
+        eventDetailsDialog.close();
+      }
+    });
+    eventDetailsDialog.addEventListener("close", () => {
+      document.body.classList.remove("modal-open");
+    });
+  }
+
+  eventDetailsDialog.querySelector("#eventDetailsTitle").textContent = event.title;
+  eventDetailsDialog.querySelector(".event-dialog-date").textContent = formattedEventDate(event.date);
+  eventDetailsDialog.querySelector(".event-dialog-location").textContent = event.subtitle || "";
+  eventDetailsDialog.querySelector("#eventDetailsDescription").textContent = event.details;
+  document.body.classList.add("modal-open");
+  eventDetailsDialog.showModal();
+}
+
 function renderEventList() {
   if (!eventContainer || !noUpcomingEvents) return;
 
@@ -348,14 +391,21 @@ function renderEventList() {
   noUpcomingEvents.hidden = upcomingEvents.length > 0;
 
   upcomingEvents.forEach(event => {
-    const card = document.createElement("article");
+    const card = document.createElement(event.details ? "button" : "article");
     card.className = "event-card";
+    if (event.details) {
+      card.type = "button";
+      card.classList.add("event-card-clickable");
+      card.setAttribute("aria-haspopup", "dialog");
+      card.addEventListener("click", () => openEventDetails(event));
+    }
 
     card.innerHTML = `
       <time class="event-date" datetime="${event.date}">${formattedEventDate(event.date)}</time>
       <div class="event-details">
         <h3>${event.title}</h3>
         ${event.subtitle ? `<p>${event.subtitle}</p>` : ""}
+        ${event.details ? '<span class="event-details-link">View details &rarr;</span>' : ""}
       </div>
     `;
 
@@ -407,8 +457,14 @@ function renderMonthCalendar() {
     dayCell.appendChild(dayNumber);
 
     eventsOnDate.forEach(event => {
-      const eventChip = document.createElement("div");
+      const eventChip = document.createElement(event.details ? "button" : "div");
       eventChip.className = "calendar-event-chip";
+      if (event.details) {
+        eventChip.type = "button";
+        eventChip.classList.add("calendar-event-clickable");
+        eventChip.setAttribute("aria-haspopup", "dialog");
+        eventChip.addEventListener("click", () => openEventDetails(event));
+      }
       eventChip.textContent = event.title;
       eventChip.title = event.subtitle ? `${event.title} — ${event.subtitle}` : event.title;
       dayCell.appendChild(eventChip);
