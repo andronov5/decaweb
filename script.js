@@ -184,6 +184,16 @@ const events = [
     details: "Mock Districts is mainly for members competing in Principles events. Practice presenting to an officer and get feedback to help you prepare for Districts. Check Schoology to sign up."
   },
   {
+    date: "2026-10-27",
+    title: "Districts Testing Day 1",
+    subtitle: "During Final 30 in the Business Hallway (B2)"
+  },
+  {
+    date: "2026-10-28",
+    title: "Districts Testing Day 2",
+    subtitle: "During Final 30 in the Business Hallway (B2)"
+  },
+  {
     date: "2026-10-28",
     title: "DECA Meeting",
     subtitle: "At lunch in the Business Hallway (B2)"
