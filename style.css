@@ -1707,7 +1707,7 @@ footer {
   border-right: none;
 }
 
-.calendar-day:nth-last-child(-n + 7) {
+.calendar-day.calendar-last-week {
   border-bottom: none;
 }
 
@@ -2710,4 +2710,18 @@ body.modal-open {
   color: #063b8e;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* Multi-day events occupy one shared grid item across their dates. */
+.calendar-event-span {
+  z-index: 1;
+  align-self: start;
+  min-width: 0;
+  height: 27px;
+  margin-right: 8px;
+  margin-left: 8px;
+  padding: 6px 9px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 6px rgba(6, 59, 142, 0.08);
 }

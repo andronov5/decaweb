@@ -210,7 +210,7 @@ const events = [
   },
   {
     date: "2026-11-18",
-    title: "DECA Districts",
+    title: "DECA District Competition",
     subtitle: "All day · Arapahoe County Fairgrounds"
   },
   {
@@ -446,6 +446,31 @@ function renderMonthCalendar() {
   const month = visibleCalendarMonth.getMonth();
   const firstDayOfMonth = new Date(year, month, 1);
   const gridStartDate = new Date(year, month, 1 - firstDayOfMonth.getDay());
+  const dates = Array.from({ length: 42 }, (_, index) => new Date(
+    gridStartDate.getFullYear(), gridStartDate.getMonth(), gridStartDate.getDate() + index
+  ));
+  const dateStrings = dates.map(dateToISO);
+  const weekSegments = Array.from({ length: 6 }, () => []);
+
+  // One continuous bar per week, with separate lanes for overlapping date ranges.
+  events.filter(event => event.endDate && event.endDate > event.date).forEach(event => {
+    weekSegments.forEach((segments, week) => {
+      const first = week * 7;
+      const coveredDays = dateStrings.slice(first, first + 7)
+        .map((date, column) => ({ date, column }))
+        .filter(day => day.date >= event.date && day.date <= event.endDate);
+      if (!coveredDays.length) return;
+
+      const startColumn = coveredDays[0].column;
+      const endColumn = coveredDays[coveredDays.length - 1].column;
+      let lane = 0;
+      while (segments.some(segment => segment.lane === lane
+        && segment.startColumn <= endColumn && segment.endColumn >= startColumn)) {
+        lane += 1;
+      }
+      segments.push({ event, startColumn, endColumn, lane });
+    });
+  });
 
   calendarMonthLabel.textContent = new Intl.DateTimeFormat("en-US", {
     month: "long",
@@ -454,27 +479,21 @@ function renderMonthCalendar() {
 
   calendarGrid.innerHTML = "";
 
-  for (let index = 0; index < 42; index += 1) {
-    const cellDate = new Date(
-      gridStartDate.getFullYear(),
-      gridStartDate.getMonth(),
-      gridStartDate.getDate() + index
-    );
-    const cellDateISO = dateToISO(cellDate);
+  dates.forEach((cellDate, index) => {
+    const cellDateISO = dateStrings[index];
+    const week = Math.floor(index / 7);
     const eventsOnDate = events.filter(event => event.date <= cellDateISO && (event.endDate || event.date) >= cellDateISO);
     const dayCell = document.createElement("div");
 
     dayCell.className = "calendar-day";
+    dayCell.style.gridColumn = String(index % 7 + 1);
+    dayCell.style.gridRow = String(week + 1);
+    if (week === 5) dayCell.classList.add("calendar-last-week");
     dayCell.setAttribute("role", "gridcell");
     dayCell.setAttribute("aria-label", `${formattedEventDate(cellDateISO)}${eventsOnDate.length ? `, ${eventsOnDate.length} event${eventsOnDate.length === 1 ? "" : "s"}` : ""}`);
 
-    if (cellDate.getMonth() !== month) {
-      dayCell.classList.add("outside-month");
-    }
-
-    if (cellDateISO === todayISO) {
-      dayCell.classList.add("today");
-    }
+    if (cellDate.getMonth() !== month) dayCell.classList.add("outside-month");
+    if (cellDateISO === todayISO) dayCell.classList.add("today");
 
     const dayNumber = document.createElement("time");
     dayNumber.className = "calendar-day-number";
@@ -482,7 +501,15 @@ function renderMonthCalendar() {
     dayNumber.textContent = cellDate.getDate();
     dayCell.appendChild(dayNumber);
 
-    eventsOnDate.forEach(event => {
+    const laneCount = weekSegments[week].reduce((count, segment) => Math.max(count, segment.lane + 1), 0);
+    if (laneCount) {
+      const space = document.createElement("div");
+      space.style.height = `${laneCount * 32}px`;
+      space.setAttribute("aria-hidden", "true");
+      dayCell.appendChild(space);
+    }
+
+    eventsOnDate.filter(event => !event.endDate || event.endDate === event.date).forEach(event => {
       const eventChip = document.createElement(event.details ? "button" : "div");
       eventChip.className = "calendar-event-chip";
       if (event.details) {
@@ -497,7 +524,27 @@ function renderMonthCalendar() {
     });
 
     calendarGrid.appendChild(dayCell);
-  }
+  });
+
+  weekSegments.forEach((segments, week) => {
+    segments.forEach(({ event, startColumn, endColumn, lane }) => {
+      const bar = document.createElement(event.details ? "button" : "div");
+      bar.className = "calendar-event-chip calendar-event-span";
+      bar.style.gridColumn = `${startColumn + 1} / ${endColumn + 2}`;
+      bar.style.gridRow = String(week + 1);
+      bar.style.marginTop = `${44 + lane * 32}px`;
+      bar.textContent = event.title;
+      bar.title = `${event.title} · ${formattedEventDateRange(event)} · ${event.subtitle || ""}`;
+      bar.setAttribute("aria-label", bar.title);
+      if (event.details) {
+        bar.type = "button";
+        bar.classList.add("calendar-event-clickable");
+        bar.setAttribute("aria-haspopup", "dialog");
+        bar.addEventListener("click", () => openEventDetails(event));
+      }
+      calendarGrid.appendChild(bar);
+    });
+  });
 }
 
 function setCalendarView(view) {
