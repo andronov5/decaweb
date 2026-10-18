@@ -212,6 +212,12 @@ const events = [
     date: "2026-11-18",
     title: "DECA Districts",
     subtitle: "All day · Arapahoe County Fairgrounds"
+  },
+  {
+    date: "2027-02-21",
+    endDate: "2027-02-23",
+    title: "DECA State Competition",
+    subtitle: "The Broadmoor Resort · Colorado Springs"
   }
 ];
 
@@ -317,6 +323,16 @@ function formattedEventDate(dateString) {
   }).format(dateFromISO(dateString));
 }
 
+function formattedEventDateRange(event) {
+  if (!event.endDate || event.endDate === event.date) return formattedEventDate(event.date);
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }).formatRange(dateFromISO(event.date), dateFromISO(event.endDate));
+}
+
 let todayISO = currentChapterDateISO();
 let today = dateFromISO(todayISO);
 let visibleCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -383,7 +399,7 @@ function openEventDetails(event) {
   }
 
   eventDetailsDialog.querySelector("#eventDetailsTitle").textContent = event.title;
-  eventDetailsDialog.querySelector(".event-dialog-date").textContent = formattedEventDate(event.date);
+  eventDetailsDialog.querySelector(".event-dialog-date").textContent = formattedEventDateRange(event);
   eventDetailsDialog.querySelector(".event-dialog-location").textContent = event.subtitle || "";
   eventDetailsDialog.querySelector("#eventDetailsDescription").textContent = event.details;
   document.body.classList.add("modal-open");
@@ -396,7 +412,7 @@ function renderEventList() {
   eventContainer.innerHTML = "";
 
   const upcomingEvents = events
-    .filter(event => event.date >= todayISO)
+    .filter(event => (event.endDate || event.date) >= todayISO)
     .sort((firstEvent, secondEvent) => firstEvent.date.localeCompare(secondEvent.date));
   noUpcomingEvents.hidden = upcomingEvents.length > 0;
 
@@ -411,7 +427,7 @@ function renderEventList() {
     }
 
     card.innerHTML = `
-      <time class="event-date" datetime="${event.date}">${formattedEventDate(event.date)}</time>
+      <time class="event-date" datetime="${event.date}">${formattedEventDateRange(event)}</time>
       <div class="event-details">
         <h3>${event.title}</h3>
         ${event.subtitle ? `<p>${event.subtitle}</p>` : ""}
@@ -445,7 +461,7 @@ function renderMonthCalendar() {
       gridStartDate.getDate() + index
     );
     const cellDateISO = dateToISO(cellDate);
-    const eventsOnDate = events.filter(event => event.date === cellDateISO);
+    const eventsOnDate = events.filter(event => event.date <= cellDateISO && (event.endDate || event.date) >= cellDateISO);
     const dayCell = document.createElement("div");
 
     dayCell.className = "calendar-day";
