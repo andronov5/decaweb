@@ -5,16 +5,16 @@ publication until the receiver is deployed and the live submission test passes.
 
 The page lives at `/join-newsletter/`. It is omitted from navigation and has
 `noindex, nofollow` metadata. This makes it unlisted, not access restricted.
-The existing site domain in CNAME is `northfielddeca.org`; confirm the requested
-`.com` domain before producing the final event QR code. Do not modify CNAME
-unless a domain migration is explicitly requested.
+The confirmed signup URL is `https://northfielddeca.org/join-newsletter/`.
+Deployment is pending. Keep the existing `northfielddeca.org` CNAME unchanged.
 
 ## Connect the response sheet
 
 1. In the private newsletter spreadsheet, open **Extensions > Apps Script**.
 2. Paste `google-sheets.gs` into the bound project and save.
-3. Run `setup` to bind the existing `Signups` tab. Authorize access to this
-   spreadsheet using its owner's account.
+3. Run `setup` to bind the existing `Signups` tab. Authorize using its owner's
+   account. The receiver requires the full spreadsheets scope because web-app
+   execution uses `openById`; do not add `@OnlyCurrentDoc`.
 4. Deploy a new web app: **Execute as: Me**, **Who has access: Anyone**.
    The receiver accepts submissions but never returns subscriber data.
    Keep the spreadsheet's sharing restricted.
