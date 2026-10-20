@@ -1,7 +1,8 @@
 # Newsletter signup setup
 
-Updated October 20, 2026. The newsletter receiver is deployed and a test
-submission succeeded. Final browser verification is pending before publication.
+Updated October 20, 2026. The signup page and newsletter receiver are live.
+A production browser submission and a case-varied duplicate were verified
+against the response sheet. Both reserved test addresses have been removed.
 
 The page lives at `/join-newsletter/`. It is omitted from navigation and has
 `noindex, nofollow` metadata. This makes it unlisted, not access restricted.
