@@ -1,12 +1,12 @@
 # Newsletter signup setup
 
-Prepared October 20, 2026. The `newsletter-signup` branch is not ready for
-publication until the receiver is deployed and the live submission test passes.
+Updated October 20, 2026. The newsletter receiver is deployed and a test
+submission succeeded. Final browser verification is pending before publication.
 
 The page lives at `/join-newsletter/`. It is omitted from navigation and has
 `noindex, nofollow` metadata. This makes it unlisted, not access restricted.
 The confirmed signup URL is `https://northfielddeca.org/join-newsletter/`.
-Deployment is pending. Keep the existing `northfielddeca.org` CNAME unchanged.
+Keep the existing `northfielddeca.org` CNAME unchanged.
 
 ## Connect the response sheet
 
@@ -18,7 +18,7 @@ Deployment is pending. Keep the existing `northfielddeca.org` CNAME unchanged.
 4. Deploy a new web app: **Execute as: Me**, **Who has access: Anyone**.
    The receiver accepts submissions but never returns subscriber data.
    Keep the spreadsheet's sharing restricted.
-5. Put the resulting `/exec` URL into the `endpoint` constant in
+5. Put the resulting `/exec` URL into the `NEWSLETTER_ENDPOINT` constant in
    `join-newsletter/index.html`.
 6. Test a new address and a duplicate; confirm the sheet has one row. Test a
    failed request and confirm the page shows a retry message, not success.
