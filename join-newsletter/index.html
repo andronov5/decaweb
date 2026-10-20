@@ -54,7 +54,6 @@
       letter-spacing: -.045em;
       font-weight: 850;
     }
-    .intro { margin: 0 auto 30px; max-width: 360px; color: #526175; font-size: 18px; line-height: 1.55; }
     form { text-align: left; }
     label { display: block; margin-bottom: 10px; font-size: 16px; font-weight: 750; }
     input[type="email"] {
@@ -93,7 +92,6 @@
     button:hover { background: #f8d369; box-shadow: 0 8px 20px rgba(246, 198, 68, .22); }
     button:focus-visible { outline: 3px solid #063b8e; outline-offset: 4px; }
     button:disabled { cursor: wait; opacity: .7; box-shadow: none; }
-    .consent { margin: 18px 0 0; color: #64748b; font-size: 13px; line-height: 1.6; text-align: center; }
     .message { margin: 14px 0 0; color: #a52c25; font-size: 15px; line-height: 1.5; }
     .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
     .success { padding: 14px 0 24px; }
@@ -113,7 +111,6 @@
       .signup { padding: 30px 24px 28px; border-radius: 24px; }
       .chapter-logo { width: 66px; height: 66px; margin-bottom: 16px; }
       .chapter-name { font-size: 13px; margin-bottom: 20px; }
-      .intro { font-size: 17px; margin-bottom: 26px; }
       input[type="email"] { font-size: 20px; padding-left: 15px; }
       button { font-size: 18px; }
     }
@@ -126,17 +123,15 @@
     <p class="chapter-name">Northfield DECA</p>
     <div id="signup-content">
       <h1 id="page-title">Stay in the loop.</h1>
-      <p class="intro">News, events, and chapter updates.<br>Right in your inbox.</p>
       <form id="newsletter-form">
         <label for="email">Email address</label>
-        <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="signup-note signup-error">
+        <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="signup-error">
         <div class="honeypot" aria-hidden="true">
           <label for="website">Leave this field empty</label>
           <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
         <button id="submit-button" type="submit">Join the newsletter</button>
         <p id="signup-error" class="message" role="alert" hidden></p>
-        <p id="signup-note" class="consent">By joining, you’ll receive Northfield DECA newsletter emails.</p>
       </form>
       <noscript><p class="message">Please turn on JavaScript in your browser to join the newsletter.</p></noscript>
     </div>
