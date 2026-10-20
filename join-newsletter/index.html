@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#063b8e">
+  <title>Join the Newsletter | Northfield DECA</title>
+  <meta name="description" content="Get news, events, and chapter updates from Northfield DECA.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <style>
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      font-family: Inter, Arial, sans-serif;
+      color: #122033;
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(246, 198, 68, .19), transparent 42%),
+        radial-gradient(ellipse at 90% 95%, rgba(6, 59, 142, .09), transparent 48%),
+        #f7f9fc;
+    }
+    .signup {
+      width: 100%;
+      max-width: 580px;
+      padding: 42px 44px 36px;
+      border: 1px solid #dce6f2;
+      border-top: 5px solid #f6c644;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(15, 35, 68, .09);
+      text-align: center;
+    }
+    .chapter-logo { display: block; width: 76px; height: 76px; margin: 0 auto 18px; }
+    .chapter-name {
+      margin: 0 0 22px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #063b8e;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(36px, 8vw, 48px);
+      line-height: 1.07;
+      letter-spacing: -.045em;
+      font-weight: 850;
+    }
+    .intro { margin: 0 auto 30px; max-width: 360px; color: #526175; font-size: 18px; line-height: 1.55; }
+    form { text-align: left; }
+    label { display: block; margin-bottom: 10px; font-size: 16px; font-weight: 750; }
+    input[type="email"] {
+      display: block;
+      width: 100%;
+      min-height: 66px;
+      padding: 17px 18px;
+      border: 1.5px solid #bbc9dc;
+      border-radius: 14px;
+      background: #f9fbff;
+      color: #122033;
+      font: inherit;
+      font-size: 21px;
+      line-height: 1.4;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input::placeholder { color: #64748b; opacity: 1; }
+    input:focus { outline: 0; border-color: #063b8e; box-shadow: 0 0 0 4px rgba(6, 59, 142, .12); }
+    button {
+      display: block;
+      width: 100%;
+      min-height: 64px;
+      margin-top: 16px;
+      padding: 17px 15px;
+      border: 0;
+      border-radius: 14px;
+      background: #f6c644;
+      color: #102033;
+      font: inherit;
+      font-size: 19px;
+      line-height: 1.4;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background .15s, box-shadow .15s;
+    }
+    button:hover { background: #f8d369; box-shadow: 0 8px 20px rgba(246, 198, 68, .22); }
+    button:focus-visible { outline: 3px solid #063b8e; outline-offset: 4px; }
+    button:disabled { cursor: wait; opacity: .7; box-shadow: none; }
+    .consent { margin: 18px 0 0; color: #64748b; font-size: 13px; line-height: 1.6; text-align: center; }
+    .message { margin: 14px 0 0; color: #a52c25; font-size: 15px; line-height: 1.5; }
+    .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .success { padding: 14px 0 24px; }
+    .success-icon {
+      display: grid; place-items: center;
+      width: 64px; height: 64px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: #edf4ff;
+      color: #063b8e;
+    }
+    .success h2 { margin: 0 0 12px; font-size: 38px; line-height: 1.1; letter-spacing: -.04em; }
+    .success p { margin: 0; color: #526175; font-size: 18px; line-height: 1.6; }
+    [hidden] { display: none !important; }
+    @media (max-width: 480px) {
+      body { padding: 24px 16px; }
+      .signup { padding: 30px 24px 28px; border-radius: 24px; }
+      .chapter-logo { width: 66px; height: 66px; margin-bottom: 16px; }
+      .chapter-name { font-size: 13px; margin-bottom: 20px; }
+      .intro { font-size: 17px; margin-bottom: 26px; }
+      input[type="email"] { font-size: 20px; padding-left: 15px; }
+      button { font-size: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { input, button { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="signup" aria-labelledby="page-title">
+    <img class="chapter-logo" src="/favicon.png" width="76" height="76" alt="Northfield DECA logo">
+    <p class="chapter-name">Northfield DECA</p>
+    <div id="signup-content">
+      <h1 id="page-title">Stay in the loop.</h1>
+      <p class="intro">News, events, and chapter updates.<br>Right in your inbox.</p>
+      <form id="newsletter-form">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="signup-note signup-error">
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button id="submit-button" type="submit">Join the newsletter</button>
+        <p id="signup-error" class="message" role="alert" hidden></p>
+        <p id="signup-note" class="consent">By joining, you’ll receive Northfield DECA newsletter emails.</p>
+      </form>
+      <noscript><p class="message">Please turn on JavaScript in your browser to join the newsletter.</p></noscript>
+    </div>
+    <section id="signup-success" class="success" tabindex="-1" aria-labelledby="success-title" hidden>
+      <div class="success-icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2 id="success-title">You’re on the list!</h2>
+      <p>Thanks for joining.<br>Keep an eye on your inbox.</p>
+    </section>
+  </main>
+  <script>
+    (() => {
+      'use strict';
+      // Set to the deployed Google Apps Script /exec URL before publication.
+      const NEWSLETTER_ENDPOINT = '';
+      const form = document.getElementById('newsletter-form');
+      const emailInput = document.getElementById('email');
+      const submitButton = document.getElementById('submit-button');
+      const errorMessage = document.getElementById('signup-error');
+      let submitting = false;
+
+      function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.hidden = false;
+      }
+
+      emailInput.addEventListener('input', () => { errorMessage.hidden = true; });
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (submitting) return;
+        emailInput.value = emailInput.value.trim();
+        if (!form.reportValidity()) return;
+        errorMessage.hidden = true;
+        if (!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(NEWSLETTER_ENDPOINT)) {
+          showError('Signup is being set up. Please check back shortly.');
+          return;
+        }
+        submitting = true;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Joining…';
+        form.setAttribute('aria-busy', 'true');
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 25000);
+        try {
+          const response = await fetch(NEWSLETTER_ENDPOINT, {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'omit',
+            referrerPolicy: 'no-referrer',
+            headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+            body: JSON.stringify({ email: emailInput.value, website: document.getElementById('website').value }),
+            signal: controller.signal
+          });
+          if (!response.ok) throw new Error('Signup request failed');
+          const result = await response.json();
+          if (result.ok !== true) throw new Error('Signup was not confirmed');
+          document.getElementById('signup-content').hidden = true;
+          const success = document.getElementById('signup-success');
+          success.hidden = false;
+          document.querySelector('main').setAttribute('aria-labelledby', 'success-title');
+          success.focus();
+          form.reset();
+        } catch (_) {
+          showError('We couldn’t confirm your signup. Please try again.');
+        } finally {
+          clearTimeout(timeout);
+          submitting = false;
+          submitButton.disabled = false;
+          submitButton.textContent = 'Join the newsletter';
+          form.removeAttribute('aria-busy');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
