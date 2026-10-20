@@ -1,4 +1,3 @@
-/** @OnlyCurrentDoc */
 // Bind this script to the private newsletter spreadsheet, run setup(), and
 // deploy as a web app executing as its owner with access set to Anyone.
 // No endpoint reads or exposes subscriber data.
